@@ -1,0 +1,17 @@
+{
+  "name": "f3d323c7-42c4-4cc8-b500-582e48d50555",
+  "displayName": "prebuilt_components_feedback:last_feedback_check",
+  "genericWebService": {
+    "uri": "https://www.example.com",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"phone_number\": \"$session.params.phone_number\",\n  \"fulfillmentInfo\": {\n    \"tag\": \"getPreviousFeedbackDate\"\n  }\n}",
+    "parameterMapping": [ {
+      "key": "$flow.last_feedback_time_elapsed",
+      "value": "last_feedback_time_elapsed"
+    } ]
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

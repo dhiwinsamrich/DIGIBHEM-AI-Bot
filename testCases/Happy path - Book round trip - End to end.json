@@ -1,0 +1,1026 @@
+{
+  "name": "978cc108-cf41-4ba4-afb4-faf8d38ea3b9",
+  "displayName": "Happy path - Book round trip - End to end",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "hi"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "Default Welcome Intent"
+      },
+      "currentPage": {
+        "name": "Start Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Hi! I'm the virtual flights agent. I can help you book a flight, check your frequent flyer miles, look up account credits, or get a refund on a ticket. How can I assist you today?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "book a flight"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "flights.book_flight"
+      },
+      "currentPage": {
+        "name": "Select Ticket Type",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "I can help you find a ticket. Let's get started." ]
+      }, {
+        "text": [ "Are you looking for a round trip ticket?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes round trip please"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "flights.round_trip_ticket"
+      },
+      "currentPage": {
+        "name": "Collect Round-Trip Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Great. Let's find a round trip ticket for you." ]
+      }, {
+        "text": [ "What is the first and last name of the passenger flying?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Jane Doe"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Collect Round-Trip Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Which day would you like to leave?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Jan 5"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2021
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Collect Round-Trip Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Which airport are you leaving from?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "SFO"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2021
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Collect Round-Trip Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What time would you like to leave on the outbound flight? Please use AM and PM in your response." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "9am"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2021
+        },
+        "outbound_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Collect Round-Trip Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is your return date?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Jan 15"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2021
+        },
+        "outbound_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_date": {
+          "day": 15,
+          "month": 1,
+          "year": 2021
+        }
+      },
+      "currentPage": {
+        "name": "Collect Round-Trip Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is the name of the airport you would like to fly to?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "LAX"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2021
+        },
+        "outbound_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "LAX\t",
+        "return_date": {
+          "day": 15,
+          "month": 1,
+          "year": 2021
+        }
+      },
+      "currentPage": {
+        "name": "Collect Round-Trip Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What time would you like to leave on the return flight home? Please use AM and PM in your response." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "5pm"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2021
+        },
+        "outbound_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "LAX\t",
+        "return_date": {
+          "day": 15,
+          "month": 1,
+          "year": 2021
+        },
+        "return_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "currentPage": {
+        "name": "Confirm Flight Details Round-Trip Ticket",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Thank you for that information. " ]
+      }, {
+        "text": [ "This is to confirm that Jane Doe will fly \n\nFrom SFO\n\nTo  LAX\t  \n\nLeaving on 2021-01-05\n \nOutbound Flight Time 09:00:00 \n\nReturning on 2021-01-15\n\nReturn Flight Time 17:00:00\n\nIs that correct?\n" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "correct"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2021
+        },
+        "outbound_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "LAX\t",
+        "return_date": {
+          "day": 15,
+          "month": 1,
+          "year": 2021
+        },
+        "return_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.yes"
+      },
+      "currentPage": {
+        "name": "Show Round-Trip Available Flights",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Now we will choose the flight time. " ]
+      }, {
+        "text": [ "[Sample webhook response of available flights]\n\nOption A\nDeparture Flight BL378M\nDate 2021-01-05\nDeparture Airport SFO\nTime 6:15 AM\nArrival Airport LAX\t  \nArrival Time 7:15 AM \n\nReturn Flight DA1357\nDate 2021-01-15\nTime 10:00 PM\nDeparture Airport LAX\t  \nTime 11:00 PM\nArrival Airport SFO\n\nOption B\nDeparture Flight  NW781A \nDate 2021-01-05\nDeparture Airport SFO\nTime  9:30 AM\nArrival Airport LAX\t  \nArrival Time 11:30 AM  \n\nReturn Flight DA1347\nDate 2021-01-15\nDeparture Airport LAX\t  \nTime 6:00 PM\nArrival Airport SFO\nTime 11:00 PM\n\nOption C\nDeparture Flight  DA1357\nDate 2021-01-05\nDeparture Airport  SFO\nTime  09:00:00\nArrival Airport LAX\t  \nArrival Time 8:00 PM  \n\nReturn Flight DA9842: \nDate 2021-01-15\nDeparture Airport LAX\t  \nTime 17:00:00\nArrival Airport SFO\nArrival Time 9:00 PM \n" ]
+      }, {
+        "text": [ "Would you like to book  Flight Option A, Flight Option B, or Option C?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "option B"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2021
+        },
+        "flight_option": "Option B",
+        "outbound_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "LAX\t",
+        "return_date": {
+          "day": 15,
+          "month": 1,
+          "year": 2021
+        },
+        "return_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "currentPage": {
+        "name": "Display Selected Round-Trip Flight",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "All of our seats are open seating.  Family passengers with children under 5 are boarded first to allow families to sit together. " ]
+      }, {
+        "text": [ "[Unfilled parameters will need a real time webhook response]\n\nDeparture Flight $session.params.departure_flight_number\nDate 2021-01-05\nDeparture Airport SFO\nTime 09:00:00\nArrival Airport LAX\t  \nTime $session.params.outbound_arrival_time \n\nReturn Flight $session.params.return_flight_number\nDate 2021-01-15\nDeparture Airport LAX\t  \nTime 17:00:00\nArrival Airport SFO\nTime $session.params.return_arrival_time\n\nThe price for this ticket is $session.params.ticket_price\nYou have an available account credit of: $session.params.account_credit \n\nWould you like to proceed with payment?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "sure"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2021
+        },
+        "flight_option": "Option B",
+        "outbound_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "LAX\t",
+        "return_date": {
+          "day": 15,
+          "month": 1,
+          "year": 2021
+        },
+        "return_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.yes"
+      },
+      "currentPage": {
+        "name": "Round-Trip Payment",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Great!\n" ]
+      }, {
+        "text": [ "What card type will you be using?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "visa"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "card_type": "visa",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2021
+        },
+        "flight_option": "Option B",
+        "outbound_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "LAX\t",
+        "return_date": {
+          "day": 15,
+          "month": 1,
+          "year": 2021
+        },
+        "return_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "currentPage": {
+        "name": "Round-Trip Payment",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Please enter the card number." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "1234 4567 7788 4567"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "card_number": "1234456777884567",
+        "card_type": "visa",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2021
+        },
+        "flight_option": "Option B",
+        "outbound_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "LAX\t",
+        "return_date": {
+          "day": 15,
+          "month": 1,
+          "year": 2021
+        },
+        "return_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "currentPage": {
+        "name": "Round-Trip Payment",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is the name on the card?\t" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Jane Doe"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "billing_name": "Jane Doe",
+        "card_number": "1234456777884567",
+        "card_type": "visa",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2021
+        },
+        "flight_option": "Option B",
+        "outbound_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "LAX\t",
+        "return_date": {
+          "day": 15,
+          "month": 1,
+          "year": 2021
+        },
+        "return_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "currentPage": {
+        "name": "Round-Trip Payment",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is the billing street address?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "123 Main St Palo Alto CA"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "billing_name": "Jane Doe",
+        "billing_street_address": "123 Main St Palo Alto CA",
+        "card_number": "1234456777884567",
+        "card_type": "visa",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2021
+        },
+        "flight_option": "Option B",
+        "outbound_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "LAX\t",
+        "return_date": {
+          "day": 15,
+          "month": 1,
+          "year": 2021
+        },
+        "return_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "currentPage": {
+        "name": "Round-Trip Payment",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ " What is the billing ZIP code?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "injectedParameters": {
+        "payment": "pass"
+      },
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "94043"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "billing_name": "Jane Doe",
+        "billing_street_address": "123 Main St Palo Alto CA",
+        "billing_zip_code": "94043",
+        "card_number": "1234456777884567",
+        "card_type": "visa",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2021
+        },
+        "flight_option": "Option B",
+        "outbound_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "payment": "pass",
+        "return_airport": "LAX\t",
+        "return_date": {
+          "day": 15,
+          "month": 1,
+          "year": 2021
+        },
+        "return_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "currentPage": {
+        "name": "Round-Trip Ticket Purchase Confirmation",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Your credit card has been charged.   \n\n[Trigger webhook to add ticket to the frequent flyer account associated with the passenger profile]" ]
+      }, {
+        "text": [ "[Below is a sample webhook response with both filled parameters and static data. Unfilled parameters will need a real time webhook response]\n\nYour ticket confirmation number is HP205\n\nJane Doe \n\nDeparture Flight DA1357\nDate 2021-01-05\nDeparture Airport SFO\nTime 09:00:00\nArrival Airport LAX\t  \nArrival Time 8:00 PM \n\nReturn Flight DA9842: \nDate 2021-01-15\nDeparture Airport LAX\t  \nTime 17:00:00\nArrival Airport SFO\nArrival Time 10:00 PM" ]
+      }, {
+        "text": [ "We will send a confirmation email of the ticket for your records. May I have your email please? " ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "janedoe@gmail.com"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "billing_name": "Jane Doe",
+        "billing_street_address": "123 Main St Palo Alto CA",
+        "billing_zip_code": "94043",
+        "card_number": "1234456777884567",
+        "card_type": "visa",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2021
+        },
+        "email": "janedoe@gmail.com",
+        "flight_option": "Option B",
+        "outbound_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "payment": "pass",
+        "return_airport": "LAX\t",
+        "return_date": {
+          "day": 15,
+          "month": 1,
+          "year": 2021
+        },
+        "return_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Thank you for your email address. We will send a confirmation message to you." ]
+      }, {
+        "text": [ "Would you like help with anything else?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "can I have my pet with me?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "billing_name": "Jane Doe",
+        "billing_street_address": "123 Main St Palo Alto CA",
+        "billing_zip_code": "94043",
+        "card_number": "1234456777884567",
+        "card_type": "visa",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2021
+        },
+        "email": "janedoe@gmail.com",
+        "flight_option": "Option B",
+        "outbound_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "payment": "pass",
+        "return_airport": "LAX\t",
+        "return_date": {
+          "day": 15,
+          "month": 1,
+          "year": 2021
+        },
+        "return_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "triggeredIntent": {
+        "name": "flights.animals_on_board  "
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Only one service animal per passenger is allowed on the airplane." ]
+      }, {
+        "text": [ "Can I help you with anything else?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "are there masks available?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "billing_name": "Jane Doe",
+        "billing_street_address": "123 Main St Palo Alto CA",
+        "billing_zip_code": "94043",
+        "card_number": "1234456777884567",
+        "card_type": "visa",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2021
+        },
+        "email": "janedoe@gmail.com",
+        "flight_option": "Option B",
+        "outbound_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "payment": "pass",
+        "return_airport": "LAX\t",
+        "return_date": {
+          "day": 15,
+          "month": 1,
+          "year": 2021
+        },
+        "return_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "triggeredIntent": {
+        "name": "flights.masks_on_airplanes"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Flight attendants will distribute surgical face masks and sanitizing gels to passengers over three (3) years of age. \n\nParents are asked to help their young children under three (3) with frequent handwashing." ]
+      }, {
+        "text": [ "Would you like help with anything else?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "alright thanx"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "billing_name": "Jane Doe",
+        "billing_street_address": "123 Main St Palo Alto CA",
+        "billing_zip_code": "94043",
+        "card_number": "1234456777884567",
+        "card_type": "visa",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2021
+        },
+        "email": "janedoe@gmail.com",
+        "flight_option": "Option B",
+        "outbound_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "payment": "pass",
+        "return_airport": "LAX\t",
+        "return_date": {
+          "day": 15,
+          "month": 1,
+          "year": 2021
+        },
+        "return_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "triggeredIntent": {
+        "name": "small_talk.thanks"
+      },
+      "currentPage": {
+        "name": "End Session",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "I am glad I could help you today. Good-bye!" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1607032035,
+    "nanos": 415782000
+  }
+}

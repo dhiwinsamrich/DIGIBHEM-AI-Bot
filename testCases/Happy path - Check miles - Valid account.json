@@ -1,0 +1,159 @@
+{
+  "name": "5b5d1139-ffc8-4b41-a790-bb37289e9b01",
+  "displayName": "Happy path - Check miles - Valid account",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "how many miles do i have"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "flights.available_miles"
+      },
+      "currentPage": {
+        "name": "Check Frequent Flyer Account Miles",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Let's check on your frequent flyer account." ]
+      }, {
+        "text": [ "This pathway features an Apigee Integration webhook. You can enter your own data or follow the prompt to activate the Apigee webhook." ]
+      }, {
+        "text": [ "What is your frequent flyer account number? [Enter account number: 123456 to begin the Apigee webhook.]" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "123456"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "account_credits": "0",
+        "frequent_flyer_account_number": "123456",
+        "mileage": "55000"
+      },
+      "currentPage": {
+        "name": "Check Frequent Flyer Account Miles",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is the first and last name associated with the frequent flyer account? [Enter Melina Garcia to see the Apigee webhook response below.]" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Melina Garcia"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "account_credits": "0",
+        "frequent_flyer_account_number": "123456",
+        "mileage": "55000",
+        "passenger_name": "Melina Garcia"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Melina Garcia, you have 55000 miles available for use.\n\nA free flight requires [insert company policy] miles. " ]
+      }, {
+        "text": [ "Would you like help with anything else?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "is there a senior discount"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "account_credits": "0",
+        "frequent_flyer_account_number": "123456",
+        "mileage": "55000",
+        "passenger_name": "Melina Garcia"
+      },
+      "triggeredIntent": {
+        "name": "flights.senior_discount"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Passengers over 55 receive a 15% discount with the use of a pre-validated ID. \n\nThe ID must be shown to an employee at the airport in order for the discount to be applied to the account. \n\nThe discount is only valid for the name listed on the validated senior's ID." ]
+      }, {
+        "text": [ "Can I help you with anything else?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "no thanks"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "account_credits": "0",
+        "frequent_flyer_account_number": "123456",
+        "mileage": "55000",
+        "passenger_name": "Melina Garcia"
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.no"
+      },
+      "currentPage": {
+        "name": "End Session",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "We thank you for your business. Have a great day!\n" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1606883357,
+    "nanos": 545905000
+  }
+}

@@ -1,0 +1,930 @@
+{
+  "name": "aeb396e6-a1bb-45ae-b691-d10fca53c2fd",
+  "displayName": "Error handling - Book one way - Change info midway",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "need a one way ticket pls"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "flights.one_way_ticket"
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Let's find a one-way ticket for you. " ]
+      }, {
+        "text": [ "Which day would you like to leave?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Mar 5"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_date": {
+          "day": 5,
+          "month": 3,
+          "year": 2021
+        }
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Which airport would you like to fly out of?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Portland airport"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "PWM\t",
+        "departure_date": {
+          "day": 5,
+          "month": 3,
+          "year": 2021
+        }
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Which airport are you flying into?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "New York"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LGA\t",
+        "departure_airport": "PWM\t",
+        "departure_date": {
+          "day": 5,
+          "month": 3,
+          "year": 2021
+        }
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What time would you like to leave? Please use AM and PM in your response. " ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "2pm"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LGA\t",
+        "departure_airport": "PWM\t",
+        "departure_date": {
+          "day": 5,
+          "month": 3,
+          "year": 2021
+        },
+        "outbound_departure_time": {
+          "hours": 14,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is the first  and last name of the passenger flying?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Jane Doe"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LGA\t",
+        "departure_airport": "PWM\t",
+        "departure_date": {
+          "day": 5,
+          "month": 3,
+          "year": 2021
+        },
+        "outbound_departure_time": {
+          "hours": 14,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Confirm Flight Details One-Way Ticket",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "You want a one way ticket for:\n\nPassenger Jane Doe \n\nFrom PWM\t\n\nTo  LGA\t\n\nLeaving on 2021-03-05 \n\nTime 14:00:00\n\nIs that correct?\n" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "sorry I need to change"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.no"
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Let's try checking for other options. Please note that you will be asked to re-enter your information. " ]
+      }, {
+        "text": [ "Which day would you like to leave?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Mar 5"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_date": {
+          "day": 5,
+          "month": 3,
+          "year": 2021
+        }
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Which airport would you like to fly out of?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Seattle"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "SEA\t",
+        "departure_date": {
+          "day": 5,
+          "month": 3,
+          "year": 2021
+        }
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Which airport are you flying into?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "New York"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LGA\t",
+        "departure_airport": "SEA\t",
+        "departure_date": {
+          "day": 5,
+          "month": 3,
+          "year": 2021
+        }
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What time would you like to leave? Please use AM and PM in your response. " ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "5pm"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LGA\t",
+        "departure_airport": "SEA\t",
+        "departure_date": {
+          "day": 5,
+          "month": 3,
+          "year": 2021
+        },
+        "outbound_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is the first  and last name of the passenger flying?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Jane Doe"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LGA\t",
+        "departure_airport": "SEA\t",
+        "departure_date": {
+          "day": 5,
+          "month": 3,
+          "year": 2021
+        },
+        "outbound_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Confirm Flight Details One-Way Ticket",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "You want a one way ticket for:\n\nPassenger Jane Doe \n\nFrom SEA\t\n\nTo  LGA\t\n\nLeaving on 2021-03-05 \n\nTime 17:00:00\n\nIs that correct?\n" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LGA\t",
+        "departure_airport": "SEA\t",
+        "departure_date": {
+          "day": 5,
+          "month": 3,
+          "year": 2021
+        },
+        "outbound_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.yes"
+      },
+      "currentPage": {
+        "name": "Show One-Way Available Flights",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Thank you for that information. Let me check if we have a flight available. " ]
+      }, {
+        "text": [ "Option A\nDeparture Flight $session.params.flight_number_A\nDate 2021-03-05\nDeparture Airport SEA\t\nTime  $session.params.departure_time_A\nArrival Airport LGA\t\nArrival Time $session.params.arrival_time_A \n\nOption B\nDeparture Flight $session.params.flight_number_B \nDate 2021-03-05\nDeparture Airport SEA\t\nTime  $session.params.departure_time_B\nArrival Airport LGA\t\nArrival Time $session.params.arrival_time_B  \n\nOption C\nDeparture Flight $session.params.flight_number_C\nDate 2021-03-05\nDeparture Airport SEA\t\nTime $session.params.departure_time_C\nArrival Airport LGA\t\nArrival Time $session.params.arrival_time_C" ]
+      }, {
+        "text": [ "Would you like to book Option A, Option B, or Option C?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "A"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LGA\t",
+        "departure_airport": "SEA\t",
+        "departure_date": {
+          "day": 5,
+          "month": 3,
+          "year": 2021
+        },
+        "flight_option": "Option A",
+        "outbound_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Display Selected One-Way Ticket",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "All of our seats are open seating.  Family passengers with children under 5 are boarded first to allow families to sit together. " ]
+      }, {
+        "text": [ "[Below is a sample response with static data and filled parameters. Unfilled parameters will need a real time webhook response]\n\nDeparture Flight RLABKB\nDate 2021-03-05\nDeparture Airport SEA\t\nTime $session.params.departure_time_C\nArrival Airport LGA\t\nArrival Time $session.params.arrival_time_C\n\nThe price for this ticket is $session.params.ticket_price\n\nWould you like to proceed with payment?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LGA\t",
+        "departure_airport": "SEA\t",
+        "departure_date": {
+          "day": 5,
+          "month": 3,
+          "year": 2021
+        },
+        "flight_option": "Option A",
+        "outbound_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.yes"
+      },
+      "currentPage": {
+        "name": "One-Way Payment",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What card type will you be using?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "visa"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LGA\t",
+        "card_type": "visa",
+        "departure_airport": "SEA\t",
+        "departure_date": {
+          "day": 5,
+          "month": 3,
+          "year": 2021
+        },
+        "flight_option": "Option A",
+        "outbound_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "One-Way Payment",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Please enter the card number." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "1234 4567 3456 7890"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LGA\t",
+        "card_number": "1234456734567890",
+        "card_type": "visa",
+        "departure_airport": "SEA\t",
+        "departure_date": {
+          "day": 5,
+          "month": 3,
+          "year": 2021
+        },
+        "flight_option": "Option A",
+        "outbound_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "One-Way Payment",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is the name on the card?\t" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Jane Doe"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LGA\t",
+        "billing_name": "Jane Doe",
+        "card_number": "1234456734567890",
+        "card_type": "visa",
+        "departure_airport": "SEA\t",
+        "departure_date": {
+          "day": 5,
+          "month": 3,
+          "year": 2021
+        },
+        "flight_option": "Option A",
+        "outbound_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "One-Way Payment",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is the billing street address?\t" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "123 Main St Palo Alto"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LGA\t",
+        "billing_name": "Jane Doe",
+        "billing_street_address": "123 Main St Palo Alto",
+        "card_number": "1234456734567890",
+        "card_type": "visa",
+        "departure_airport": "SEA\t",
+        "departure_date": {
+          "day": 5,
+          "month": 3,
+          "year": 2021
+        },
+        "flight_option": "Option A",
+        "outbound_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "One-Way Payment",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is the billing ZIP code?\t" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "94043"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LGA\t",
+        "billing_name": "Jane Doe",
+        "billing_street_address": "123 Main St Palo Alto",
+        "billing_zip_code": "94043",
+        "card_number": "1234456734567890",
+        "card_type": "visa",
+        "departure_airport": "SEA\t",
+        "departure_date": {
+          "day": 5,
+          "month": 3,
+          "year": 2021
+        },
+        "flight_option": "Option A",
+        "outbound_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "One-Way Ticket Purchase Confirmation",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Your card payment was accepted!" ]
+      }, {
+        "text": [ "[Below is a sample webhook response with both filled parameters and static data.]\n\nYour confirmation number is RLABKB\n\nPassenger Jane Doe \n\nDeparture Flight DA1392 \nDate 2021-03-05\nDeparture Airport SEA\t\nTime $session.params.departure_time_C\nArrival Airport LGA\t\nArrival Time $session.params.arrival_time_C\n" ]
+      }, {
+        "text": [ "We will send a confirmation email of the ticket for your records. May I have your email please? " ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "janedoe@gmail.com"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LGA\t",
+        "billing_name": "Jane Doe",
+        "billing_street_address": "123 Main St Palo Alto",
+        "billing_zip_code": "94043",
+        "card_number": "1234456734567890",
+        "card_type": "visa",
+        "departure_airport": "SEA\t",
+        "departure_date": {
+          "day": 5,
+          "month": 3,
+          "year": 2021
+        },
+        "email": "janedoe@gmail.com",
+        "flight_option": "Option A",
+        "outbound_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Thank you for your email address. Your confirmation email will arrive in your inbox shortly. " ]
+      }, {
+        "text": [ "Would you like help with anything else?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "can I have my pet with me?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LGA\t",
+        "billing_name": "Jane Doe",
+        "billing_street_address": "123 Main St Palo Alto",
+        "billing_zip_code": "94043",
+        "card_number": "1234456734567890",
+        "card_type": "visa",
+        "departure_airport": "SEA\t",
+        "departure_date": {
+          "day": 5,
+          "month": 3,
+          "year": 2021
+        },
+        "email": "janedoe@gmail.com",
+        "flight_option": "Option A",
+        "outbound_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "triggeredIntent": {
+        "name": "flights.animals_on_board  "
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Only one service animal per passenger is allowed on the airplane." ]
+      }, {
+        "text": [ "Can I help you with anything else?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "do you give out masks?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LGA\t",
+        "billing_name": "Jane Doe",
+        "billing_street_address": "123 Main St Palo Alto",
+        "billing_zip_code": "94043",
+        "card_number": "1234456734567890",
+        "card_type": "visa",
+        "departure_airport": "SEA\t",
+        "departure_date": {
+          "day": 5,
+          "month": 3,
+          "year": 2021
+        },
+        "email": "janedoe@gmail.com",
+        "flight_option": "Option A",
+        "outbound_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "triggeredIntent": {
+        "name": "flights.masks_on_airplanes"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Flight attendants will distribute surgical face masks and sanitizing gels to passengers over three (3) years of age. \n\nParents are asked to help their young children under three (3) with frequent handwashing." ]
+      }, {
+        "text": [ "Would you like help with anything else?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "no thanx"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LGA\t",
+        "billing_name": "Jane Doe",
+        "billing_street_address": "123 Main St Palo Alto",
+        "billing_zip_code": "94043",
+        "card_number": "1234456734567890",
+        "card_type": "visa",
+        "departure_airport": "SEA\t",
+        "departure_date": {
+          "day": 5,
+          "month": 3,
+          "year": 2021
+        },
+        "email": "janedoe@gmail.com",
+        "flight_option": "Option A",
+        "outbound_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.no"
+      },
+      "currentPage": {
+        "name": "End Session",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "We thank you for your business. Have a great day!\n" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1607021037,
+    "nanos": 425431000
+  }
+}

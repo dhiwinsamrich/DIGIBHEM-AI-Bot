@@ -1,0 +1,371 @@
+{
+  "name": "db3116d2-fbcd-4a63-8dd7-a6962d19c3ba",
+  "displayName": "Happy path - Check one way ticket - No purchase",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "can I get an info on one way ticket pls"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "flights.one_way_ticket"
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Let's find a one-way ticket for you. " ]
+      }, {
+        "text": [ "Which day would you like to leave?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Dec 31"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_date": {
+          "day": 31,
+          "month": 12,
+          "year": 2020
+        }
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Which airport would you like to fly out of?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "San Jose airport"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "SJC",
+        "departure_date": {
+          "day": 31,
+          "month": 12,
+          "year": 2020
+        }
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Which airport are you flying into?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "LAX"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LAX\t",
+        "departure_airport": "SJC",
+        "departure_date": {
+          "day": 31,
+          "month": 12,
+          "year": 2020
+        }
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What time would you like to leave? Please use AM and PM in your response. " ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "4pm"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LAX\t",
+        "departure_airport": "SJC",
+        "departure_date": {
+          "day": 31,
+          "month": 12,
+          "year": 2020
+        },
+        "outbound_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is the first  and last name of the passenger flying?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Jane Doe"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LAX\t",
+        "departure_airport": "SJC",
+        "departure_date": {
+          "day": 31,
+          "month": 12,
+          "year": 2020
+        },
+        "outbound_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Confirm Flight Details One-Way Ticket",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "You want a one way ticket for:\n\nPassenger Jane Doe \n\nFrom $session.params.departure_city, SJC\n\nTo $session.params.arrival_city, LAX\t\n\nLeaving on 2020-12-31 \n\nTime 16:00:00\n\nIs that correct?\n" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LAX\t",
+        "departure_airport": "SJC",
+        "departure_date": {
+          "day": 31,
+          "month": 12,
+          "year": 2020
+        },
+        "outbound_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.yes"
+      },
+      "currentPage": {
+        "name": "Show One-Way Available Flights",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Thank you for that information. Let me check if we have a flight available. " ]
+      }, {
+        "text": [ "Option A\nDeparture Flight $session.params.flight_number_A\nDate 2020-12-31\nCity $session.params.departure_city, SJC\nTime  $session.params.departure_time_A\nArrival City $session.params.arrival_city, LAX\t\nArrival Time $session.params.arrival_time_A \n\nOption B\nDeparture Flight $session.params.flight_number_B \nDate 2020-12-31\nCity $session.params.departure_city, SJC\nTime  $session.params.departure_time_B\nArrival City $session.params.arrival_city, LAX\t\nArrival Time $session.params.arrival_time_B  \n\nOption C\nDeparture Flight $session.params.flight_number_C\nDate 2020-12-31\nCity $session.params.departure_city, SJC\nTime $session.params.departure_time_C\nArrival City $session.params.arrival_city, LAX\t\nArrival Time $session.params.arrival_time_C" ]
+      }, {
+        "text": [ "Would you like to book Option A, Option B, or Option C?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "option B"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LAX\t",
+        "departure_airport": "SJC",
+        "departure_date": {
+          "day": 31,
+          "month": 12,
+          "year": 2020
+        },
+        "flight_option": "Option B",
+        "outbound_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Display Selected One-Way Ticket",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "All of our seats are open seating.  Family passengers with children under 5 are boarded first to allow families to sit together. " ]
+      }, {
+        "text": [ "[Below is a sample response with static data and filled parameters. Unfilled parameters will need a real time webhook response]\n\nDeparture Flight RLABKB\nDate 2020-12-31\nCity $session.params.departure_city, SJC\nTime 16:00:00\nArrival City $session.params.arrival_city, LAX\t \n\nThe price for this ticket is $session.params.ticket_price\n\nWould you like to proceed with payment?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "not now"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LAX\t",
+        "departure_airport": "SJC",
+        "departure_date": {
+          "day": 31,
+          "month": 12,
+          "year": 2020
+        },
+        "flight_option": "Option B",
+        "outbound_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.no"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Would you like help with anything else?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "no thanx"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "LAX\t",
+        "departure_airport": "SJC",
+        "departure_date": {
+          "day": 31,
+          "month": 12,
+          "year": 2020
+        },
+        "flight_option": "Option B",
+        "outbound_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.no"
+      },
+      "currentPage": {
+        "name": "End Session",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "We thank you for your business. Have a great day!\n" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1606940309,
+    "nanos": 65372000
+  }
+}

@@ -1,0 +1,371 @@
+{
+  "name": "fd24d64a-7cd6-46f9-b290-aba726f410c4",
+  "displayName": "Happy path - Check one way - Don't select option",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "one way ticket pls"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "flights.one_way_ticket"
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Let's find a one-way ticket for you. " ]
+      }, {
+        "text": [ "Which day would you like to leave?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Dec 24"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_date": {
+          "day": 24,
+          "month": 12,
+          "year": 2020
+        }
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Which airport would you like to fly out of?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Houston"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "IAH\t",
+        "departure_date": {
+          "day": 24,
+          "month": 12,
+          "year": 2020
+        }
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Which airport are you flying into?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Chicago"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "MDW\t",
+        "departure_airport": "IAH\t",
+        "departure_date": {
+          "day": 24,
+          "month": 12,
+          "year": 2020
+        }
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What time would you like to leave? Please use AM and PM in your response. " ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "10am"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "MDW\t",
+        "departure_airport": "IAH\t",
+        "departure_date": {
+          "day": 24,
+          "month": 12,
+          "year": 2020
+        },
+        "outbound_departure_time": {
+          "hours": 10,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is the first  and last name of the passenger flying?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Jane Doe"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "MDW\t",
+        "departure_airport": "IAH\t",
+        "departure_date": {
+          "day": 24,
+          "month": 12,
+          "year": 2020
+        },
+        "outbound_departure_time": {
+          "hours": 10,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Confirm Flight Details One-Way Ticket",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "You want a one way ticket for:\n\nPassenger Jane Doe \n\nFrom IAH\t\n\nTo  MDW\t\n\nLeaving on 2020-12-24 \n\nTime 10:00:00\n\nIs that correct?\n" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "MDW\t",
+        "departure_airport": "IAH\t",
+        "departure_date": {
+          "day": 24,
+          "month": 12,
+          "year": 2020
+        },
+        "outbound_departure_time": {
+          "hours": 10,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.yes"
+      },
+      "currentPage": {
+        "name": "Show One-Way Available Flights",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Thank you for that information. Let me check if we have a flight available. " ]
+      }, {
+        "text": [ "Option A\nDeparture Flight $session.params.flight_number_A\nDate 2020-12-24\nDeparture Airport IAH\t\nTime  $session.params.departure_time_A\nArrival Airport MDW\t\nArrival Time $session.params.arrival_time_A \n\nOption B\nDeparture Flight $session.params.flight_number_B \nDate 2020-12-24\nDeparture Airport IAH\t\nTime  $session.params.departure_time_B\nArrival Airport MDW\t\nArrival Time $session.params.arrival_time_B  \n\nOption C\nDeparture Flight $session.params.flight_number_C\nDate 2020-12-24\nDeparture Airport IAH\t\nTime $session.params.departure_time_C\nArrival Airport MDW\t\nArrival Time $session.params.arrival_time_C" ]
+      }, {
+        "text": [ "Would you like to book Option A, Option B, or Option C?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "no thanx I was just checking"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "MDW\t",
+        "departure_airport": "IAH\t",
+        "departure_date": {
+          "day": 24,
+          "month": 12,
+          "year": 2020
+        },
+        "outbound_departure_time": {
+          "hours": 10,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.no"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Would you like help with anything else?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "do you have discounts for seniors?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "MDW\t",
+        "departure_airport": "IAH\t",
+        "departure_date": {
+          "day": 24,
+          "month": 12,
+          "year": 2020
+        },
+        "outbound_departure_time": {
+          "hours": 10,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "triggeredIntent": {
+        "name": "flights.senior_discount"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Passengers over 55 receive a 15% discount with the use of a pre-validated ID. \n\nThe ID must be shown to an employee at the airport in order for the discount to be applied to the account. \n\nThe discount is only valid for the name listed on the validated senior's ID." ]
+      }, {
+        "text": [ "Would you like help with anything else?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "ok thanx"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "MDW\t",
+        "departure_airport": "IAH\t",
+        "departure_date": {
+          "day": 24,
+          "month": 12,
+          "year": 2020
+        },
+        "outbound_departure_time": {
+          "hours": 10,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "triggeredIntent": {
+        "name": "small_talk.thanks"
+      },
+      "currentPage": {
+        "name": "End Session",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "I am glad I could help you today. Good-bye!" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1606951943,
+    "nanos": 823179000
+  }
+}

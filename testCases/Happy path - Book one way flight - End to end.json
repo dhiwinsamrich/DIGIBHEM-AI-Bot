@@ -1,0 +1,810 @@
+{
+  "name": "40e0f3f3-8e89-4554-99c5-4fa886d33107",
+  "displayName": "Happy path - Book one way flight - End to end",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "hello"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "Default Welcome Intent"
+      },
+      "currentPage": {
+        "name": "Start Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Hi! I'm the virtual flights agent. I can help you book a flight or assist with our frequent flyer program. How can I assist you today?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "need one way ticket pls"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "flights.one_way_ticket"
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Let's find a one-way ticket for you. " ]
+      }, {
+        "text": [ "Which date do you want to fly?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Jan 5"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2022
+        }
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Which airport would you like to fly out of?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "SFO"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2022
+        }
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Which airport are you flying into?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Seattle airport"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "SEA\t",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2022
+        }
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What time would you like to leave? Please use AM and PM in your response. " ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "3pm"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "SEA\t",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2022
+        },
+        "outbound_departure_time": {
+          "hours": 15,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is the first  and last name of the passenger flying?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Jane Doe"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "SEA\t",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2022
+        },
+        "outbound_departure_time": {
+          "hours": 15,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Confirm Flight Details One-Way Ticket",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "You want a one way ticket for:\n\nPassenger Jane Doe \n\nFrom SFO\n\nTo  SEA\t\n\nLeaving on 2022-01-05 \n\nTime 15:00:00\n\nIs that correct?\n" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "SEA\t",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2022
+        },
+        "outbound_departure_time": {
+          "hours": 15,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.yes"
+      },
+      "currentPage": {
+        "name": "Show One-Way Available Flights",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Thank you for that information. Let me check if we have a flight available. " ]
+      }, {
+        "text": [ "Option A\nDeparture Flight $session.params.flight_number_A\nDate 2022-01-05\nDeparture Airport SFO\nTime  $session.params.departure_time_A\nArrival Airport SEA\t\nArrival Time $session.params.arrival_time_A \n\nOption B\nDeparture Flight $session.params.flight_number_B \nDate 2022-01-05\nDeparture Airport SFO\nTime  $session.params.departure_time_B\nArrival Airport SEA\t\nArrival Time $session.params.arrival_time_B  \n\nOption C\nDeparture Flight $session.params.flight_number_C\nDate 2022-01-05\nDeparture Airport SFO\nTime $session.params.departure_time_C\nArrival Airport SEA\t\nArrival Time $session.params.arrival_time_C" ]
+      }, {
+        "text": [ "Would you like to book Option A, Option B, or Option C?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Option c"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "SEA\t",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2022
+        },
+        "flight_option": "Option C",
+        "outbound_departure_time": {
+          "hours": 15,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Display Selected One-Way Ticket",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "All of our seats are open seating.  Family passengers with children under 5 are boarded first to allow families to sit together. " ]
+      }, {
+        "text": [ "[Below is a sample response with static data and filled parameters. Unfilled parameters will need a real time webhook response]\n\nDeparture Flight RLABKB\nDate 2022-01-05\nDeparture Airport SFO\nTime $session.params.departure_time_C\nArrival Airport SEA\t\nArrival Time $session.params.arrival_time_C\n\nThe price for this ticket is $session.params.ticket_price\n\nWould you like to proceed with payment?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "sure"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "SEA\t",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2022
+        },
+        "flight_option": "Option C",
+        "outbound_departure_time": {
+          "hours": 15,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.yes"
+      },
+      "currentPage": {
+        "name": "One-Way Payment",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What card type will you be using?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Visa"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "SEA\t",
+        "card_type": "Visa",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2022
+        },
+        "flight_option": "Option C",
+        "outbound_departure_time": {
+          "hours": 15,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "One-Way Payment",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Please enter the card number." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "1234 5678 9800"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "SEA\t",
+        "card_number": "123456789800",
+        "card_type": "Visa",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2022
+        },
+        "flight_option": "Option C",
+        "outbound_departure_time": {
+          "hours": 15,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "One-Way Payment",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is the name on the card?\t" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Jane Doe"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "SEA\t",
+        "billing_name": "Jane Doe",
+        "card_number": "123456789800",
+        "card_type": "Visa",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2022
+        },
+        "flight_option": "Option C",
+        "outbound_departure_time": {
+          "hours": 15,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "One-Way Payment",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is the billing street address?\t" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "123 Main St Palo Alto CA"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "SEA\t",
+        "billing_name": "Jane Doe",
+        "billing_street_address": "123 Main St Palo Alto CA",
+        "card_number": "123456789800",
+        "card_type": "Visa",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2022
+        },
+        "flight_option": "Option C",
+        "outbound_departure_time": {
+          "hours": 15,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "One-Way Payment",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is the billing ZIP code?\t" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "94043"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "SEA\t",
+        "billing_name": "Jane Doe",
+        "billing_street_address": "123 Main St Palo Alto CA",
+        "billing_zip_code": "94043",
+        "card_number": "123456789800",
+        "card_type": "Visa",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2022
+        },
+        "flight_option": "Option C",
+        "outbound_departure_time": {
+          "hours": 15,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "One-Way Ticket Purchase Confirmation",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Your card payment was accepted!" ]
+      }, {
+        "text": [ "[Below is a sample webhook response with both filled parameters and static data.]\n\nYour confirmation number is RLABKB\n\nPassenger Jane Doe \n\nDeparture Flight DA1392 \nDate 2022-01-05\nDeparture Airport SFO\nTime $session.params.departure_time_C\nArrival Airport SEA\t\nArrival Time $session.params.arrival_time_C\n" ]
+      }, {
+        "text": [ "We will send a confirmation email of the ticket for your records. May I have your email please? " ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "janedoe@gmail.com"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "SEA\t",
+        "billing_name": "Jane Doe",
+        "billing_street_address": "123 Main St Palo Alto CA",
+        "billing_zip_code": "94043",
+        "card_number": "123456789800",
+        "card_type": "Visa",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2022
+        },
+        "email": "janedoe@gmail.com",
+        "flight_option": "Option C",
+        "outbound_departure_time": {
+          "hours": 15,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Thank you for your email address. Your confirmation email will arrive in your inbox shortly. " ]
+      }, {
+        "text": [ "Would you like help with anything else?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "can I have my dog onboard?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "SEA\t",
+        "billing_name": "Jane Doe",
+        "billing_street_address": "123 Main St Palo Alto CA",
+        "billing_zip_code": "94043",
+        "card_number": "123456789800",
+        "card_type": "Visa",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2022
+        },
+        "email": "janedoe@gmail.com",
+        "flight_option": "Option C",
+        "outbound_departure_time": {
+          "hours": 15,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "triggeredIntent": {
+        "name": "flights.animals_on_board  "
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Only one service animal per passenger is allowed on the airplane." ]
+      }, {
+        "text": [ "Would you like help with anything else?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "how many suitcases are allowed?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "SEA\t",
+        "billing_name": "Jane Doe",
+        "billing_street_address": "123 Main St Palo Alto CA",
+        "billing_zip_code": "94043",
+        "card_number": "123456789800",
+        "card_type": "Visa",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2022
+        },
+        "email": "janedoe@gmail.com",
+        "flight_option": "Option C",
+        "outbound_departure_time": {
+          "hours": 15,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "triggeredIntent": {
+        "name": "flights.how_many_suitcases"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Carry-on luggage is limited to one small roller and personal item.\n\nPassengers may check two 40lb bags per ticket. Each bag/box can be a maximum of 50 linear inches in size.\n\nThe third and fourth checked bags are $75 for 40lbs of luggage.\n\nOverweight luggage is subject to a $85 surcharge for luggage weighing 41-70 lbs. Luggage over 70 lbs is not allowed on the flight.  \n\nYou may only check a total of 4 pieces of luggage per flight.\n\n" ]
+      }, {
+        "text": [ "Would you like help with anything else?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "is this ticket refundable?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "SEA\t",
+        "billing_name": "Jane Doe",
+        "billing_street_address": "123 Main St Palo Alto CA",
+        "billing_zip_code": "94043",
+        "card_number": "123456789800",
+        "card_type": "Visa",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2022
+        },
+        "email": "janedoe@gmail.com",
+        "flight_option": "Option C",
+        "outbound_departure_time": {
+          "hours": 15,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "triggeredIntent": {
+        "name": "flights.is_ticket_refundable"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Tickets are refundable for up to 24 hours from the time of purchase. All other cancelled tickets are issued an account credit for the original paid price of the ticket." ]
+      }, {
+        "text": [ "Can I help you with anything else?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "no thanx im done"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "arrival_airport": "SEA\t",
+        "billing_name": "Jane Doe",
+        "billing_street_address": "123 Main St Palo Alto CA",
+        "billing_zip_code": "94043",
+        "card_number": "123456789800",
+        "card_type": "Visa",
+        "departure_airport": "SFO",
+        "departure_date": {
+          "day": 5,
+          "month": 1,
+          "year": 2022
+        },
+        "email": "janedoe@gmail.com",
+        "flight_option": "Option C",
+        "outbound_departure_time": {
+          "hours": 15,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "I didn't get that. Can you repeat?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1606937109,
+    "nanos": 553009000
+  }
+}

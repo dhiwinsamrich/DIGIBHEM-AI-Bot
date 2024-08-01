@@ -1,0 +1,176 @@
+{
+  "name": "ab12f2b0-a21b-4d6f-ace3-2bc4b1130cb6",
+  "displayName": "Happy path - join frequent flyer_",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Hi! I would like to join your frequent flyer club"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "flights.frequent_flyer_club"
+      },
+      "currentPage": {
+        "name": "Frequent Flyer Program",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Do you have already have a frequent flyer account with us?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "No"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.no"
+      },
+      "currentPage": {
+        "name": "Join Frequent Flyer",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "[Display brief description about your airline's frequent flyer program]" ]
+      }, {
+        "text": [ "What is your first and last name?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Tammy Tester"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "passenger_name": "Tammy Tester"
+      },
+      "currentPage": {
+        "name": "Join Frequent Flyer",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is your email address? We send all legal and ticket communication via email or online to you account. " ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "tammy@gmail.com"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "email": "tammy@gmail.com",
+        "passenger_name": "Tammy Tester"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Thank you for your information. Let me generate a frequent flyer account for you." ]
+      }, {
+        "text": [ "Your new frequent flyer account number is [display webhook response]. You can find more information about our frequent flyer program at [URL]." ]
+      }, {
+        "text": [ "Would you like help with anything else?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "what is your policy on service animals?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "email": "tammy@gmail.com",
+        "passenger_name": "Tammy Tester"
+      },
+      "triggeredIntent": {
+        "name": "flights.animals_on_board  "
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Only one service animal per passenger is allowed on the airplane." ]
+      }, {
+        "text": [ "Would you like help with anything else?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "nope. Thanx!"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "email": "tammy@gmail.com",
+        "passenger_name": "Tammy Tester"
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.no"
+      },
+      "currentPage": {
+        "name": "End Session",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Thank you for contacting the virtual flights agent. Enjoy your flight and have a great day!\n" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1613503535,
+    "nanos": 701823000
+  }
+}

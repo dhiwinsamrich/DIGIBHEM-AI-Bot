@@ -1,0 +1,98 @@
+{
+  "name": "d518fd0c-4236-4c2c-a576-4aff3a6d521a",
+  "displayName": "Error handling - Frequent flyer - Invalid account",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "can I check my frequent flyer account pls?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "flights.available_miles"
+      },
+      "currentPage": {
+        "name": "Check Frequent Flyer Account Miles",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Let's check on your frequent flyer account." ]
+      }, {
+        "text": [ "This pathway features an Apigee Integration webhook. You can enter your own data or follow the prompt to activate the Apigee webhook." ]
+      }, {
+        "text": [ "What is your frequent flyer account number? [Enter account number: 123456 to begin the Apigee webhook.]" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "injectedParameters": {
+        "account": "invalid"
+      },
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "123456"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "account": "invalid",
+        "frequent_flyer_account_number": "123456"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Unfortunately, there is not a frequent flyer account associated with this number and/or email address." ]
+      }, {
+        "text": [ "Can I help you with anything else?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "hm... can you get me a live agent?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "account": "invalid",
+        "frequent_flyer_account_number": "123456"
+      },
+      "triggeredIntent": {
+        "name": "flights.customer_service"
+      },
+      "currentPage": {
+        "name": "End Session",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Please hold while I transfer you to a live person." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1607017862,
+    "nanos": 842838000
+  }
+}

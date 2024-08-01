@@ -1,0 +1,797 @@
+{
+  "name": "3a438da2-0fdc-4be8-b1b9-573f59c333ad",
+  "displayName": "Error handling - Book round trip - Invalid Card_",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "flight info"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "flights.book_flight"
+      },
+      "currentPage": {
+        "name": "Select Ticket Type",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "I can help you find a ticket. Let's get started." ]
+      }, {
+        "text": [ "Do you want a round-trip or one-way ticket?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Round trip"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "flights.round_trip_ticket"
+      },
+      "currentPage": {
+        "name": "Collect Round-Trip Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Great. Let's find a round trip ticket for you." ]
+      }, {
+        "text": [ "What is the first and last name of the passenger flying?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Jane Doe"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Collect Round-Trip Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Which day would you like to leave?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "today"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_date": {
+          "day": 16,
+          "month": 2,
+          "year": 2021
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Collect Round-Trip Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Which airport are you leaving from?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Oakland airport"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "OAK\t",
+        "departure_date": {
+          "day": 16,
+          "month": 2,
+          "year": 2021
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Collect Round-Trip Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What time would you like to leave on the outbound flight? Please use AM and PM in your response." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "4pm"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "OAK\t",
+        "departure_date": {
+          "day": 16,
+          "month": 2,
+          "year": 2021
+        },
+        "outbound_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Collect Round-Trip Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Which date will you return?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Feb 26"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "OAK\t",
+        "departure_date": {
+          "day": 16,
+          "month": 2,
+          "year": 2021
+        },
+        "outbound_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_date": {
+          "day": 26,
+          "month": 2,
+          "year": 2021
+        }
+      },
+      "currentPage": {
+        "name": "Collect Round-Trip Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is the name of the airport you would like to fly to?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "new york"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "OAK\t",
+        "departure_date": {
+          "day": 16,
+          "month": 2,
+          "year": 2021
+        },
+        "outbound_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "JFK\t",
+        "return_date": {
+          "day": 26,
+          "month": 2,
+          "year": 2021
+        }
+      },
+      "currentPage": {
+        "name": "Collect Round-Trip Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What time would you like to leave on the return flight home? Please use AM and PM in your response." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "9m"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "OAK\t",
+        "departure_date": {
+          "day": 16,
+          "month": 2,
+          "year": 2021
+        },
+        "outbound_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "JFK\t",
+        "return_date": {
+          "day": 26,
+          "month": 2,
+          "year": 2021
+        }
+      },
+      "currentPage": {
+        "name": "Collect Round-Trip Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What time would you like to leave on the return flight home? Please use AM and PM in your response." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "9am"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "OAK\t",
+        "departure_date": {
+          "day": 16,
+          "month": 2,
+          "year": 2021
+        },
+        "outbound_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "JFK\t",
+        "return_date": {
+          "day": 26,
+          "month": 2,
+          "year": 2021
+        },
+        "return_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "currentPage": {
+        "name": "Confirm Flight Details Round-Trip Ticket",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Thank you for that information. " ]
+      }, {
+        "text": [ "This is to confirm that Jane Doe will fly \n\nFrom OAK\t\n\nTo  JFK\t  \n\nLeaving on 2021-02-16\n \nOutbound Flight Time 16:00:00 \n\nReturning on 2021-02-26\n\nReturn Flight Time 09:00:00\n\nIs that correct?\n" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yep"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "OAK\t",
+        "departure_date": {
+          "day": 16,
+          "month": 2,
+          "year": 2021
+        },
+        "outbound_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "JFK\t",
+        "return_date": {
+          "day": 26,
+          "month": 2,
+          "year": 2021
+        },
+        "return_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.yes"
+      },
+      "currentPage": {
+        "name": "Show Round-Trip Available Flights",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Now we will choose the flight time. " ]
+      }, {
+        "text": [ "[Sample webhook response of available flights]\n\nOption A\nDeparture Flight BL378M\nDate 2021-02-16\nDeparture Airport OAK\t\nTime 6:15 AM\nArrival Airport JFK\t  \nArrival Time 7:15 AM \n\nReturn Flight DA1357\nDate 2021-02-26\nTime 10:00 PM\nDeparture Airport JFK\t  \nTime 11:00 PM\nArrival Airport OAK\t\n\nOption B\nDeparture Flight  NW781A \nDate 2021-02-16\nDeparture Airport OAK\t\nTime  9:30 AM\nArrival Airport JFK\t  \nArrival Time 11:30 AM  \n\nReturn Flight DA1347\nDate 2021-02-26\nDeparture Airport JFK\t  \nTime 6:00 PM\nArrival Airport OAK\t\nTime 11:00 PM\n\nOption C\nDeparture Flight  DA1357\nDate 2021-02-16\nDeparture Airport  OAK\t\nTime  16:00:00\nArrival Airport JFK\t  \nArrival Time 8:00 PM  \n\nReturn Flight DA9842: \nDate 2021-02-26\nDeparture Airport JFK\t  \nTime 09:00:00\nArrival Airport OAK\t\nArrival Time 9:00 PM \n" ]
+      }, {
+        "text": [ "Would you like to book Flight Option A, Flight Option B, or Option C?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "optin B"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "OAK\t",
+        "departure_date": {
+          "day": 16,
+          "month": 2,
+          "year": 2021
+        },
+        "flight_option": "Option B",
+        "outbound_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "JFK\t",
+        "return_date": {
+          "day": 26,
+          "month": 2,
+          "year": 2021
+        },
+        "return_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "currentPage": {
+        "name": "Display Selected Round-Trip Flight",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "All of our seats are open seating.  Family passengers with children under 5 are boarded first to allow families to sit together. " ]
+      }, {
+        "text": [ "[Unfilled parameters will need a real time webhook response]\n\nDeparture Flight $session.params.departure_flight_number\nDate 2021-02-16\nDeparture Airport OAK\t\nTime 16:00:00\nArrival Airport JFK\t  \nTime $session.params.outbound_arrival_time \n\nReturn Flight $session.params.return_flight_number\nDate 2021-02-26\nDeparture Airport JFK\t  \nTime 09:00:00\nArrival Airport OAK\t\nTime $session.params.return_arrival_time\n\nThe price for this ticket is $session.params.ticket_price\nYou have an available account credit of: $session.params.account_credit \n\nWould you like to proceed with payment?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "sure"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "OAK\t",
+        "departure_date": {
+          "day": 16,
+          "month": 2,
+          "year": 2021
+        },
+        "flight_option": "Option B",
+        "outbound_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "JFK\t",
+        "return_date": {
+          "day": 26,
+          "month": 2,
+          "year": 2021
+        },
+        "return_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.yes"
+      },
+      "currentPage": {
+        "name": "Round-Trip Payment",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Great!\n" ]
+      }, {
+        "text": [ "What card type will you be using?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "visa"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "card_type": "visa",
+        "departure_airport": "OAK\t",
+        "departure_date": {
+          "day": 16,
+          "month": 2,
+          "year": 2021
+        },
+        "flight_option": "Option B",
+        "outbound_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "JFK\t",
+        "return_date": {
+          "day": 26,
+          "month": 2,
+          "year": 2021
+        },
+        "return_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "currentPage": {
+        "name": "Round-Trip Payment",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Please enter the card number." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "12345667"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "card_number": "12345667",
+        "card_type": "visa",
+        "departure_airport": "OAK\t",
+        "departure_date": {
+          "day": 16,
+          "month": 2,
+          "year": 2021
+        },
+        "flight_option": "Option B",
+        "outbound_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "JFK\t",
+        "return_date": {
+          "day": 26,
+          "month": 2,
+          "year": 2021
+        },
+        "return_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "currentPage": {
+        "name": "Round-Trip Payment",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is the name on the card?\t" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "John Doe"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "billing_name": "John Doe",
+        "card_number": "12345667",
+        "card_type": "visa",
+        "departure_airport": "OAK\t",
+        "departure_date": {
+          "day": 16,
+          "month": 2,
+          "year": 2021
+        },
+        "flight_option": "Option B",
+        "outbound_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "JFK\t",
+        "return_date": {
+          "day": 26,
+          "month": 2,
+          "year": 2021
+        },
+        "return_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "currentPage": {
+        "name": "Round-Trip Payment",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is the billing street address?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "123 Any St"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "billing_name": "John Doe",
+        "billing_street_address": "St",
+        "card_number": "12345667",
+        "card_type": "visa",
+        "departure_airport": "OAK\t",
+        "departure_date": {
+          "day": 16,
+          "month": 2,
+          "year": 2021
+        },
+        "flight_option": "Option B",
+        "outbound_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "JFK\t",
+        "return_date": {
+          "day": 26,
+          "month": 2,
+          "year": 2021
+        },
+        "return_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "currentPage": {
+        "name": "Round-Trip Payment",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ " What is the billing ZIP code?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "injectedParameters": {
+        "payment": "fail"
+      },
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "95006"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "billing_name": "John Doe",
+        "billing_street_address": "St",
+        "billing_zip_code": "95006",
+        "card_number": "12345667",
+        "card_type": "visa",
+        "departure_airport": "OAK\t",
+        "departure_date": {
+          "day": 16,
+          "month": 2,
+          "year": 2021
+        },
+        "flight_option": "Option B",
+        "outbound_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "payment": "fail",
+        "return_airport": "JFK\t",
+        "return_date": {
+          "day": 26,
+          "month": 2,
+          "year": 2021
+        },
+        "return_departure_time": {
+          "hours": 9,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "currentPage": {
+        "name": "End Session",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "There was an issue with your payment. Please hold while I transfer you to Customer Service." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1613504168,
+    "nanos": 570840000
+  }
+}

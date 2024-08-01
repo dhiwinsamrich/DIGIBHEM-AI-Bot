@@ -1,0 +1,332 @@
+{
+  "name": "fa1f4c23-4e8a-45b2-9899-78eb815cdd49",
+  "displayName": "Happy path - Check round trip - No purchase",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "need to book a ticket pls"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "flights.book_flight"
+      },
+      "currentPage": {
+        "name": "Select Ticket Type",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "I can help you find a ticket. Let's get started." ]
+      }, {
+        "text": [ "Do you want a round-trip or one-way ticket?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "Select Ticket Type",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Say that one more time?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Jane Doe"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "Select Ticket Type",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "I missed that, say that again?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Jan 4"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "Select Ticket Type",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Say that one more time?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "SFO"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_city": [ "@airport-codes" ]
+      },
+      "triggeredIntent": {
+        "name": "flights.book_flight"
+      },
+      "currentPage": {
+        "name": "Select Ticket Type",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "I can help you find a ticket. Let's get started." ]
+      }, {
+        "text": [ "Do you want a round-trip or one-way ticket?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "10am"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_city": [ "@airport-codes" ]
+      },
+      "currentPage": {
+        "name": "Select Ticket Type",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "I missed what you said. What was that?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Jan 25"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_city": [ "@airport-codes" ]
+      },
+      "currentPage": {
+        "name": "Select Ticket Type",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "One more time?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "New York Kennedy "
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_city": [ "@airport-codes" ]
+      },
+      "currentPage": {
+        "name": "Select Ticket Type",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "One more time?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "5pm"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_city": [ "@airport-codes" ]
+      },
+      "currentPage": {
+        "name": "Select Ticket Type",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "I missed what you said. What was that?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_city": [ "@airport-codes" ]
+      },
+      "currentPage": {
+        "name": "Select Ticket Type",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "One more time?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "C"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_city": [ "@airport-codes" ]
+      },
+      "currentPage": {
+        "name": "Select Ticket Type",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Say that one more time?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "not today"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_city": [ "@airport-codes" ]
+      },
+      "currentPage": {
+        "name": "Select Ticket Type",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Sorry, could you say that again?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "no thanx"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_city": [ "@airport-codes" ]
+      },
+      "currentPage": {
+        "name": "Select Ticket Type",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "I didn't get that. Can you say it again?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1606940885,
+    "nanos": 930200000
+  }
+}

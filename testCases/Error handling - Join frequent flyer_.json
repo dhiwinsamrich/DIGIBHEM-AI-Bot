@@ -1,0 +1,175 @@
+{
+  "name": "dc592d7f-9c0c-454c-96a1-333e4c10d22f",
+  "displayName": "Error handling - Join frequent flyer_",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "join club"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "flights.frequent_flyer_club"
+      },
+      "currentPage": {
+        "name": "Frequent Flyer Program",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Do you have already have a frequent flyer account with us?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "not yet"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.no"
+      },
+      "currentPage": {
+        "name": "Join Frequent Flyer",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "[Display brief description about your airline's frequent flyer program]" ]
+      }, {
+        "text": [ "What is your first and last name?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Jane Doe"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Join Frequent Flyer",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is your email address? We send all legal and ticket communication via email or online to you account. " ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "I forgot which email I used"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "passenger_name": "Jane Doe"
+      },
+      "triggeredIntent": {
+        "name": "small_talk.i_don't_know"
+      },
+      "currentPage": {
+        "name": "Join Frequent Flyer",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "To join the frequent flyer program, I need your name and email address. You can take a moment to sign up for a valid email account or to look up the correct address. Feel free to take a  come back to the agent when you are ready. " ]
+      }, {
+        "text": [ "What is your email address? We send all legal and ticket communication via email or online to you account. " ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "it's janedoe@gmail.com"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "email": "sjanedoe@gmail.com",
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Thank you for your information. Let me generate a frequent flyer account for you." ]
+      }, {
+        "text": [ "Your new frequent flyer account number is [display webhook response]. You can find more information about our frequent flyer program at [URL]." ]
+      }, {
+        "text": [ "Can I help you with anything else?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "no, thank you"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "email": "sjanedoe@gmail.com",
+        "passenger_name": "Jane Doe"
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.no"
+      },
+      "currentPage": {
+        "name": "End Session",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "We thank you for your business. Have a great day!\n" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1613503355,
+    "nanos": 182432000
+  }
+}

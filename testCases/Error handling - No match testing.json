@@ -1,0 +1,495 @@
+{
+  "name": "54b0f9c0-22b4-47a6-a68d-f47bec2bb229",
+  "displayName": "Error handling - No match testing",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "hello"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "Default Welcome Intent"
+      },
+      "currentPage": {
+        "name": "Start Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Hi! I'm the virtual flights agent. I can help you book a flight or assist with our frequent flyer program. How can I assist you today?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "can you help me"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "flights.frequent_flyer_club"
+      },
+      "currentPage": {
+        "name": "Frequent Flyer Program",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Do you have already have a frequent flyer account with us?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "how much is the ticket from New York to London?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "airport-codes": [ "London" ],
+        "departure_city": [ "@airport-codes" ]
+      },
+      "triggeredIntent": {
+        "name": "flights.book_flight"
+      },
+      "currentPage": {
+        "name": "Select Ticket Type",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "I can help you find a ticket. Let's get started." ]
+      }, {
+        "text": [ "Do you want a round-trip or one-way ticket?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "one way only"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "airport-codes": [ "London" ],
+        "departure_city": [ "@airport-codes" ],
+        "flight-type": [ "one-way" ]
+      },
+      "triggeredIntent": {
+        "name": "flights.one_way_ticket"
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Let's find a one-way ticket for you. " ]
+      }, {
+        "text": [ "Which day would you like to leave?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Christmas day"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "airport-codes": [ "London" ],
+        "departure_city": [ "@airport-codes" ],
+        "departure_date": {
+          "day": 25,
+          "month": 12,
+          "year": 2021
+        },
+        "flight-type": [ "one-way" ]
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Which airport would you like to fly out of?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "New York Kennedy airport"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "airport-codes": [ "London" ],
+        "departure_airport": "JFK\t",
+        "departure_city": [ "@airport-codes" ],
+        "departure_date": {
+          "day": 25,
+          "month": 12,
+          "year": 2021
+        },
+        "flight-type": [ "one-way" ]
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Which airport are you flying into?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Hithrow"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "airport-codes": [ "London" ],
+        "departure_airport": "JFK\t",
+        "departure_city": [ "@airport-codes" ],
+        "departure_date": {
+          "day": 25,
+          "month": 12,
+          "year": 2021
+        },
+        "flight-type": [ "one-way" ]
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "If you need time to look up the airport name, feel free to come back to the agent after you are ready to proceed." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Heathrow London"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "airport-codes": [ "London" ],
+        "arrival_airport": "London",
+        "departure_airport": "JFK\t",
+        "departure_city": [ "@airport-codes" ],
+        "departure_date": {
+          "day": 25,
+          "month": 12,
+          "year": 2021
+        },
+        "flight-type": [ "one-way" ]
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What time would you like to leave? Please use AM and PM in your response. " ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "I don't know. any airport works"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "airport-codes": [ "London" ],
+        "arrival_airport": "London",
+        "departure_airport": "JFK\t",
+        "departure_city": [ "@airport-codes" ],
+        "departure_date": {
+          "day": 25,
+          "month": 12,
+          "year": 2021
+        },
+        "flight-type": [ "one-way" ]
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What time would you like to leave? Please use AM and PM in your response. " ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "I would like to leave at 5pm"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "airport-codes": [ "London" ],
+        "arrival_airport": "London",
+        "departure_airport": "JFK\t",
+        "departure_city": [ "@airport-codes" ],
+        "departure_date": {
+          "day": 25,
+          "month": 12,
+          "year": 2021
+        },
+        "flight-type": [ "one-way" ],
+        "outbound_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "currentPage": {
+        "name": "Collect One-Way Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is the first  and last name of the passenger flying?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Jane Doe"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "airport-codes": [ "London" ],
+        "arrival_airport": "London",
+        "departure_airport": "JFK\t",
+        "departure_city": [ "@airport-codes" ],
+        "departure_date": {
+          "day": 25,
+          "month": 12,
+          "year": 2021
+        },
+        "flight-type": [ "one-way" ],
+        "outbound_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Confirm Flight Details One-Way Ticket",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "You want a one way ticket for:\n\nPassenger Jane Doe \n\nFrom JFK\t\n\nTo  London\n\nLeaving on 2021-12-25 \n\nTime 17:00:00\n\nIs that correct?\n" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "i don't know"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "airport-codes": [ "London" ],
+        "arrival_airport": "London",
+        "departure_airport": "JFK\t",
+        "departure_city": [ "@airport-codes" ],
+        "departure_date": {
+          "day": 25,
+          "month": 12,
+          "year": 2021
+        },
+        "flight-type": [ "one-way" ],
+        "outbound_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Confirm Flight Details One-Way Ticket",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "One more time?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "do you sell international tickets?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "airport-codes": [ "London" ],
+        "arrival_airport": "London",
+        "departure_airport": "JFK\t",
+        "departure_city": [ "@airport-codes" ],
+        "departure_date": {
+          "day": 25,
+          "month": 12,
+          "year": 2021
+        },
+        "flight-type": [ "one-way" ],
+        "outbound_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Confirm Flight Details One-Way Ticket",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Sorry, what was that?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "can I talk to a human"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "airport-codes": [ "London" ],
+        "arrival_airport": "London",
+        "departure_airport": "JFK\t",
+        "departure_city": [ "@airport-codes" ],
+        "departure_date": {
+          "day": 25,
+          "month": 12,
+          "year": 2021
+        },
+        "flight-type": [ "one-way" ],
+        "outbound_departure_time": {
+          "hours": 17,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "triggeredIntent": {
+        "name": "flights.customer_service"
+      },
+      "currentPage": {
+        "name": "End Session",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Please hold while I transfer you to a live person." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1607019586,
+    "nanos": 139421000
+  }
+}

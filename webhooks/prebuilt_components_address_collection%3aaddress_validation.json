@@ -1,0 +1,54 @@
+{
+  "name": "f368e1ac-4ce2-4a4d-9aa7-f724bcdf0400",
+  "displayName": "prebuilt_components_address_collection:address_validation",
+  "genericWebService": {
+    "uri": "https://addressvalidation.googleapis.com/v1:validateAddress?key=MAPS_API_KEY",
+    "username": "key",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"address\": \"$flow.request_body\"\n}",
+    "parameterMapping": [ {
+      "key": "$flow.admin_area_webhook",
+      "value": "$.result.address.addressComponents[?(@.componentType == 'administrative_area_level_1')].componentName.text"
+    }, {
+      "key": "$flow.api_response",
+      "value": "$.result"
+    }, {
+      "key": "$flow.city_webhook",
+      "value": "$.result.address.addressComponents[?(@.componentType == 'locality')].componentName.text"
+    }, {
+      "key": "$flow.confirmed_elems",
+      "value": "$.result.address.addressComponents[?(@.confirmationLevel == 'CONFIRMED' \u0026\u0026 ((@.componentType == 'country') || (@.componentType == 'archipelago') || (@.componentType == 'route') || (@.componentType == 'administrative_area_level_1') || (@.componentType == 'street_number') || (@.componentType == 'postal_code') || (@.componentType == 'locality')))].componentType"
+    }, {
+      "key": "$flow.country_webhook",
+      "value": "$.result.address.addressComponents[?(@.componentType == 'country')].componentName.text"
+    }, {
+      "key": "$flow.inferred_elems",
+      "value": "$.result.address.addressComponents[?(@.inferred==true \u0026\u0026 ((@.componentType == 'country') || (@.componentType == 'archipelago') || (@.componentType == 'route') || (@.componentType == 'administrative_area_level_1') || (@.componentType == 'street_number') || (@.componentType == 'postal_code') || (@.componentType == 'locality')))].componentType"
+    }, {
+      "key": "$flow.island_webhook",
+      "value": "$.result.address.addressComponents[?(@.componentType == 'archipelago')].componentName.text"
+    }, {
+      "key": "$flow.missing_elems",
+      "value": "$.result.address.missingComponentTypes"
+    }, {
+      "key": "$flow.regionCode",
+      "value": "$.result.address.postalAddress.regionCode"
+    }, {
+      "key": "$flow.route_webhook",
+      "value": "$.result.address.addressComponents[?(@.componentType == 'route')].componentName.text"
+    }, {
+      "key": "$flow.street_number_webhook",
+      "value": "$.result.address.addressComponents[?(@.componentType == 'street_number')].componentName.text"
+    }, {
+      "key": "$flow.unconfimed_elems",
+      "value": "$.result.address.addressComponents[?((@.confirmationLevel == 'UNCONFIRMED_AND_SUSPICIOUS' || @.confirmationLevel == 'UNCONFIRMED_BUT_PLAUSIBLE') \u0026\u0026 ((@.componentType == 'country') || (@.componentType == 'archipelago') || (@.componentType == 'route') || (@.componentType == 'administrative_area_level_1') || (@.componentType == 'street_number') || (@.componentType == 'postal_code') || (@.componentType == 'locality')))].componentType"
+    }, {
+      "key": "$flow.zip_code_webhook",
+      "value": "$.result.address.addressComponents[?(@.componentType == 'postal_code')].componentName.text"
+    } ]
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

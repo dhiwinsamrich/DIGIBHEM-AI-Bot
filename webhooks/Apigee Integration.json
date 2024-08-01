@@ -1,0 +1,14 @@
+{
+  "name": "2a483a88-565c-4a14-bca9-f08b9b72aa2f",
+  "displayName": "Apigee Integration",
+  "genericWebService": {
+    "uri": "https://gcp-ce-40-prod.apigee.net/cx/flights/v1",
+    "requestHeaders": [ {
+      "key": "CLIENT-KEY",
+      "value": "z6hIANe4CkSIb3qPt2FTbmdSaUQ0WOZe"
+    } ]
+  },
+  "timeout": {
+    "seconds": 30
+  }
+}

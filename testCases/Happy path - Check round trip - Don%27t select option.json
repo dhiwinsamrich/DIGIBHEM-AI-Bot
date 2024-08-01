@@ -1,0 +1,509 @@
+{
+  "name": "6ed1b685-fa68-486c-acef-ccfdb335fc02",
+  "displayName": "Happy path - Check round trip - Don't select option",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "round trip ticket pls"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "flights.round_trip_ticket"
+      },
+      "currentPage": {
+        "name": "Collect Round-Trip Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Let's find a round trip ticket for you. " ]
+      }, {
+        "text": [ "What is the first and last name of the passenger flying?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Jane Doe"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Collect Round-Trip Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Which day would you like to leave?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "this Saturday"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_date": {
+          "day": 5,
+          "month": 12,
+          "year": 2020
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Collect Round-Trip Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Which airport are you leaving from?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Chicago"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "MDW\t",
+        "departure_date": {
+          "day": 5,
+          "month": 12,
+          "year": 2020
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Collect Round-Trip Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What time would you like to leave on the outbound flight? Please use AM and PM in your response." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "10am"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "MDW\t",
+        "departure_date": {
+          "day": 5,
+          "month": 12,
+          "year": 2020
+        },
+        "outbound_departure_time": {
+          "hours": 10,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe"
+      },
+      "currentPage": {
+        "name": "Collect Round-Trip Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Which date will you return?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Monday"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "MDW\t",
+        "departure_date": {
+          "day": 5,
+          "month": 12,
+          "year": 2020
+        },
+        "outbound_departure_time": {
+          "hours": 10,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_date": {
+          "day": 7,
+          "month": 12,
+          "year": 2020
+        }
+      },
+      "currentPage": {
+        "name": "Collect Round-Trip Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What is the name of the airport you would like to fly to?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Dallas"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "MDW\t",
+        "departure_date": {
+          "day": 5,
+          "month": 12,
+          "year": 2020
+        },
+        "outbound_departure_time": {
+          "hours": 10,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "DAL\t",
+        "return_date": {
+          "day": 7,
+          "month": 12,
+          "year": 2020
+        }
+      },
+      "currentPage": {
+        "name": "Collect Round-Trip Ticket Information",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "What time would you like to leave on the return flight home? Please use AM and PM in your response." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "4pm"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "MDW\t",
+        "departure_date": {
+          "day": 5,
+          "month": 12,
+          "year": 2020
+        },
+        "outbound_departure_time": {
+          "hours": 10,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "DAL\t",
+        "return_date": {
+          "day": 7,
+          "month": 12,
+          "year": 2020
+        },
+        "return_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "currentPage": {
+        "name": "Confirm Flight Details Round-Trip Ticket",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Thank you for that information. " ]
+      }, {
+        "text": [ "This is to confirm that Jane Doe will fly \n\nFrom MDW\t\n\nTo  DAL\t  \n\nLeaving on 2020-12-05\n \nOutbound Flight Time 10:00:00 \n\nReturning on 2020-12-07\n\nReturn Flight Time 16:00:00\n\nIs that correct?\n" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "MDW\t",
+        "departure_date": {
+          "day": 5,
+          "month": 12,
+          "year": 2020
+        },
+        "outbound_departure_time": {
+          "hours": 10,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "DAL\t",
+        "return_date": {
+          "day": 7,
+          "month": 12,
+          "year": 2020
+        },
+        "return_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.yes"
+      },
+      "currentPage": {
+        "name": "Show Round-Trip Available Flights",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Now we will choose the flight time. " ]
+      }, {
+        "text": [ "[Sample webhook response of available flights]\n\nOption A\nDeparture Flight BL378M\nDate 2020-12-05\nDeparture Airport MDW\t\nTime 6:15 AM\nArrival Airport DAL\t  \nArrival Time 7:15 AM \n\nReturn Flight DA1357\nDate 2020-12-07\nTime 10:00 PM\nDeparture Airport DAL\t  \nTime 11:00 PM\nArrival Airport MDW\t\n\nOption B\nDeparture Flight  NW781A \nDate 2020-12-05\nDeparture Airport MDW\t\nTime  9:30 AM\nArrival Airport DAL\t  \nArrival Time 11:30 AM  \n\nReturn Flight DA1347\nDate 2020-12-07\nDeparture Airport DAL\t  \nTime 6:00 PM\nArrival Airport MDW\t\nTime 11:00 PM\n\nOption C\nDeparture Flight  DA1357\nDate 2020-12-05\nDeparture Airport  MDW\t\nTime  10:00:00\nArrival Airport DAL\t  \nArrival Time 8:00 PM  \n\nReturn Flight DA9842: \nDate 2020-12-07\nDeparture Airport DAL\t  \nTime 16:00:00\nArrival Airport MDW\t\nArrival Time 9:00 PM \n" ]
+      }, {
+        "text": [ "Would you like to book  Flight Option A, Flight Option B, or Option C?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "no I was just checking"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "MDW\t",
+        "departure_date": {
+          "day": 5,
+          "month": 12,
+          "year": 2020
+        },
+        "outbound_departure_time": {
+          "hours": 10,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "DAL\t",
+        "return_date": {
+          "day": 7,
+          "month": 12,
+          "year": 2020
+        },
+        "return_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.no"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Can I help you with anything else?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "can I take my pet onboard?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "MDW\t",
+        "departure_date": {
+          "day": 5,
+          "month": 12,
+          "year": 2020
+        },
+        "outbound_departure_time": {
+          "hours": 10,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "DAL\t",
+        "return_date": {
+          "day": 7,
+          "month": 12,
+          "year": 2020
+        },
+        "return_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "triggeredIntent": {
+        "name": "flights.animals_on_board  "
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Only one service animal per passenger is allowed on the airplane." ]
+      }, {
+        "text": [ "Would you like help with anything else?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "alright, thanx"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "departure_airport": "MDW\t",
+        "departure_date": {
+          "day": 5,
+          "month": 12,
+          "year": 2020
+        },
+        "outbound_departure_time": {
+          "hours": 10,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        },
+        "passenger_name": "Jane Doe",
+        "return_airport": "DAL\t",
+        "return_date": {
+          "day": 7,
+          "month": 12,
+          "year": 2020
+        },
+        "return_departure_time": {
+          "hours": 16,
+          "minutes": 0,
+          "nanos": 0,
+          "seconds": 0
+        }
+      },
+      "triggeredIntent": {
+        "name": "small_talk.thanks"
+      },
+      "currentPage": {
+        "name": "End Session",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "I am glad I could help you today. Good-bye!" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1606951801,
+    "nanos": 950300000
+  }
+}
