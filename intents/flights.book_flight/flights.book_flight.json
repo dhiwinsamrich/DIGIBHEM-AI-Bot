@@ -1,0 +1,35 @@
+{
+  "name": "076706da-3d2d-483d-af73-73a48d20ecd4",
+  "displayName": "flights.book_flight",
+  "parameters": [ {
+    "id": "geo-city",
+    "entityType": "@sys.geo-city",
+    "isList": true
+  }, {
+    "id": "airport-codes",
+    "entityType": "@airport-codes",
+    "isList": true
+  }, {
+    "id": "departure_city",
+    "entityType": "@origin-city",
+    "isList": true
+  }, {
+    "id": "arrival_city",
+    "entityType": "@destination-city",
+    "isList": true
+  }, {
+    "id": "flight_type",
+    "entityType": "@flight-type",
+    "isList": true
+  }, {
+    "id": "departure_date",
+    "entityType": "@departure-date",
+    "isList": true
+  }, {
+    "id": "return_date",
+    "entityType": "@return-date",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 26
+}

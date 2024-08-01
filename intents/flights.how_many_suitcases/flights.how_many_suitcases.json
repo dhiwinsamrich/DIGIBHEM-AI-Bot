@@ -1,0 +1,10 @@
+{
+  "name": "d1d9bd6e-d644-4ec4-b776-4a6184e00e6e",
+  "displayName": "flights.how_many_suitcases",
+  "parameters": [ {
+    "id": "number",
+    "entityType": "@sys.number"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 22
+}

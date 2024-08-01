@@ -1,0 +1,453 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "flight let me get a flight",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i want to book a ticket",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i want to book a "
+    }, {
+      "text": "one-way",
+      "parameterId": "flight_type"
+    }, {
+      "text": " flight leaving from "
+    }, {
+      "text": "ATL",
+      "parameterId": "departure_city",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "one way",
+      "parameterId": "flight_type"
+    }, {
+      "text": " ticket leaving "
+    }, {
+      "text": "January 1",
+      "parameterId": "departure_date"
+    }, {
+      "text": " to "
+    }, {
+      "text": "LAX",
+      "parameterId": "arrival_city",
+      "auto": true
+    }, {
+      "text": " from "
+    }, {
+      "text": "CDG",
+      "parameterId": "departure_city"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i want a ",
+      "auto": true
+    }, {
+      "text": "round trip",
+      "parameterId": "flight_type",
+      "auto": true
+    }, {
+      "text": " ticket leaving from ",
+      "auto": true
+    }, {
+      "text": "SFO",
+      "parameterId": "departure_city",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "get me a "
+    }, {
+      "text": "round trip",
+      "parameterId": "flight_type",
+      "auto": true
+    }, {
+      "text": " ticket leaving "
+    }, {
+      "text": "tomorrow",
+      "parameterId": "departure_date"
+    }, {
+      "text": " to "
+    }, {
+      "text": "Atlanta",
+      "parameterId": "arrival_city"
+    }, {
+      "text": " from "
+    }, {
+      "text": "Seattle",
+      "parameterId": "departure_city",
+      "auto": true
+    }, {
+      "text": " returning "
+    }, {
+      "text": "saturday",
+      "parameterId": "return_date"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i need to fly to "
+    }, {
+      "text": "Boston",
+      "parameterId": "arrival_city"
+    }, {
+      "text": " "
+    }, {
+      "text": "tomorrow",
+      "parameterId": "departure_date"
+    }, {
+      "text": " "
+    }, {
+      "text": "one way",
+      "parameterId": "flight_type",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i want to book a "
+    }, {
+      "text": "round-trip",
+      "parameterId": "flight_type"
+    }, {
+      "text": " flight from "
+    }, {
+      "text": "San Francisco",
+      "parameterId": "departure_city"
+    }, {
+      "text": " to "
+    }, {
+      "text": "Los Angeles",
+      "parameterId": "arrival_city"
+    }, {
+      "text": " leaving "
+    }, {
+      "text": "tomorrow",
+      "parameterId": "departure_date"
+    }, {
+      "text": " and returning "
+    }, {
+      "text": "thursday",
+      "parameterId": "return_date"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I'd like to buy a "
+    }, {
+      "text": "one way",
+      "parameterId": "flight_type"
+    }, {
+      "text": " ticket"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i want to book a "
+    }, {
+      "text": "round trip",
+      "parameterId": "flight_type"
+    }, {
+      "text": " ticket departing from "
+    }, {
+      "text": "SFO",
+      "parameterId": "departure_city"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I want to book a ticket for my mother, she's coming here from "
+    }, {
+      "text": "Moscow DME",
+      "parameterId": "departure_city"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Are there any direct flights from "
+    }, {
+      "text": "SFO",
+      "parameterId": "departure_city"
+    }, {
+      "text": " to "
+    }, {
+      "text": "Paris CDG",
+      "parameterId": "arrival_city"
+    }, {
+      "text": "?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Please book a flight for me and my husband to go to "
+    }, {
+      "text": "EWR New York",
+      "parameterId": "arrival_city"
+    }, {
+      "text": " on "
+    }, {
+      "text": "5 July",
+      "parameterId": "departure_date"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I need a direct flight to "
+    }, {
+      "text": "Miami MIA",
+      "parameterId": "arrival_city"
+    }, {
+      "text": " in August"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "will you set up my ticket from "
+    }, {
+      "text": "Toronto",
+      "parameterId": "geo-city"
+    }, {
+      "text": "  "
+    }, {
+      "text": "YYZ",
+      "parameterId": "airport-codes"
+    }, {
+      "text": " to "
+    }, {
+      "text": "San Jose",
+      "parameterId": "geo-city"
+    }, {
+      "text": "  "
+    }, {
+      "text": "SJC",
+      "parameterId": "airport-codes"
+    }, {
+      "text": " from "
+    }, {
+      "text": "May 20th"
+    }, {
+      "text": " to "
+    }, {
+      "text": "June 20th"
+    }, {
+      "text": "? thanks"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I need a new "
+    }, {
+      "text": "one way",
+      "parameterId": "flight_type"
+    }, {
+      "text": " ticket to "
+    }, {
+      "text": "Johannesburg JNB",
+      "parameterId": "arrival_city"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Can you book my flight to "
+    }, {
+      "text": "San Francisco",
+      "parameterId": "arrival_city"
+    }, {
+      "text": " "
+    }, {
+      "text": "next month"
+    }, {
+      "text": "?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Four "
+    }, {
+      "text": "round-trip",
+      "parameterId": "flight_type"
+    }, {
+      "text": " tickes from "
+    }, {
+      "text": "Taiwan",
+      "parameterId": "departure_city"
+    }, {
+      "text": " to "
+    }, {
+      "text": "Dubai",
+      "parameterId": "arrival_city"
+    }, {
+      "text": " from "
+    }, {
+      "text": "June 2nd",
+      "parameterId": "departure_date"
+    }, {
+      "text": " to "
+    }, {
+      "text": "30th",
+      "parameterId": "return_date"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My sister wants to go to "
+    }, {
+      "text": "Paris ORY",
+      "parameterId": "arrival_city"
+    }, {
+      "text": " for her birthday in "
+    }, {
+      "text": "March"
+    }, {
+      "text": ". We need two first class tickets please."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I need a flight "
+    }, {
+      "text": "next saturday",
+      "parameterId": "departure_date"
+    }, {
+      "text": " to "
+    }, {
+      "text": "LAX",
+      "parameterId": "arrival_city"
+    }, {
+      "text": " from "
+    }, {
+      "text": "NGO",
+      "parameterId": "departure_city"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Book "
+    }, {
+      "text": "SFO",
+      "parameterId": "departure_city"
+    }, {
+      "text": " to "
+    }, {
+      "text": "MIA",
+      "parameterId": "arrival_city"
+    }, {
+      "text": " on "
+    }, {
+      "text": "August 10th, 2020",
+      "parameterId": "departure_date"
+    }, {
+      "text": " "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Help me book a ticket leaving "
+    }, {
+      "text": "June 5th",
+      "parameterId": "departure_date"
+    }, {
+      "text": " returning "
+    }, {
+      "text": "June 10th, 2020",
+      "parameterId": "return_date"
+    }, {
+      "text": " please departing from "
+    }, {
+      "text": "MIA",
+      "parameterId": "departure_city"
+    }, {
+      "text": " and going to "
+    }, {
+      "text": "ATL",
+      "parameterId": "arrival_city"
+    }, {
+      "text": " "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Help me buy my ticket"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "What are the flights from "
+    }, {
+      "text": "New York JFK",
+      "parameterId": "departure_city"
+    }, {
+      "text": " to "
+    }, {
+      "text": "San Francisco SFO",
+      "parameterId": "arrival_city"
+    }, {
+      "text": " next month?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Hi, can you find me the cheapest ticket to "
+    }, {
+      "text": "Jamaica",
+      "parameterId": "arrival_city"
+    }, {
+      "text": " for "
+    }, {
+      "text": "Christmas",
+      "parameterId": "departure_date"
+    }, {
+      "text": "?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Good Morning! I need to find a flight to "
+    }, {
+      "text": "Boston",
+      "parameterId": "arrival_city"
+    }, {
+      "text": " next weekend from "
+    }, {
+      "text": "BOS",
+      "parameterId": "departure_city"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

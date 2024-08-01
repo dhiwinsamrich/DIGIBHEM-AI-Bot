@@ -1,0 +1,209 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "Do I have any miles in my frequent flyer account?",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "How many points have accumulated in my account recently? Please check the account "
+    }, {
+      "text": "272584",
+      "parameterId": "number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Is there enough miles on my flyer account to get a free ticket?"
+    } ],
+    "repeatCount": 3,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Can I buy a ticket using flight points? My account number is "
+    }, {
+      "text": "927258",
+      "parameterId": "number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Are there many miles left on my frequrnt flyer account?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I took a few flights ",
+      "auto": true
+    }, {
+      "text": "last year",
+      "auto": true
+    }, {
+      "text": ", but don't know if I have enough points for a free ticket. Please chck for me.",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Check my frequent flyer points How Many miles are on my account?",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "163893",
+      "parameterId": "number"
+    }, {
+      "text": " is my Frequent Flyer account number. What is the available points"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "How many more miles to earn a free ticket? Account "
+    }, {
+      "text": "976753",
+      "parameterId": "number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Will account "
+    }, {
+      "text": "358753",
+      "parameterId": "number"
+    }, {
+      "text": " qualify for a free ticket soon?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "How many points are on the account?",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I signed up for frequent flyer. The account is ",
+      "auto": true
+    }, {
+      "text": "09468753",
+      "parameterId": "number"
+    }, {
+      "text": ".",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My account number is ",
+      "auto": true
+    }, {
+      "text": "09256783",
+      "parameterId": "number"
+    }, {
+      "text": ". What is the status of my points?",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Can you check for me? Did ",
+      "auto": true
+    }, {
+      "text": "09258903",
+      "parameterId": "number"
+    }, {
+      "text": " earn enough points for a free flight",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My account ",
+      "auto": true
+    }, {
+      "text": "09658953",
+      "parameterId": "number"
+    }, {
+      "text": " has points, but I don;t know how many.",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Check my account "
+    }, {
+      "text": "09272583",
+      "parameterId": "number"
+    }, {
+      "text": " for available airline points"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": " Does "
+    }, {
+      "text": "09180274",
+      "parameterId": "number"
+    }, {
+      "text": " have any points on it"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "How many points do I have in my account?",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "09532718",
+      "parameterId": "number"
+    }, {
+      "text": " is my account number.",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Number "
+    }, {
+      "text": "09182753",
+      "parameterId": "number"
+    }, {
+      "text": ". Check my points."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My frequent flyer number is "
+    }, {
+      "text": "09384756",
+      "parameterId": "number"
+    }, {
+      "text": ". How many point do I have available for use?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

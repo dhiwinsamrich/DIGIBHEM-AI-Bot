@@ -1,0 +1,10 @@
+{
+  "name": "98f34a6a-be82-476e-9881-0d1a19aab0f8",
+  "displayName": "flights.masks_on_airplanes",
+  "parameters": [ {
+    "id": "number",
+    "entityType": "@sys.number"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 21
+}

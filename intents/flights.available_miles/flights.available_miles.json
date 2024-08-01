@@ -1,0 +1,11 @@
+{
+  "name": "b1be4723-a657-458a-9a57-196bae1cf63c",
+  "displayName": "flights.available_miles",
+  "parameters": [ {
+    "id": "number",
+    "entityType": "@sys.number",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 21
+}
