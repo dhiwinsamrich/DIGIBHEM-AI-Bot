@@ -1,0 +1,11 @@
+{
+  "name": "c8a08a2a-6b48-4201-bfef-faf8ee584a67",
+  "displayName": "prebuilt_components_address_collection_country",
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-head",
+    "value": "sys-head"
+  } ],
+  "description": "Used to indicate this address element needs to be changed. Country indicates the national political entity, and is typically the highest order type returned by the Geocoder.",
+  "numTrainingPhrases": 55
+}

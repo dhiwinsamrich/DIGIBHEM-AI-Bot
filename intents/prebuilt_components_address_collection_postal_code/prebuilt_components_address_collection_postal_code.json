@@ -1,0 +1,11 @@
+{
+  "name": "119fcbf3-fb30-4754-bb42-7f67566d16fd",
+  "displayName": "prebuilt_components_address_collection_postal_code",
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-head",
+    "value": "sys-head"
+  } ],
+  "description": "Used to indicate this address element needs to be changed. Postal_code indicates a postal code as used to address postal mail within the country.",
+  "numTrainingPhrases": 53
+}

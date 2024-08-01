@@ -1,0 +1,11 @@
+{
+  "name": "27f674fe-028c-47f1-b81c-de985e412c22",
+  "displayName": "prebuilt_components_replay",
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-head",
+    "value": "sys-head"
+  } ],
+  "description": "Possible when a user asked an agent to repeat what it just said.",
+  "numTrainingPhrases": 34
+}
