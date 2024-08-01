@@ -1,0 +1,15 @@
+{
+  "entities": [ {
+    "value": "@airport-codes",
+    "synonyms": [ "@airport-codes" ],
+    "languageCode": "en"
+  }, {
+    "value": "@sys.geo-city",
+    "synonyms": [ "@geo-city" ],
+    "languageCode": "en"
+  }, {
+    "value": "@sys.geo-country",
+    "synonyms": [ "@sys.geo-country" ],
+    "languageCode": "en"
+  } ]
+}

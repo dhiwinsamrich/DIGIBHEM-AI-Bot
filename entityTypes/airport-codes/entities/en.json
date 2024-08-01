@@ -1,0 +1,687 @@
+{
+  "entities": [ {
+    "value": "ABQ",
+    "synonyms": [ "ABQ", "Albuquerque\t", "Albuquerque International Sunport" ],
+    "languageCode": "en"
+  }, {
+    "value": "ADW\t",
+    "synonyms": [ "ADW\t", "Camp Springs", "Andrews Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "AFW",
+    "synonyms": [ "AFW", "Fort Worth\tF", "Fort Worth Alliance Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "AGS\t",
+    "synonyms": [ "AGS\t", "Augusta\t", "Augusta Regional At Bush Fi" ],
+    "languageCode": "en"
+  }, {
+    "value": "AMA\t",
+    "synonyms": [ "AMA\t", "Amarillo\t", "Rick Husband Amarillo International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "ANC\t",
+    "synonyms": [ "ANC\t", "Anchorage\t", "Ted Stevens Anchorage International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "ATL\t",
+    "synonyms": [ "ATL\t", "Atlanta\t\t", "Hartsfield-Jackson Atlanta International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "AUS",
+    "synonyms": [ "AUS", "Austin\t\t", "Austin Bergstrom International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "AVL\t",
+    "synonyms": [ "AVL\t", "Asheville\t", "Asheville Regional Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "BAB\t",
+    "synonyms": [ "BAB\t", "Marysville\t", "Beale Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "BAD",
+    "synonyms": [ "BAD", "Bossier City\t", "Barksdale Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "BDL",
+    "synonyms": [ "BDL", "Hartford\t", "Bradley International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "BFI",
+    "synonyms": [ "BFI", "Seattle\t\t", "Boeing Field King County International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "BGR\t",
+    "synonyms": [ "BGR\t", "Bangor\t\t", "Bangor International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "BHM\t",
+    "synonyms": [ "BHM\t", "Birmingham\t", "Birmingham-Shuttlesworth International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "BIL\t",
+    "synonyms": [ "BIL\t", "Billings\t\t", "Billings Logan International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "BLV",
+    "synonyms": [ "BLV", "Belleville\t", "Scott AFB/Midamerica Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "BMI\t",
+    "synonyms": [ "BMI\t", "Bloomington/Normal\t", "Central Illinois Regional Airport at Bloomington-Normal" ],
+    "languageCode": "en"
+  }, {
+    "value": "BNA",
+    "synonyms": [ "BNA", "Nashville\t", "Nashville International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "BOI\t",
+    "synonyms": [ "BOI\t", "Boise\t", "Boise Air Terminal/Gowen Field" ],
+    "languageCode": "en"
+  }, {
+    "value": "BOS\t",
+    "synonyms": [ "BOS\t", "Boston\t", "Logan International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "BUF",
+    "synonyms": [ "BUF", "Buffalo\t\t", "Buffalo Niagara International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "BWI\t",
+    "synonyms": [ "BWI\t", "Baltimore\t", "Baltimore/Washington International Thurgood Marshall Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "CAE\t",
+    "synonyms": [ "CAE\t", "Columbia\t", "Columbia Metropolitan Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "CMB",
+    "synonyms": [ "Columbus\t", "Columbus Air Force Base", "CMB" ],
+    "languageCode": "en"
+  }, {
+    "value": "CHA\t",
+    "synonyms": [ "CHA\t", "Chattanooga\t", "Lovell Field" ],
+    "languageCode": "en"
+  }, {
+    "value": "CID",
+    "synonyms": [ "CID", "Cedar Rapids", "The Eastern Iowa Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "CLE\t",
+    "synonyms": [ "CLE\t", "Cleveland\t", "Cleveland Hopkins International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "CLT\t",
+    "synonyms": [ "CLT\t", "Charlotte\t", "Charlotte Douglas International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "CMH\t",
+    "synonyms": [ "CMH\t", "John Glenn Columbus International Airport", "Columbus International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "COS\t",
+    "synonyms": [ "COS\t", "Colorado Springs\t", "City of Colorado Springs Municipal Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "CRP",
+    "synonyms": [ "CRP", "Corpus Christi\t", "Corpus Christi International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "CRW\t",
+    "synonyms": [ "CRW\t", "Charleston\t", "Yeager Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "CVG\t",
+    "synonyms": [ "CVG\t", "Cincinnati\t", "Cincinnati/Northern Kentucky International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "CVS\t",
+    "synonyms": [ "CVS\t", "Clovis\t\t", "Cannon Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "DAB\t",
+    "synonyms": [ "DAB\t", "Daytona", "Daytona Beach International Airport", "Daytona Beach " ],
+    "languageCode": "en"
+  }, {
+    "value": "DAL\t",
+    "synonyms": [ "DAL\t", "Dallas\t", "Dallas Love Field Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "DAY\t",
+    "synonyms": [ "DAY\t", "Dayton\t", "James M Cox Dayton International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "DBQ\t",
+    "synonyms": [ "DBQ\t", "Dubuque\t", "Dubuque Regional Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "DCA\t",
+    "synonyms": [ "DCA\t", "Washington\tDC\t", "DC", "Ronald Reagan Washington National Airport", "Reagan", "ronald reagan" ],
+    "languageCode": "en"
+  }, {
+    "value": "DEN\t",
+    "synonyms": [ "DEN\t", "Denver", "Denver International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "DFW\t",
+    "synonyms": [ "DFW\t", "Dallas-Fort Worth\t", "Dallas Fort Worth International " ],
+    "languageCode": "en"
+  }, {
+    "value": "DTW",
+    "synonyms": [ "DTW", "Detroit\t\t", "Detroit Metropolitan Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "DYS\t",
+    "synonyms": [ "DYS\t", "Abilene\t\t", "Dyess Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "EDW",
+    "synonyms": [ "EDW", "Edwards\t", "Edwards Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "END\t",
+    "synonyms": [ "END\t", "Enid\t", "Vance Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "ERI\t",
+    "synonyms": [ "ERI\t", "Erie\t", "Erie International Tom Ridge Field" ],
+    "languageCode": "en"
+  }, {
+    "value": "EWR\t",
+    "synonyms": [ "EWR\t", "Newark\t", "Newark Liberty International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "FAI\t",
+    "synonyms": [ "FAI\t", "Fairbanks\t", "Fairbanks International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "FFO\t",
+    "synonyms": [ "FFO\t", "Dayton\t\t", "Wright-Patterson Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "FSM",
+    "synonyms": [ "FSM", "Fort Smith\t", "Fort Smith Regional Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "FTW\t",
+    "synonyms": [ "FTW\t", "Fort Worth\t", "Fort Worth Meacham International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "FWA\t",
+    "synonyms": [ "FWA\t", "Fort Wayne\t", "Fort Wayne International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "GEG\t",
+    "synonyms": [ "GEG\t", "Spokane\t", "Spokane International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "GPT\t",
+    "synonyms": [ "GPT\t", "Gulfport\t", "Gulfport Biloxi International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "GRB\t",
+    "synonyms": [ "GRB\t", "Green Bay", "Austin Straubel International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "GSB",
+    "synonyms": [ "GSB", "Goldsboro\t", "Seymour Johnson Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "GSO\t",
+    "synonyms": [ "GSO\t", "Greensboro\t", "Piedmont Triad International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "GSP\t",
+    "synonyms": [ "GSP\t", "Greenville\t", "Greenville Spartanburg International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "GUS\t",
+    "synonyms": [ "GUS\t", "Peru", "Grissom Air Reserve Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "HIB\t",
+    "synonyms": [ "HIB\t", "Hibbing\t", "Range Regional Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "HMN\t",
+    "synonyms": [ "HMN\t", "Alamogordo\t", "Holloman Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "HNL\t",
+    "synonyms": [ "HNL\t", "Honolulu\t", "Daniel K. Inouye International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "HOU\t",
+    "synonyms": [ "HOU\t", "Houston\t\t", "William P Hobby Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "HSV\t",
+    "synonyms": [ "HSV\t", "Huntsville\t", "Huntsville International Carl T Jones Field" ],
+    "languageCode": "en"
+  }, {
+    "value": "HTS\t",
+    "synonyms": [ "HTS\t", "Huntington\t", "Tri-State/Milton J. Ferguson Field" ],
+    "languageCode": "en"
+  }, {
+    "value": "IAD\t",
+    "synonyms": [ "IAD\t", "Washington\t", "Washington Dulles International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "IAH\t",
+    "synonyms": [ "IAH\t", "Houston\t", "George Bush Intercontinental Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "ICT\t",
+    "synonyms": [ "ICT\t", "Wichita\t\t", "Wichita Eisenhower National Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "IND\t",
+    "synonyms": [ "IND\t", "Indianapolis\t", "Indianapolis International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "JAN\t",
+    "synonyms": [ "JAN\t", "Jackson\t", "Jackson-Medgar Wiley Evers International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "JAX\t",
+    "synonyms": [ "JAX\t", "Jacksonville\t", "Jacksonville International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "JFK\t",
+    "synonyms": [ "JFK\t", "John F. Kennedy International Airport", "JFK New York" ],
+    "languageCode": "en"
+  }, {
+    "value": "JLN\t",
+    "synonyms": [ "JLN\t", "Joplin\t\t", "Joplin Regional Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "LAS",
+    "synonyms": [ "LAS", "Las Vegas\t", "McCarran International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "LAX\t",
+    "synonyms": [ "LAX\t", "Los Angeles\t", "Los Angeles International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "LCK\t",
+    "synonyms": [ "LCK\t", "Rickenbacker International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "LBB\t",
+    "synonyms": [ "LBB\t", "Lubbock\t", "Lubbock Preston Smith International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "LEX\t",
+    "synonyms": [ "LEX\t", "Lexington\t", "Blue Grass Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "LFI\t",
+    "synonyms": [ "LFI\t", "Hampton\t", "Langley Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "LFT\t",
+    "synonyms": [ "LFT\t", "Lafayette\t", "Lafayette Regional Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "LGA\t",
+    "synonyms": [ "LGA\t", "La Guardia Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "LIT\t",
+    "synonyms": [ "LIT\t", "Little Rock\t", "Bill \u0026 Hillary Clinton National Airport/Adams Field" ],
+    "languageCode": "en"
+  }, {
+    "value": "LTS\t",
+    "synonyms": [ "LTS\t", "Altus\t", "Altus Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "LUF\t",
+    "synonyms": [ "LUF\t", "Glendale\t", "Luke Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "MBS\t",
+    "synonyms": [ "MBS\t", "Saginaw", "MBS International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "MCF\t",
+    "synonyms": [ "MCF\t", "Tampa\t\t", "Mac Dill Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "MCI\t",
+    "synonyms": [ "MCI\t", "Kansas City", "Kansas City International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "MCO",
+    "synonyms": [ "MCO", "Orlando International Airport", "Orlando MCO" ],
+    "languageCode": "en"
+  }, {
+    "value": "MDW\t",
+    "synonyms": [ "MDW\t", "Chicago\t", "Chicago Midway International Airport", "Midway" ],
+    "languageCode": "en"
+  }, {
+    "value": "MEM\t",
+    "synonyms": [ "MEM\t", "Memphis\t", "Memphis International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "MGE\t",
+    "synonyms": [ "MGE\t", "Marietta\t", "Dobbins Air Reserve Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "MGM\t",
+    "synonyms": [ "MGM\t", "Montgomery\t", "Montgomery Regional (Dannelly Field) Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "MHT",
+    "synonyms": [ "MHT", "Manchester\t", "Manchester-Boston Regional Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "MIA\t",
+    "synonyms": [ "MIA\t", "Miami\t", "Miami International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "MKE\t",
+    "synonyms": [ "MKE\t", "Milwaukee\t", "General Mitchell International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "MLI\t",
+    "synonyms": [ "MLI\t", "Moline\t\t", "Quad City International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "MLU",
+    "synonyms": [ "MLU", "Monroe\t", "Monroe Regional Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "MOB",
+    "synonyms": [ "MOB", "Mobile", "Mobile Regional Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "MSN\t",
+    "synonyms": [ "MSN\t", "Madison\t", "Dane County Regional Truax Field" ],
+    "languageCode": "en"
+  }, {
+    "value": "MSP\t",
+    "synonyms": [ "MSP\t", "Minneapolis", "Minneapolis–Saint Paul International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "MSY",
+    "synonyms": [ "MSY", "New Orleans", "Louis Armstrong New Orleans International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "MUO\t",
+    "synonyms": [ "MUO\t", "Mountain Home\t", "Mountain Home Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "OAK\t",
+    "synonyms": [ "OAK\t", "Oakland\t", "Metropolitan Oakland International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "OKC\t",
+    "synonyms": [ "OKC\t", "Oklahoma City\t", "Will Rogers World Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "OMA\t",
+    "synonyms": [ "OMA\t", "Omaha", "Eppley Airfield" ],
+    "languageCode": "en"
+  }, {
+    "value": "ONT\t",
+    "synonyms": [ "ONT\t", "Ontario", "Ontario International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "ORD\t",
+    "synonyms": [ "ORD\t", "Chicago O'Hare International Airport", "O'Hare" ],
+    "languageCode": "en"
+  }, {
+    "value": "ORF\t",
+    "synonyms": [ "ORF\t", "Norfolk\t", "Norfolk International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "PAM",
+    "synonyms": [ "PAM", "Panama City", "Tyndall Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "PBI\t",
+    "synonyms": [ "PBI\t", "West Palm Beach\t", "Palm Beach International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "PDX",
+    "synonyms": [ "PDX", "Portland\t", "Portland International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "PHF",
+    "synonyms": [ "PHF", "Newport News", "Newport News Williamsburg International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "PHL\t",
+    "synonyms": [ "PHL\t", "Philadelphia\t", "Philadelphia International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "PHX",
+    "synonyms": [ "PHX", "Phoenix\t", "Phoenix Sky Harbor International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "PIA\t",
+    "synonyms": [ "PIA\t", "Peoria\t", "General Wayne A. Downing Peoria International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "PIT\t",
+    "synonyms": [ "PIT\t", "Pittsburgh\t", "Pittsburgh International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "PVD",
+    "synonyms": [ "PVD", "Providence\t", "Theodore Francis Green State Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "PWM\t",
+    "synonyms": [ "PWM\t", "Portland", "Portland International Jetport Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "RDU\t",
+    "synonyms": [ "RDU\t", "Raleigh/Durham\t", "Raleigh Durham International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "RFD\t",
+    "synonyms": [ "RFD\t", "Chicago Rockford\t", "Rockford\t", "Chicago Rockford International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "RIC\t",
+    "synonyms": [ "RIC\t", "Richmond\t", "Richmond International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "RND\t",
+    "synonyms": [ "RND\t", "Universal City\t", "Randolph Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "RNO\t",
+    "synonyms": [ "RNO\t", "Reno\t", "Reno Tahoe International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "ROA",
+    "synonyms": [ "ROA", "Roanoke\t", "Roanoke–Blacksburg Regional Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "ROC",
+    "synonyms": [ "ROC", "Greater Rochester International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "RST\t",
+    "synonyms": [ "RST\t", "Rochester\t", "Rochester International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "RSW\t",
+    "synonyms": [ "RSW\t", "Fort Myers\t", "Southwest Florida International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "SAN",
+    "synonyms": [ "SAN", "San Diego", "San Diego International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "SAT\t",
+    "synonyms": [ "SAT\t", "San Antonio", "San Antonio International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "SAV\t",
+    "synonyms": [ "SAV\t", "Savannah\t", "Savannah Hilton Head International Airport", "Savannah Hilton", " Hilton Head International Airport", "Savannah Hilton International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "SBN\t",
+    "synonyms": [ "SBN\t", "South Bend\t", "South Bend Regional Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "SDF",
+    "synonyms": [ "SDF", "Louisville\t", "Louisville International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "SEA\t",
+    "synonyms": [ "SEA\t", "Seattle", "Seattle-Tacoma International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "SFB\t",
+    "synonyms": [ "SFB\t", "Orlando Sanford International Airport", "Orlando SFB" ],
+    "languageCode": "en"
+  }, {
+    "value": "SFO",
+    "synonyms": [ "SFO", "San Francisco\t", "San Francisco International Airport", "Frisco International Airport", "Frisco" ],
+    "languageCode": "en"
+  }, {
+    "value": "SGF",
+    "synonyms": [ "SGF", "Springfield Branson National Airport", "Springfield SGF" ],
+    "languageCode": "en"
+  }, {
+    "value": "SJC",
+    "synonyms": [ "SJC", "San Jose", "Norman Y. Mineta San Jose International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "SKA\t",
+    "synonyms": [ "SKA\t", "Fairchild Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "SLC\t",
+    "synonyms": [ "SLC\t", "Salt Lake City", "Salt Lake City International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "SMF\t",
+    "synonyms": [ "SMF\t", "Sacramento\t", "Sacramento International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "SNA",
+    "synonyms": [ "SNA", "Santa Ana\t", "John Wayne Airport", "John Wayne Airport-Orange County Airport", "John Wayne ", "Orange County Airport", "Orange County" ],
+    "languageCode": "en"
+  }, {
+    "value": "SPI\t",
+    "synonyms": [ "SPI\t", "Abraham Lincoln Capital Airport", "Springfield SPI" ],
+    "languageCode": "en"
+  }, {
+    "value": "SPS\t",
+    "synonyms": [ "SPS\t", "Wichita Falls", "Sheppard Air Force Base", "Wichita Falls Municipal Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "SR",
+    "synonyms": [ "SRQ", "Sarasota", "Bradenton", "Sarasota Bradenton International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "SSC\t",
+    "synonyms": [ "SSC\t", "Sumter\t", "Shaw Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "STL",
+    "synonyms": [ "STL", "St Louis\t", "St Louis Lambert International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "SUS\t",
+    "synonyms": [ "SUS\t", "Spirit of St Louis Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "SUU\t",
+    "synonyms": [ "SUU\t", "Fairfield", "Travis Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "SUX",
+    "synonyms": [ "SUX", "Sioux City", "Sioux Gateway Col. Bud Day Field" ],
+    "languageCode": "en"
+  }, {
+    "value": "SYR\t",
+    "synonyms": [ "SYR\t", "Syracuse", "Syracuse Hancock International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "SZL",
+    "synonyms": [ "SZL", "Knob Noster\t", "Whiteman Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "TCM\t",
+    "synonyms": [ "TCM\t", "Tacoma", "McChord Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "TIK\t",
+    "synonyms": [ "TIK\t", "Oklahoma City", "Tinker Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "TLH",
+    "synonyms": [ "TLH", "Tallahassee\t", "Tallahassee Regional Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "TOL\t",
+    "synonyms": [ "TOL\t", "Toledo\t", "Toledo Express Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "TPA\t",
+    "synonyms": [ "TPA\t", "Tampa\t", "Tampa International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "TRI\t",
+    "synonyms": [ "TRI\t", "Johnson", "Kingsport", "Tri-Cities Regional TN Airport", "Tri-Cities Regional VA Airport", "Tri-Cities Regional Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "TUL\t",
+    "synonyms": [ "TUL\t", "Tulsa\t", "Tulsa International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "TUS\t",
+    "synonyms": [ "TUS\t", "Tucson\t\t", "Tucson International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "TYS",
+    "synonyms": [ "TYS", "Knoxville\t", "McGhee Tyson Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "VBG",
+    "synonyms": [ "VBG", "Lompoc\t", "Vandenberg Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "VPS",
+    "synonyms": [ "VPS", "Valparaiso\t", "Destin Airport", "Ft Walton Beach Airport", "Walton Beach Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "WRB",
+    "synonyms": [ "WRB", "Warner Robins", "Robins Air Force Base" ],
+    "languageCode": "en"
+  }, {
+    "value": "ABZ",
+    "synonyms": [ "ABZ", "Aberdeen", "Aberdeen Dyce Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "BFS\t",
+    "synonyms": [ "BFS\t", "Belfast\t\t", "Belfast International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "BHX\t",
+    "synonyms": [ "BHX\t", "Birmingham", "Birmingham International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "BOH\t",
+    "synonyms": [ "BOH\t", "Bournemouth", "Bournemouth Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "BRS\t",
+    "synonyms": [ "BRS\t", "Bristol\t", "Bristol Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "CWL\t",
+    "synonyms": [ "CWL\t", "Cardiff\t\t", "Cardiff International Airport" ],
+    "languageCode": "en"
+  }, {
+    "value": "AKT\t",
+    "synonyms": [ "AKT\t", "Akrotiri\t\t", "RAF Akrotiri" ],
+    "languageCode": "en"
+  } ]
+}

@@ -1,0 +1,15 @@
+{
+  "entities": [ {
+    "value": "Option A",
+    "synonyms": [ "Option A", "A", "a" ],
+    "languageCode": "en"
+  }, {
+    "value": "Option B",
+    "synonyms": [ "Option B", "B", "b" ],
+    "languageCode": "en"
+  }, {
+    "value": "Option C",
+    "synonyms": [ "Option C", "C", "c" ],
+    "languageCode": "en"
+  } ]
+}

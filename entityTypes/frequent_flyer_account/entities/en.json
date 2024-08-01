@@ -1,0 +1,11 @@
+{
+  "entities": [ {
+    "value": "@sys.number-sequence",
+    "synonyms": [ "@sys.number-sequence" ],
+    "languageCode": "en"
+  }, {
+    "value": "@sys.email",
+    "synonyms": [ "@sys.email" ],
+    "languageCode": "en"
+  } ]
+}

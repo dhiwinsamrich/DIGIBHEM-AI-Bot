@@ -1,0 +1,11 @@
+{
+  "entities": [ {
+    "value": "one-way",
+    "synonyms": [ "one way", "single", "not a round trip", "just a one way", "one-way" ],
+    "languageCode": "en"
+  }, {
+    "value": "round-trip",
+    "synonyms": [ "round trip", "round-trip", "there and back", "go and return" ],
+    "languageCode": "en"
+  } ]
+}
