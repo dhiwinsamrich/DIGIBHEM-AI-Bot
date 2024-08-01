@@ -1,0 +1,60 @@
+{
+  "name": "1ba101ea-fa20-4377-ae8c-2e9102afc448",
+  "displayName": "Airline FAQ",
+  "transitionRoutes": [ {
+    "intent": "flights.animals_on_board  ",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Only one service animal per passenger is allowed on the airplane." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "3093c049-1901-4dec-a6a1-1264800282b0"
+  }, {
+    "intent": "flights.masks_on_airplanes",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Flight attendants will distribute surgical face masks and sanitizing gels to passengers over three (3) years of age. \n\nParents are asked to help their young children under three (3) with frequent handwashing." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "5f36ab58-0000-210f-859a-f403043d09f0"
+  }, {
+    "intent": "flights.how_many_suitcases",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Carry-on luggage is limited to one small roller and personal item.\n\nPassengers may check two 40lb bags per ticket. Each bag/box can be a maximum of 50 linear inches in size.\n\nThe third and fourth checked bags are $75 for 40lbs of luggage.\n\nOverweight luggage is subject to a $85 surcharge for luggage weighing 41-70 lbs. Luggage over 70 lbs is not allowed on the flight.  \n\nYou may only check a total of 4 pieces of luggage per flight.\n\n" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "0ea01e70-9e15-4971-b594-b94ab511e345"
+  }, {
+    "intent": "flights.is_ticket_refundable",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Tickets are refundable for up to 24 hours from the time of purchase. All other cancelled tickets are issued an account credit for the original paid price of the ticket." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "5f36ab5a-0000-210f-859a-f403043d09f0"
+  }, {
+    "intent": "flights.senior_discount",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Passengers over 55 receive a 15% discount with the use of a pre-validated ID. \n\nThe ID must be shown to an employee at the airport in order for the discount to be applied to the account. \n\nThe discount is only valid for the name listed on the validated senior's ID." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "20342786-e992-4a96-81c4-14a4c807c8ff"
+  } ]
+}

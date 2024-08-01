@@ -1,0 +1,26 @@
+{
+  "name": "00960ab3-55be-421c-9f86-d05713cc69e6",
+  "displayName": "end escalation",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Please hold while we transfer your call in order to assist you better." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "origin",
+        "value": null
+      } ]
+    },
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "name": "3e066d4f-073e-4172-875d-527631a9761e"
+  } ]
+}

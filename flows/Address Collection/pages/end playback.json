@@ -1,0 +1,279 @@
+{
+  "name": "c12d4a26-3160-4022-85d8-26df32a4cbe5",
+  "displayName": "end playback",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.playback_string",
+      "value": null
+    }, {
+      "parameter": "$flow.playback_counter",
+      "value": "$sys.func.ADD($flow.playback_counter,1)"
+    }, {
+      "parameter": "$flow.is_playback",
+      "value": true
+    }, {
+      "parameter": "$flow.replay_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.playback_prompt",
+      "value": "$flow.last_prompt"
+    }, {
+      "parameter": "$flow.last_prompt",
+      "value": ""
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.is_admin_area_short",
+      "value": "$sys.func.IF(\"$sys.func.LEN($flow.admin_area) \u003e 3\", false, true)"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_playback",
+    "condition": "$flow.playback_counter \u003c 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.playback_counter",
+        "value": "$sys.func.ADD($flow.playback_counter,1)"
+      } ]
+    },
+    "name": "395c06b6-48d9-40b8-b8ca-2b1ad6587bc2"
+  }, {
+    "intent": "prebuilt_components_playback",
+    "condition": "$flow.playback_counter \u003e= 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "9b0c80b3-859c-4ae9-b2af-b0765dd2a0eb"
+  }, {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.playback_prompt" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Previous Page",
+    "name": "0c61505e-23d1-4639-bfc5-b2d607544c92"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.playback_no_counter \u003c 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.playback_no_counter",
+        "value": "$sys.func.ADD($flow.playback_no_counter,1)"
+      } ]
+    },
+    "targetPage": "start over",
+    "name": "b1877ccb-03c8-416c-a7fb-99d0be0557d6"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.playback_no_counter = 1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "format address",
+    "name": "9ee29385-9e48-4b11-9170-882224d0a19d"
+  }, {
+    "condition": "$flow.street_number != \"N/A\" AND $flow.is_playback = true AND $flow.street_number != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.playback_string",
+        "value": "$sys.func.APPEND($flow.playback_string, \"the street number is \u003csay-as interpret-as='verbatim'\u003e$flow.street_number\u003c/say-as\u003e\")"
+      } ]
+    },
+    "name": "4e6dbad9-ff86-47f0-bc16-9f7ebc846752"
+  }, {
+    "condition": "$flow.route != \"N/A\" AND $flow.is_playback = true AND $flow.route != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.playback_string",
+        "value": "$sys.func.APPEND($flow.playback_string, \"the route is $flow.route\")"
+      } ]
+    },
+    "name": "89cac08a-2d1d-4e86-afc9-7cd1b551383d"
+  }, {
+    "condition": "$flow.city != \"N/A\" AND $flow.is_playback = true AND $flow.city != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.playback_string",
+        "value": "$sys.func.APPEND($flow.playback_string, \"the city is $flow.city\")"
+      } ]
+    },
+    "name": "3c28a3d6-c63a-4fe3-aad7-681a7360996b"
+  }, {
+    "condition": "$flow.admin_area != \"N/A\" AND $flow.is_playback = true AND $flow.admin_area != null AND $flow.is_admin_area_short = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.playback_string",
+        "value": "$sys.func.APPEND($flow.playback_string, \"the administrative area is \u003csay-as interpret-as='verbatim'\u003e$flow.admin_area\u003c/say-as\u003e\")"
+      } ]
+    },
+    "name": "879e0e4b-8bf0-485d-b1f5-f50e80aad846"
+  }, {
+    "condition": "$flow.admin_area != \"N/A\" AND $flow.is_playback = true AND $flow.admin_area != null AND $flow.is_admin_area_short = false",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.playback_string",
+        "value": "$sys.func.APPEND($flow.playback_string, \"the administrative area is $flow.admin_area\")"
+      } ]
+    },
+    "name": "cb50e485-7b1f-404c-be33-d74fa02b22bf"
+  }, {
+    "condition": "$flow.zip_code != \"N/A\" AND $flow.is_playback = true AND $flow.zip_code != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.playback_string",
+        "value": "$sys.func.APPEND($flow.playback_string, \"the postal code is \u003csay-as interpret-as='verbatim'\u003e$flow.zip_code\u003c/say-as\u003e\")"
+      } ]
+    },
+    "name": "3ccb4a77-4cb5-4c92-b997-5d6a2ded7f56"
+  }, {
+    "condition": "$flow.island != \"N/A\" AND $flow.is_playback = true AND $flow.island != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.playback_string",
+        "value": "$sys.func.APPEND($flow.playback_string, \"the island is $flow.island\")"
+      } ]
+    },
+    "name": "77f81ea5-6fc2-422f-bbac-fd35471f6216"
+  }, {
+    "condition": "$flow.country != \"N/A\" AND $flow.is_playback = true AND $flow.country != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.playback_string",
+        "value": "$sys.func.APPEND($flow.playback_string, \"the country is $flow.country\")"
+      } ]
+    },
+    "name": "47e31706-04ec-4b52-9ec2-dc3456b43e76"
+  }, {
+    "condition": "$flow.playback_string != null AND $flow.playback_counter \u003c 3 AND $session.params.waiting_room_event_handler = null",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSure, as of right now, I have got some parts of the address, $flow.playback_string. Shall I continue? Please say yes or no. \u003c/speak\u003e " ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.is_playback",
+        "value": false
+      } ]
+    },
+    "name": "857694f9-9abc-4acd-8387-491e1e6fbead"
+  }, {
+    "condition": "$flow.playback_string = null AND $flow.playback_counter \u003c 3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, I haven't collected any address elements so far. Please tell me your full address to start." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.last_prompt",
+        "value": "Sorry, I haven't collected any address elements so far. Please tell me your full address to start."
+      } ]
+    },
+    "targetPage": "Previous Page",
+    "name": "4966e0d5-102a-4312-b0b3-a9fdc6ca9970"
+  }, {
+    "condition": "$flow.playback_string = null AND $flow.playback_counter = 3",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "83eb2b88-a6a2-4b17-85d5-e5f2eb826530"
+  }, {
+    "condition": "$flow.playback_string != null AND $flow.playback_counter = 3",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "4fb0df15-852f-48be-99de-779499223873"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "c49e337a-1dbf-4e8e-b58f-aadf70663c97"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "f6cd4739-1ba1-4952-a727-b287c7412b18"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, I didn't get that. I have got some parts of the address, $flow.playback_string. Shall I continue? Please say yes or no.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "7253d174-d146-4547-ba39-e6a5437fc5b5"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, I still wasn't able to get that. Shall I continue? Please say yes or no." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "3c653e84-e5d4-4353-b246-c3ad84aa1751"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "27320a8a-f8c1-41d3-b23e-c7b2b8d9036e"
+  }, {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, I wasn't able to hear you. I have got some parts of the address, $flow.playback_string. Shall I continue? Please say yes or no.\u003c/speak\u003e " ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "d89286a4-2677-44b4-9150-1c8694e0dbb7"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, I still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "6afd3ceb-bb4d-47d6-b037-64c52caf2432"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "f4cfc01e-eba3-41be-930e-e78df8b297a0"
+  } ]
+}

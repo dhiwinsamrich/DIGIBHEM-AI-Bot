@@ -1,0 +1,67 @@
+{
+  "name": "19473a89-69c9-4247-9dfd-efa8261f4628",
+  "displayName": "Join Frequent Flyer",
+  "form": {
+    "parameters": [ {
+      "displayName": "passenger_name",
+      "required": true,
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "What is your first and last name?" ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    }, {
+      "displayName": "email",
+      "required": true,
+      "entityType": "@sys.email",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "What is your email address? We send all legal and ticket communication via email or online to you account. " ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "[Display brief description about your airline's frequent flyer program]" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "small_talk.i_don't_know",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "To join the frequent flyer program, I need your name and email address. You can take a moment to sign up for a valid email account or to look up the correct address. Feel free to take a  come back to the agent when you are ready. " ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "9795cb99-2e2f-43f3-816f-cde613245831"
+  }, {
+    "condition": "$page.params.status = \"FINAL\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thank you for your information. Let me generate a frequent flyer account for you." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Display New Frequent Flyer Account Number",
+    "name": "5f36ab39-0000-210f-859a-f403043d09f0"
+  } ]
+}

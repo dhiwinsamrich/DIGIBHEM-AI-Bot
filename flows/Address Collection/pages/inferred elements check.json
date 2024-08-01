@@ -1,0 +1,130 @@
+{
+  "name": "39773b18-41e4-4855-8356-74eeaa0ca4b6",
+  "displayName": "inferred elements check",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.city_inferred",
+      "value": "$sys.func.IF(\"$flow.city_required = true\" , $sys.func.IF($sys.func.CONTAIN($flow.inferred_elems, \"locality\"), true, false) ,false)"
+    }, {
+      "parameter": "$flow.zip_code_inferred",
+      "value": "$sys.func.IF(\"$flow.zip_code_required = true\" , $sys.func.IF($sys.func.CONTAIN($flow.inferred_elems, \"postal_code\"), true, false) , false)"
+    }, {
+      "parameter": "$flow.admin_area_inferred",
+      "value": "$sys.func.IF(\"$flow.admin_area_required = true\" , $sys.func.IF($sys.func.CONTAIN($flow.inferred_elems, \"administrative_area_level_1\"), true, false) , false)"
+    }, {
+      "parameter": "$flow.street_number_inferred",
+      "value": "$sys.func.IF(\"$flow.street_number_required = true\" , $sys.func.IF($sys.func.CONTAIN($flow.inferred_elems, \"street_number\"), true, false) , false)"
+    }, {
+      "parameter": "$flow.route_inferred",
+      "value": "$sys.func.IF(\"$flow.route_required = true\" , $sys.func.IF($sys.func.CONTAIN($flow.inferred_elems, \"route\"), true, false) , false)"
+    }, {
+      "parameter": "$flow.country_inferred",
+      "value": "$sys.func.IF(\"$flow.country_required = true\" , $sys.func.IF($sys.func.CONTAIN($flow.inferred_elems, \"country\"), true, false) , false)"
+    }, {
+      "parameter": "$flow.island_inferred",
+      "value": "$sys.func.IF(\"$flow.island_required = true\" , $sys.func.IF($sys.func.CONTAIN($flow.inferred_elems, \"archipelago\"), true, false) , false)"
+    }, {
+      "parameter": "$flow.inferred_string",
+      "value": null
+    }, {
+      "parameter": "$flow.is_admin_area_short",
+      "value": "$sys.func.IF(\"$sys.func.LEN($flow.admin_area_webhook[0]) \u003e 3\", false, true)"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.city_inferred = true AND $flow.city_replaced = false",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.inferred_string",
+        "value": "$sys.func.APPEND($flow.inferred_string, \"city is $flow.city_webhook[0]\")"
+      } ]
+    },
+    "name": "ffd7d6d7-32ec-4fd7-acbf-4843fc155a95"
+  }, {
+    "condition": "$flow.zip_code_inferred = true AND $flow.zip_code_replaced = false",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.inferred_string",
+        "value": "$sys.func.APPEND($flow.inferred_string, \"postal code is \u003csay-as interpret-as='verbatim'\u003e$flow.zip_code_webhook[0]\u003c/say-as\u003e\")"
+      } ]
+    },
+    "name": "0b1fb028-0606-4f73-94cd-cfe4c4c44b75"
+  }, {
+    "condition": "$flow.admin_area_inferred = true AND $flow.admin_area_replaced = false AND $flow.is_admin_area_short = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.inferred_string",
+        "value": "$sys.func.APPEND($flow.inferred_string, \"administrative area is \u003csay-as interpret-as='verbatim'\u003e$flow.admin_area_webhook[0]\u003c/say-as\u003e\")"
+      } ]
+    },
+    "name": "2e929edd-4e8a-4042-9f9e-8a07bbeff3b2"
+  }, {
+    "condition": "$flow.street_number_inferred = true AND $flow.street_number_replaced = false",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.inferred_string",
+        "value": "$sys.func.APPEND($flow.inferred_string, \"street number is \u003csay-as interpret-as='verbatim'\u003e$flow.street_number_webhook[0]\u003c/say-as\u003e\")"
+      } ]
+    },
+    "name": "9c3fa927-b918-438d-b85c-17dbab39d233"
+  }, {
+    "condition": "$flow.route_inferred = true AND $flow.route_replaced = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.inferred_string",
+        "value": "$sys.func.APPEND($flow.inferred_string, \"route is $flow.route_webhook[0]\")"
+      } ]
+    },
+    "name": "cacb8575-5587-4fc9-8033-fdbc1b4614db"
+  }, {
+    "condition": "$flow.country_inferred = true AND $flow.country_replaced = false",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.inferred_string",
+        "value": "$sys.func.APPEND($flow.inferred_string, \"country is $flow.country_webhook[0]\")"
+      } ]
+    },
+    "name": "a17a2bb6-79e2-41ec-9efb-b2c7a77766cf"
+  }, {
+    "condition": "$flow.island_inferred = true AND $flow.island_replaced = false",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.inferred_string",
+        "value": "$sys.func.APPEND($flow.inferred_string, \"island is $flow.island_webhook[0]\")"
+      } ]
+    },
+    "name": "cfcb83bd-e55c-4c57-a0c4-46922c45b135"
+  }, {
+    "condition": "$flow.inferred_string != null",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eI have guessed some part of the address, the $flow.inferred_string. \u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.inferred_string",
+        "value": "$sys.func.JOIN(\", \", $flow.inferred_string)"
+      }, {
+        "parameter": "$flow.playback_previous_prompt",
+        "value": "I have guessed some part of the address, the $flow.inferred_string."
+      } ]
+    },
+    "targetPage": "missing elements check",
+    "name": "f60b8955-6d97-4309-b992-1661663b313e"
+  }, {
+    "condition": "$flow.inferred_string = null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.confirm_address",
+        "value": true
+      } ]
+    },
+    "targetPage": "missing elements check",
+    "name": "34ef1635-ce93-4970-bc7a-da0d2e3c3ee8"
+  } ]
+}

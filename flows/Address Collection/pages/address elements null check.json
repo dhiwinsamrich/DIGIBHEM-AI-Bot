@@ -1,0 +1,39 @@
+{
+  "name": "9287642d-78d7-4094-a581-c930e2501152",
+  "displayName": "address elements null check",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.admin_area",
+      "value": "$sys.func.IF(\"$flow.admin_area_required = true\" , $sys.func.IF(\"$flow.admin_area_webhook[0] != null\", $flow.admin_area_webhook[0], \"N/A\") ,\"N/A\")"
+    }, {
+      "parameter": "$flow.zip_code",
+      "value": "$sys.func.IF(\"$flow.zip_code_required = true\" , $sys.func.IF(\"$flow.zip_code_webhook[0] != null\", $flow.zip_code_webhook[0], \"N/A\") ,\"N/A\")"
+    }, {
+      "parameter": "$flow.city",
+      "value": "$sys.func.IF(\"$flow.city_required = true\" , $sys.func.IF(\"$flow.city_webhook[0] != null\", $flow.city_webhook[0], \"N/A\") ,\"N/A\")"
+    }, {
+      "parameter": "$flow.island",
+      "value": "$sys.func.IF(\"$flow.island_required = true\" , $sys.func.IF(\"$flow.island_webhook[0] != null\", $flow.island_webhook[0], \"N/A\") ,\"N/A\")"
+    }, {
+      "parameter": "$flow.country",
+      "value": "$sys.func.IF(\"$flow.country_required = true\" , $sys.func.IF(\"$flow.country_webhook[0] != null\", $flow.country_webhook[0], \"N/A\") ,\"N/A\")"
+    }, {
+      "parameter": "$flow.street_number",
+      "value": "$sys.func.IF(\"$flow.street_number_required = true\" , $sys.func.IF(\"$flow.street_number_webhook[0] != null\", $flow.street_number_webhook[0], \"N/A\") ,\"N/A\")"
+    }, {
+      "parameter": "$flow.route",
+      "value": "$sys.func.IF(\"$flow.route_required = true\" , $sys.func.IF(\"$flow.route_webhook[0] != null\", $flow.route_webhook[0], \"N/A\") ,\"N/A\")"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "inferred elements check",
+    "name": "7f803b4d-1b4b-433f-9160-52d462851576"
+  } ]
+}

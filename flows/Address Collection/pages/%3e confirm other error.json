@@ -1,0 +1,147 @@
+{
+  "name": "302cdf2d-53a1-4d3c-bdd6-f516cd7c2b59",
+  "displayName": "\u003e confirm other error",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "I'm done with this update. Is there anything else to be changed? Please say yes or no." ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.playback_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.last_prompt",
+      "value": "I'm done with this update. Is there anything else to be changed? Please say yes or no."
+    }, {
+      "parameter": "$flow.replay_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.playback_previous_prompt",
+      "value": ""
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect error elements",
+    "name": "469aad40-0dc2-4b58-b1ca-e91960d82c07"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.correction",
+        "value": false
+      } ]
+    },
+    "targetPage": "\u003e collect missing elements",
+    "name": "c06eaef9-bc81-433c-94f5-5481ef8c1642"
+  }, {
+    "intent": "prebuilt_components_playback",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end playback",
+    "name": "bd1a703a-5ccc-435a-b899-98aa6df9ecb9"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "6a10e6e7-8192-4a54-8bb5-a4f76773a974"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "4319b3da-32ba-401a-a69f-980ceed64611"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "cdf5211a-d788-490f-8b7b-4ec48d53da96"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, I didn't get that. I'm done with this update. Is there anything else to be changed? Please say yes or no.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "dcc0ee57-a089-449a-9d77-ee6aa29538fd"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, I still wasn't able to get that. Please say yes or no." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "6cce55a0-66a9-41d1-803a-1c0671581747"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "e7dff372-3379-4fef-8bf6-a6792f606140"
+  }, {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, I wasn't able to hear you. I'm done with this update. Is there anything else to be changed? Please say yes or no.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "af52d21a-6007-43b5-9e5a-7aeb51165ef1"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, I still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "17ffd6ce-9cac-4dac-8b15-673affae6e00"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "a100f5cd-b1d5-4ed4-9089-21e5ad066e85"
+  } ]
+}

@@ -1,0 +1,145 @@
+{
+  "name": "17955927-c3dd-4814-8adb-c68660ed7239",
+  "displayName": "format address",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.formatted_address",
+      "value": null
+    }, {
+      "parameter": "address_collection_address",
+      "value": {
+      
+      }
+    }, {
+      "parameter": "$flow.is_admin_area_short",
+      "value": "$sys.func.IF(\"$sys.func.LEN($flow.admin_area) \u003e 3\", false, true)"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.street_number != \"N/A\" AND $flow.street_number != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.formatted_address",
+        "value": "$sys.func.APPEND($flow.formatted_address, \"the street number is \u003csay-as interpret-as='verbatim'\u003e$flow.street_number\u003c/say-as\u003e\")"
+      }, {
+        "parameter": "$sys.func.NESTED_FIELD(\"$session.params.address_collection_address\", \"street-number\")",
+        "value": "$flow.street_number"
+      } ]
+    },
+    "name": "c7d101ec-25ce-4224-bbd2-0c1c7b6038e8"
+  }, {
+    "condition": "$flow.route != \"N/A\" AND $flow.route != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.formatted_address",
+        "value": "$sys.func.APPEND($flow.formatted_address, \"the route is $flow.route\")"
+      }, {
+        "parameter": "$sys.func.NESTED_FIELD(\"$session.params.address_collection_address\", \"route\")",
+        "value": "$flow.route"
+      } ]
+    },
+    "name": "25d46bd9-6ed4-4a3e-934e-91c815b8d3f7"
+  }, {
+    "condition": "$flow.city != \"N/A\" AND $flow.city != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.formatted_address",
+        "value": "$sys.func.APPEND($flow.formatted_address, \"the city is $flow.city\")"
+      }, {
+        "parameter": "$sys.func.NESTED_FIELD(\"$session.params.address_collection_address\", \"city\")",
+        "value": "$flow.city"
+      } ]
+    },
+    "name": "e7999829-90fa-4ff3-a61e-4dfd7fd7ebfd"
+  }, {
+    "condition": "$flow.zip_code != \"N/A\" AND $flow.zip_code != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.formatted_address",
+        "value": "$sys.func.APPEND($flow.formatted_address, \"the postal code is \u003csay-as interpret-as='verbatim'\u003e$flow.zip_code\u003c/say-as\u003e\")"
+      }, {
+        "parameter": "$sys.func.NESTED_FIELD(\"$session.params.address_collection_address\", \"zip-code\")",
+        "value": "$flow.zip_code"
+      } ]
+    },
+    "name": "c470e65a-adb8-4b73-84f2-5079a32559c5"
+  }, {
+    "condition": "$flow.island != \"N/A\" AND $flow.island != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.formatted_address",
+        "value": "$sys.func.APPEND($flow.formatted_address, \"the island is $flow.island\")"
+      }, {
+        "parameter": "$sys.func.NESTED_FIELD(\"$session.params.address_collection_address\", \"island\")",
+        "value": "$flow.island"
+      } ]
+    },
+    "name": "c845dcc4-0ca7-4fb0-a49a-3c95d797a173"
+  }, {
+    "condition": "$flow.admin_area != \"N/A\" AND $flow.admin_area != null AND $flow.is_admin_area_short = false",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.formatted_address",
+        "value": "$sys.func.APPEND($flow.formatted_address, \"the administrative area is $flow.admin_area\")"
+      }, {
+        "parameter": "$sys.func.NESTED_FIELD(\"$session.params.address_collection_address\", \"admin-area\")",
+        "value": "$flow.admin_area"
+      } ]
+    },
+    "name": "db1eca51-9c58-4629-ade7-aa57b34a4a7f"
+  }, {
+    "condition": "$flow.admin_area != \"N/A\" AND $flow.admin_area != null AND $flow.is_admin_area_short = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.formatted_address",
+        "value": "$sys.func.APPEND($flow.formatted_address, \"the administrative area is \u003csay-as interpret-as='verbatim'\u003e$flow.admin_area\u003c/say-as\u003e\")"
+      }, {
+        "parameter": "$sys.func.NESTED_FIELD(\"$session.params.address_collection_address\", \"admin-area\")",
+        "value": "$flow.admin_area"
+      } ]
+    },
+    "name": "e1a9babd-17e7-4c98-9bcf-1eee401a7c71"
+  }, {
+    "condition": "$flow.country != \"N/A\" AND $flow.country != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.formatted_address",
+        "value": "$sys.func.APPEND($flow.formatted_address, \"the country is $flow.country\")"
+      }, {
+        "parameter": "$sys.func.NESTED_FIELD(\"$session.params.address_collection_address\", \"country\")",
+        "value": "$flow.country"
+      } ]
+    },
+    "name": "270b28ea-b16d-445a-a394-f620c1727e24"
+  }, {
+    "condition": "$flow.formatted_address != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.formatted_address",
+        "value": "$sys.func.JOIN(\", \", $flow.formatted_address)"
+      } ]
+    },
+    "targetPage": "\u003e confirm address",
+    "name": "2b5c2a1c-8f64-4ed7-af78-d65b8802dddb"
+  }, {
+    "condition": "$flow.formatted_address = null AND $flow.webhook_retry_num \u003c $flow.retry_num",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "start over",
+    "name": "bd1791ee-5b81-45e0-93f0-74fa9e7e3f0d"
+  }, {
+    "condition": "$flow.formatted_address = null AND $flow.webhook_retry_num = $flow.retry_num",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, I've used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "e39c24b9-d635-4445-8312-8152604a3f32"
+  } ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "a9a5532c-d448-48ed-9e6b-04ec5465ce72",
+  "displayName": "start over",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Sorry! I'm facing difficulty collecting your address. Let's start collecting the address again." ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.user_provided_address",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect address",
+    "name": "92a64496-e8ce-4f43-92a2-31a2c91d18e0"
+  } ]
+}

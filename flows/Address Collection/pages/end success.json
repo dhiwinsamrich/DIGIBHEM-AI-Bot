@@ -1,0 +1,23 @@
+{
+  "name": "cffdbcfc-2ae6-46ca-8072-2dfcdd1ce2ae",
+  "displayName": "end success",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Fantastic, I've collected the address." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "End Flow",
+    "name": "1f8eb924-f149-4741-b957-7afc95feb1da"
+  } ]
+}

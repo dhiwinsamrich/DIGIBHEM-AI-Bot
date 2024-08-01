@@ -1,0 +1,49 @@
+{
+  "name": "507d4e58-cf0c-494b-861d-b0f0ed660bde",
+  "displayName": "missing elements null check",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.island_webhook",
+      "value": "$sys.func.IF(\"$flow.island_webhook[0] != null\", $flow.island_webhook, $sys.func.APPEND($flow.island_webhook,\"N/A\"))"
+    }, {
+      "parameter": "$flow.zip_code_webhook",
+      "value": "$sys.func.IF(\"$flow.zip_code_webhook[0] != null\", $flow.zip_code_webhook, $sys.func.APPEND($flow.zip_code_webhook,\"N/A\"))"
+    }, {
+      "parameter": "$flow.city_webhook",
+      "value": "$sys.func.IF(\"$flow.city_webhook[0] != null\", $flow.city_webhook, $sys.func.APPEND($flow.city_webhook,\"N/A\"))"
+    }, {
+      "parameter": "$flow.admin_area_webhook",
+      "value": "$sys.func.IF(\"$flow.admin_area_webhook[0] != null\", $flow.admin_area_webhook , $sys.func.APPEND($flow.admin_area_webhook ,\"N/A\"))"
+    }, {
+      "parameter": "$flow.street_number_webhook",
+      "value": "$sys.func.IF(\"$flow.street_number_webhook[0] != null\", $flow.street_number_webhook , $sys.func.APPEND($flow.street_number_webhook ,\"N/A\"))"
+    }, {
+      "parameter": "$flow.route_webhook",
+      "value": "$sys.func.IF(\"$flow.route_webhook[0] != null\", $flow.route_webhook , $sys.func.APPEND($flow.route_webhook ,\"N/A\"))"
+    }, {
+      "parameter": "$flow.country_webhook",
+      "value": "$sys.func.IF(\"$flow.country_webhook[0] != null\", $flow.country_webhook , $sys.func.APPEND($flow.country_webhook ,\"N/A\"))"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.missing_elems = null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.missing_elems",
+        "value": [ ]
+      } ]
+    },
+    "targetPage": "required elements check",
+    "name": "4baf2747-964b-4785-a141-6b737be0d7a5"
+  }, {
+    "condition": "$flow.missing_elems != null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "required elements check",
+    "name": "550164f0-4afe-4b12-b0ae-0b3076c02460"
+  } ]
+}

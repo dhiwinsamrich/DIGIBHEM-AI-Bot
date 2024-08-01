@@ -1,0 +1,64 @@
+{
+  "name": "816bad52-d0a6-43fa-a52e-5140597ec956",
+  "displayName": "Show One-Way Available Flights",
+  "form": {
+    "parameters": [ {
+      "displayName": "flight_option",
+      "required": true,
+      "entityType": "@flight-option",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "Would you like to book Option A, Option B, or Option C?" ]
+            },
+            "languageCode": "en"
+          } ]
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Please enter \nOption A \nOption B \nor \nOption C" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "5f36ab45-0000-210f-859a-f403043d09f0"
+        } ]
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Option A\nDeparture Flight $session.params.flight_number_A\nDate $session.params.departure_date\nDeparture Airport $session.params.departure_airport\nTime  $session.params.departure_time_A\nArrival Airport $session.params.arrival_airport\nArrival Time $session.params.arrival_time_A \n\nOption B\nDeparture Flight $session.params.flight_number_B \nDate $session.params.departure_date\nDeparture Airport $session.params.departure_airport\nTime  $session.params.departure_time_B\nArrival Airport $session.params.arrival_airport\nArrival Time $session.params.arrival_time_B  \n\nOption C\nDeparture Flight $session.params.flight_number_C\nDate $session.params.departure_date\nDeparture Airport $session.params.departure_airport\nTime $session.params.departure_time_C\nArrival Airport $session.params.arrival_airport\nArrival Time $session.params.arrival_time_C" ]
+      },
+      "languageCode": "en"
+    } ],
+    "webhook": "Apigee Integration",
+    "tag": "findAvailableTicket"
+  },
+  "transitionRoutes": [ {
+    "intent": "small_talk.confirmation.no",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Anything Else",
+    "name": "473474eb-2f7a-4ecf-a435-b6e622d2dc93"
+  }, {
+    "condition": "$page.params.status = \"FINAL\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "All of our seats are open seating.  Family passengers with children under 5 are boarded first to allow families to sit together. " ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Display Selected One-Way Ticket",
+    "name": "5f36ab44-0000-210f-859a-f403043d09f0"
+  } ],
+  "transitionRouteGroups": [ "Airline FAQ" ]
+}

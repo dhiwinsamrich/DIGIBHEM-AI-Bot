@@ -1,0 +1,57 @@
+{
+  "name": "d2e4d8b1-b8fb-4c68-b5a9-c1df3003b4ef",
+  "displayName": "Confirm Flight Details One-Way Ticket",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "You want a one way ticket for:\n\nPassenger $session.params.passenger_name \n\nFrom $session.params.departure_airport\n\nTo  $session.params.arrival_airport\n\nLeaving on $session.params.departure_date \n\nTime $session.params.outbound_departure_time\n\nIs that correct?\n" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "small_talk.confirmation.yes",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thank you for that information. Let me check if we have a flight available. " ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Show One-Way Available Flights",
+    "name": "5f36ab50-0000-210f-859a-f403043d09f0"
+  }, {
+    "intent": "small_talk.confirmation.no",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Let's try checking for other options. Please note that you will be asked to re-enter your information. " ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "departure_date",
+        "value": null
+      }, {
+        "parameter": "departure_airport",
+        "value": null
+      }, {
+        "parameter": "arrival_airport",
+        "value": null
+      }, {
+        "parameter": "outbound_departure_time",
+        "value": null
+      }, {
+        "parameter": "passenger_name",
+        "value": null
+      } ]
+    },
+    "targetPage": "Collect One-Way Ticket Information",
+    "name": "5f36ab51-0000-210f-859a-f403043d09f0"
+  } ],
+  "transitionRouteGroups": [ "Airline FAQ" ]
+}

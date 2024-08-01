@@ -1,0 +1,40 @@
+{
+  "name": "976193e8-f472-49d7-9591-620263f7244d",
+  "displayName": "Select Ticket Type",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Do you want a round-trip or one-way ticket?" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "flights.one_way_ticket",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Let's find a one-way ticket for you. " ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Collect One-Way Ticket Information",
+    "name": "2134f4f5-343d-4ddf-a049-6f93c1c2dd38"
+  }, {
+    "intent": "flights.round_trip_ticket",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Great. Let's find a round trip ticket for you." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Collect Round-Trip Ticket Information",
+    "name": "725f35b2-72d6-4655-bb36-b45b6e3c956a"
+  } ]
+}

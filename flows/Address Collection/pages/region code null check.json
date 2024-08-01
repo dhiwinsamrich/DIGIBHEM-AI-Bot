@@ -1,0 +1,28 @@
+{
+  "name": "c151d561-ee75-4c1c-bdd3-7847ba524278",
+  "displayName": "region code null check",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.regionCode = null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.regionCode",
+        "value": ""
+      } ]
+    },
+    "targetPage": "missing elements null check",
+    "name": "da392dd9-0122-4423-9c4f-7172a533a336"
+  }, {
+    "condition": "$flow.regionCode != null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "missing elements null check",
+    "name": "33aa45ba-68b0-4475-90ef-71c7d95ab251"
+  } ]
+}

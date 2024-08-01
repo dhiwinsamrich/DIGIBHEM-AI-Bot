@@ -1,0 +1,30 @@
+{
+  "name": "eae4a7de-f626-4238-b01e-ac9e11491ac6",
+  "displayName": "check last feedback provided ",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.last_feedback_time_elapsed = \"true\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect feedback score",
+    "name": "8c99c689-3866-46d6-aca4-417692909fab"
+  }, {
+    "condition": "$flow.last_feedback_time_elapsed != \"true\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thank you for reaching out to us. Have a great day." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "c171b5ff-5fdd-4dc1-9fad-d7d5b73d0be9"
+  } ]
+}

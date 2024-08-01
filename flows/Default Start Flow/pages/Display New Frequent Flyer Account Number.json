@@ -1,0 +1,23 @@
+{
+  "name": "a500da8a-e20d-4a33-9feb-452a0cc8097a",
+  "displayName": "Display New Frequent Flyer Account Number",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Your new frequent flyer account number is [display webhook response]. You can find more information about our frequent flyer program at [URL]." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Anything Else",
+    "name": "5f36ab4c-0000-210f-859a-f403043d09f0"
+  } ]
+}

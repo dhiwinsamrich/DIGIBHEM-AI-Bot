@@ -1,0 +1,91 @@
+{
+  "name": "0819e073-c914-4659-97b1-5a23df9695f0",
+  "displayName": "Check Frequent Flyer Account Miles",
+  "form": {
+    "parameters": [ {
+      "displayName": "frequent_flyer_account_number",
+      "required": true,
+      "entityType": "@frequent_flyer_account",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "What is your frequent flyer account number? [Enter account number: 123456 to begin the Apigee webhook.]" ]
+            },
+            "languageCode": "en"
+          } ],
+          "webhook": "Apigee Integration",
+          "tag": "checkMileage"
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "We can also look up your account using the email address on file. What is your email address? [Enter jetset2020@gmail.com to continue the Apigee webhook]" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "e76e0c88-e64b-427d-9269-b8fb1fa87c87"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Please use the format name@gmail.com, so I can locate your frequent flyer account. [Enter jetset2020@gmail.com to continue the Apigee webhook]" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "279fbd78-02fb-41e2-b50b-bdf7f5544b1e"
+        } ]
+      }
+    }, {
+      "displayName": "passenger_name",
+      "required": true,
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "What is the first and last name associated with the frequent flyer account? [Enter Melina Garcia to see the Apigee webhook response below.]" ]
+            },
+            "languageCode": "en"
+          } ],
+          "webhook": "Apigee Integration",
+          "tag": "checkMileage"
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "This pathway features an Apigee Integration webhook. You can enter your own data or follow the prompt to activate the Apigee webhook." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$page.params.status = \"FINAL\"",
+    "triggerFulfillment": {
+      "webhook": "Apigee Integration",
+      "tag": "checkMileage"
+    },
+    "targetPage": "Display Frequent Flyer MIles",
+    "name": "5f36ab35-0000-210f-859a-f403043d09f0"
+  }, {
+    "condition": "$session.params.account = \"invalid\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Unfortunately, there is not a frequent flyer account associated with this number and/or email address." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Anything Else",
+    "name": "5f36ab36-0000-210f-859a-f403043d09f0"
+  } ]
+}

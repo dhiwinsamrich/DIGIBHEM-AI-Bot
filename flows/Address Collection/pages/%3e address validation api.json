@@ -1,0 +1,50 @@
+{
+  "name": "2b47f5dd-47a7-466a-b2b1-626947a3e14a",
+  "displayName": "\u003e address validation api",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "webhook": "prebuilt_components_address_collection:address_validation",
+    "tag": "validation",
+    "setParameterActions": [ {
+      "parameter": "$flow.webhook_retry_num",
+      "value": "$sys.func.ADD($flow.webhook_retry_num,1)"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "region code null check",
+    "name": "230f65fb-f1af-4a60-88e9-4b7212cdad87"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "end failure",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, something went wrong on our end."
+      }, {
+        "parameter": "address_collection_status",
+        "value": "MAPS_API_ERROR"
+      } ]
+    },
+    "name": "a50e929e-bc56-4f38-9739-48b3d61206d2"
+  }, {
+    "targetPage": "end failure",
+    "event": "webhook.error.bad-request",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "I'm sorry, but I'm currently unable to validate addresses in that region."
+      }, {
+        "parameter": "address_collection_status",
+        "value": "COUNTRY_NOT_SUPPORTED"
+      } ]
+    },
+    "name": "494a3d1a-af77-4661-a6e0-271d856fd696"
+  } ]
+}

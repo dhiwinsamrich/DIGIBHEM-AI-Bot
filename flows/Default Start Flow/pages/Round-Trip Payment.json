@@ -1,0 +1,118 @@
+{
+  "name": "1f9d662b-882c-419b-a8fa-087c16e526cf",
+  "displayName": "Round-Trip Payment",
+  "form": {
+    "parameters": [ {
+      "displayName": "card_type",
+      "required": true,
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "What card type will you be using?" ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    }, {
+      "displayName": "card_number",
+      "required": true,
+      "entityType": "@sys.number-sequence",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "Please enter the card number." ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    }, {
+      "displayName": "billing_name",
+      "required": true,
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "What is the name on the card?\t" ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    }, {
+      "displayName": "billing_street_address",
+      "required": true,
+      "entityType": "@sys.address",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "What is the billing street address?" ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    }, {
+      "displayName": "billing_zip_code",
+      "required": true,
+      "entityType": "@sys.zip-code",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ " What is the billing ZIP code?" ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    }, {
+      "displayName": "frequent_flyer_account",
+      "entityType": "@sys.number-sequence",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "If you would like to use your frequent flyer points/miles to pay for all or part of your ticket, please enter your account number now.  " ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.payment = \"pass\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Your credit card has been charged.   \n\n[Trigger webhook to add ticket to the frequent flyer account associated with the passenger profile]" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Round-Trip Ticket Purchase Confirmation",
+    "name": "8b5fa7a6-1a55-4c75-8281-85732f361f12"
+  }, {
+    "condition": "$session.params.payment = \"fail\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "There was an issue with your payment. Please hold while I transfer you to Customer Service." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "8fd41a6a-39d7-4e0a-8b40-70740e48a263"
+  } ]
+}

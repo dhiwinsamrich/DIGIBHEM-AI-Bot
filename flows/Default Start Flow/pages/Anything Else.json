@@ -1,0 +1,47 @@
+{
+  "name": "fe64d2d1-8a24-4751-bcb2-d2e18ca89e3f",
+  "displayName": "Anything Else",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "small_talk.confirmation.no",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thank you for contacting the virtual flights agent. Enjoy your flight and have a great day!\n", "We thank you for your business. Have a great day!\n" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "090f599e-2168-4260-a61b-c2d8dfd1adbc"
+  }, {
+    "intent": "small_talk.thanks",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I am glad I could help you today. Good-bye!" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "aec13955-9d85-4844-b4f7-2963def885bc"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Would you like help with anything else?", "Can I help you with anything else?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "9128a4ca-17a0-43f3-ae82-c9880d5bc372"
+  } ],
+  "transitionRouteGroups": [ "Airline FAQ" ]
+}

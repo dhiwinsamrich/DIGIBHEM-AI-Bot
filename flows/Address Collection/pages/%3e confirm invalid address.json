@@ -1,0 +1,150 @@
+{
+  "name": "cc82e282-c99a-4f8e-935b-242ba9e4042c",
+  "displayName": "\u003e confirm invalid address",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "It looks like I wasn't able to validate the address and have used too many attempts. Would you like to confirm this address anyway?" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.invalid_address_confirmation",
+      "value": true
+    }, {
+      "parameter": "$flow.last_prompt",
+      "value": "It looks like I wasn't able to validate the address and have used too many attempts. Would you like to confirm this address anyway?"
+    }, {
+      "parameter": "$flow.replay_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.playback_previous_prompt",
+      "value": ""
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "format address",
+    "name": "61e9671e-17d3-4d44-a8fa-b815e90c776a"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "address_collection_status",
+        "value": "NO_USER_CONFIRMATION"
+      }, {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, I've used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "a77d6c3d-e7c0-4dc2-aa2f-1e4187a35110"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "2d113075-7fbc-439b-bf5f-c91fd2fac395"
+  }, {
+    "intent": "prebuilt_components_playback",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end playback",
+    "name": "fb3d5969-be62-478a-89d6-2f4f7fa0b293"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "50387c84-f992-4d9e-8764-97bb135128a8"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "91a35a76-4aaf-4a0a-a0f1-6395776be30c"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, I wasn't able to hear you. Would you like to confirm the unverified address?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "078c3923-20b7-4f14-9fff-049ee414ff2f"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, I still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "1ecf74be-c238-4b07-b9b8-0f207bfdc212"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "56080e48-42af-41df-b4fc-f0e840fcb00c"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, I didn't get that. Would you like to confirm the unverified address?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "049ce97b-8a0b-4594-847b-3a928850ad18"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, I still wasn't able to get that. Please make sure you're saying yes or no to confirm the unverified address. " ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "f3f1e327-317f-4da0-8649-1beb59bfec46"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "e99fcf07-12e7-4a95-add2-52734e16dcee"
+  } ]
+}

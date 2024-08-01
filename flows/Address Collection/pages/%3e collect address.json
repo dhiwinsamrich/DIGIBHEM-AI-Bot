@@ -1,0 +1,181 @@
+{
+  "name": "74a6b6d8-47e4-4ce4-90ca-acfe62b193a3",
+  "displayName": "\u003e collect address",
+  "form": {
+    "parameters": [ {
+      "displayName": "$flow.user_provided_address",
+      "required": true,
+      "entityType": "@sys.address",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, I didn't get that. Please tell me your full address to start." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "554a1f89-ae5b-4efa-ab6e-895dd226c670"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Hmm, I still wasn't able to get that. Please tell me your full address to start." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "4252999c-416d-446e-8a3e-06d73237d74e"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+          
+          },
+          "name": "123ba4e3-501a-4bea-ab1b-f19da1eb3d66"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, I wasn't able to hear you. Please tell me your full address to start." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "b60acaac-86a8-4a90-9aaa-53d0f760eb10"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Hmm, I still cannot hear you. Try speaking louder or moving to a quieter area." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "b993ad8e-9f43-4f68-aa3e-6a07b0e4f06f"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+          
+          },
+          "name": "5bb8cbf1-9281-4064-b87d-63930c2ea136"
+        } ]
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Please tell me your full address to start.\t" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.playback_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.zip_code",
+      "value": "N/A"
+    }, {
+      "parameter": "$flow.city",
+      "value": "N/A"
+    }, {
+      "parameter": "$flow.admin_area",
+      "value": "N/A"
+    }, {
+      "parameter": "$flow.street_number",
+      "value": "N/A"
+    }, {
+      "parameter": "$flow.route",
+      "value": "N/A"
+    }, {
+      "parameter": "$flow.country",
+      "value": "N/A"
+    }, {
+      "parameter": "$flow.island",
+      "value": "N/A"
+    }, {
+      "parameter": "$flow.failure_msg",
+      "value": "Sorry, I'm having difficulty understanding your response."
+    }, {
+      "parameter": "address_collection_status",
+      "value": "NO_USER_CONFIRMATION"
+    }, {
+      "parameter": "$flow.correction",
+      "value": false
+    }, {
+      "parameter": "$flow.replay_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.last_prompt",
+      "value": "Please tell me your full address to start."
+    }, {
+      "parameter": "$flow.playback_previous_prompt",
+      "value": ""
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_playback",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end playback",
+    "name": "5b960cd9-89dc-4c23-9df0-c627dc7b4d12"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "49b91d1d-8dc3-4a5f-b749-91baab47d3b6"
+  }, {
+    "condition": "$flow.user_provided_address != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.request_body",
+        "value": {
+          "addressLines": "$flow.user_provided_address"
+        }
+      } ]
+    },
+    "targetPage": "verify retry num",
+    "name": "970d8899-ac3a-4041-93e1-c9ce4b68af43"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "3a5ad801-4b83-4782-bf1b-5121dae2fc86"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "23c76f34-bf30-4270-9bb7-10c6e523698d"
+  } ]
+}

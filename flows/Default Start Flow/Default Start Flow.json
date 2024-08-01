@@ -1,0 +1,113 @@
+{
+  "name": "00000000-0000-0000-0000-000000000000",
+  "displayName": "Default Start Flow",
+  "description": "A start flow created along with the agent",
+  "transitionRoutes": [ {
+    "intent": "Default Welcome Intent",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hi! I'm the virtual flights agent. I can help you book a flight or assist with our frequent flyer program. How can I assist you today?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "sendCallCompanionSms": true
+    },
+    "name": "18b01970-6ab7-4724-9847-71266373c8ab"
+  }, {
+    "intent": "flights.available_miles",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Let's check on your frequent flyer account." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Check Frequent Flyer Account Miles",
+    "name": "5f36ab2e-0000-210f-859a-f403043d09f0"
+  }, {
+    "intent": "flights.book_flight",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I can help you find a ticket. Let's get started." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Select Ticket Type",
+    "name": "5f36ab2f-0000-210f-859a-f403043d09f0"
+  }, {
+    "intent": "flights.one_way_ticket",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Let's find a one-way ticket for you. " ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Collect One-Way Ticket Information",
+    "name": "af8afc7c-d003-4927-8029-4d2f1669ace1"
+  }, {
+    "intent": "flights.customer_service",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Please hold while I transfer you to a live person." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "d1c90072-3d84-416e-afbe-a8a1e1a40183"
+  }, {
+    "intent": "flights.round_trip_ticket",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Let's find a round trip ticket for you. " ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Collect Round-Trip Ticket Information",
+    "name": "c7323df1-76fd-4187-8978-3c938a361351"
+  }, {
+    "intent": "flights.frequent_flyer_club",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Frequent Flyer Program",
+    "name": "acd3ac0f-3e6e-44e4-9af9-b29167e8151b"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "5f36ab2a-0000-210f-859a-f403043d09f0"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "5f36ab2b-0000-210f-859a-f403043d09f0"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC"
+  }
+}

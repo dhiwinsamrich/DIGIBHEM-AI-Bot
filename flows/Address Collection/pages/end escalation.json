@@ -1,0 +1,29 @@
+{
+  "name": "e83a6656-d4f4-466d-b840-4d441b05f741",
+  "displayName": "end escalation",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Please hold while I transfer you to someone to better assist you." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "address_collection_status",
+        "value": "NO_USER_CONFIRMATION"
+      }, {
+        "parameter": "address_collection_address",
+        "value": null
+      } ]
+    },
+    "targetPage": "END_FLOW_WITH_HUMAN_ESCALATION",
+    "name": "f73a0ce6-005f-48bc-b3b5-ac77aa8f5ade"
+  } ]
+}

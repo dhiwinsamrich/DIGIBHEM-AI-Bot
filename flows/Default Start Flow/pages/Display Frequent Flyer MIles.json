@@ -1,0 +1,23 @@
+{
+  "name": "e3582494-62a5-4e40-b3bd-7575807f5b00",
+  "displayName": "Display Frequent Flyer MIles",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "$session.params.passenger_name, you have $session.params.mileage miles available for use.\n\nA free flight requires [insert company policy] miles. " ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Anything Else",
+    "name": "5f36ab54-0000-210f-859a-f403043d09f0"
+  } ]
+}

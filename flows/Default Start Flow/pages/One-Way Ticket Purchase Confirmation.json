@@ -1,0 +1,54 @@
+{
+  "name": "02828e4a-a549-47c1-8025-a857a9f66f71",
+  "displayName": "One-Way Ticket Purchase Confirmation",
+  "form": {
+    "parameters": [ {
+      "displayName": "email",
+      "required": true,
+      "entityType": "@sys.email",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "We will send a confirmation email of the ticket for your records. May I have your email please? " ]
+            },
+            "languageCode": "en"
+          } ]
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Please enter a valid email address. An example is: your_name@gmail.com." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "b3aa9448-8fa7-4469-849c-01065d707b5a"
+        } ]
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "[Below is a sample webhook response with both filled parameters and static data.]\n\nYour confirmation number is RLABKB\n\nPassenger $session.params.passenger_name \n\nDeparture Flight DA1392 \nDate $session.params.departure_date\nDeparture Airport $session.params.departure_airport\nTime $session.params.departure_time_C\nArrival Airport $session.params.arrival_airport\nArrival Time $session.params.arrival_time_C\n" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$page.params.status = \"FINAL\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thank you for your email address. Your confirmation email will arrive in your inbox shortly. " ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Anything Else",
+    "name": "5f36ab33-0000-210f-859a-f403043d09f0"
+  } ]
+}

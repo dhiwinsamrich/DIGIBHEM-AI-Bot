@@ -1,0 +1,31 @@
+{
+  "name": "8859af8f-6150-4119-8871-9d4b542cee08",
+  "displayName": "Display Selected One-Way Ticket",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "[Below is a sample response with static data and filled parameters. Unfilled parameters will need a real time webhook response]\n\nDeparture Flight RLABKB\nDate $session.params.departure_date\nDeparture Airport $session.params.departure_airport\nTime $session.params.departure_time_C\nArrival Airport $session.params.arrival_airport\nArrival Time $session.params.arrival_time_C\n\nThe price for this ticket is $session.params.ticket_price\n\nWould you like to proceed with payment?" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "small_talk.confirmation.yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "One-Way Payment",
+    "name": "5f36ab46-0000-210f-859a-f403043d09f0"
+  }, {
+    "intent": "small_talk.confirmation.no",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Anything Else",
+    "name": "5f36ab47-0000-210f-859a-f403043d09f0"
+  } ],
+  "transitionRouteGroups": [ "Airline FAQ" ]
+}

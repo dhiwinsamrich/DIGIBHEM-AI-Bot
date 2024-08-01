@@ -1,0 +1,105 @@
+{
+  "name": "ac096a35-305d-4e49-bc0a-087867e5aa06",
+  "displayName": "One-Way Payment",
+  "form": {
+    "parameters": [ {
+      "displayName": "card_type",
+      "required": true,
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "What card type will you be using?" ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    }, {
+      "displayName": "card_number",
+      "required": true,
+      "entityType": "@sys.number-sequence",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "Please enter the card number." ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    }, {
+      "displayName": "billing_name",
+      "required": true,
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "What is the name on the card?\t" ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    }, {
+      "displayName": "billing_street_address",
+      "required": true,
+      "entityType": "@sys.address",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "What is the billing street address?\t" ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    }, {
+      "displayName": "billing_zip_code",
+      "required": true,
+      "entityType": "@sys.zip-code",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "What is the billing ZIP code?\t" ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.card_payment = \"failed\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "There was an issue with your payment. Please hold while I transfer you to Customer Service. " ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "121b7f8b-0a64-436a-b36d-5788d498d410"
+  }, {
+    "condition": "$page.params.status = \"FINAL\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Your card payment was accepted!" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "One-Way Ticket Purchase Confirmation",
+    "name": "2e6f0c6e-fa27-4944-9f70-4720b3be3e24"
+  } ]
+}

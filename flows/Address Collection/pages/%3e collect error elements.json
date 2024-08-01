@@ -1,0 +1,318 @@
+{
+  "name": "2e0162c6-51df-4a3e-aa95-d5d8587385be",
+  "displayName": "\u003e collect error elements",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Okay. Please tell me which part of the address needs to be changed." ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.correction",
+      "value": true
+    }, {
+      "parameter": "$flow.playback_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.last_prompt",
+      "value": "Okay. Please tell me which part of the address needs to be changed."
+    }, {
+      "parameter": "$flow.replay_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.playback_previous_prompt",
+      "value": ""
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_address_collection_locality",
+    "condition": "$flow.city_required = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.city",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect missing elements",
+    "name": "6ddabf23-6255-4c18-a9b2-5aae61143831"
+  }, {
+    "intent": "prebuilt_components_address_collection_postal_code",
+    "condition": "$flow.zip_code_required = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.zip_code",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect missing elements",
+    "name": "85ede5b6-de63-46f6-9da8-d7373cbc81c9"
+  }, {
+    "intent": "prebuilt_components_address_collection_administrative_area_level_1",
+    "condition": "$flow.admin_area_required = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.admin_area",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect missing elements",
+    "name": "72767b6e-a107-423f-8533-d50ff415723e"
+  }, {
+    "intent": "prebuilt_components_address_collection_street_number",
+    "condition": "$flow.street_number_required = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.street_number",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect missing elements",
+    "name": "66049542-e3bd-4c97-abd5-b0a5fba40539"
+  }, {
+    "intent": "prebuilt_components_address_collection_route",
+    "condition": "$flow.route_required = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.route",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect missing elements",
+    "name": "1744c7fa-fbad-4905-885f-259e4bc8e499"
+  }, {
+    "intent": "prebuilt_components_address_collection_country",
+    "condition": "$flow.country_required = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.country",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect missing elements",
+    "name": "6461a4e2-539d-4f38-bcab-b90363d10732"
+  }, {
+    "intent": "prebuilt_components_address_collection_archipelago",
+    "condition": "$flow.island_required = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.island",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect missing elements",
+    "name": "068a6024-b6f1-4a28-8a16-115aaac9bdbe"
+  }, {
+    "intent": "prebuilt_components_address_collection_change_entire_address",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.correction",
+        "value": false
+      } ]
+    },
+    "targetPage": "start over",
+    "name": "849c2fcb-9b50-4c72-889d-54284d88113c"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "e900a541-d506-43c7-bc0e-4983a20dc70d"
+  }, {
+    "intent": "prebuilt_components_playback",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end playback",
+    "name": "f4f20f43-c6ca-4e53-88e6-f481daea50e9"
+  }, {
+    "intent": "prebuilt_components_address_collection_actually_correct",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "format address",
+    "name": "2bf23e4a-532f-432c-9e3e-696c7c6a55d0"
+  }, {
+    "intent": "prebuilt_components_address_collection_street_number",
+    "condition": "$flow.street_number_required = false",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Apologies, I am unable to gather the street number." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "24d85033-9add-4f1c-bc10-bd27461ac37e"
+  }, {
+    "intent": "prebuilt_components_address_collection_archipelago",
+    "condition": "$flow.island_required = false",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Apologies, I am unable to gather the island name." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "bc3f7261-e519-4df7-b0fe-ce613da74478"
+  }, {
+    "intent": "prebuilt_components_address_collection_route",
+    "condition": "$flow.route_required = false",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Apologies, I am unable to gather the route." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "9d7b764e-a207-4823-aa7c-8f94b8cb292a"
+  }, {
+    "intent": "prebuilt_components_address_collection_administrative_area_level_1",
+    "condition": "$flow.admin_area_required = false",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Apologies, I am unable to gather the admin area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "a5b53afd-f8a9-46e4-805b-b406eb065b29"
+  }, {
+    "intent": "prebuilt_components_address_collection_postal_code",
+    "condition": "$flow.zip_code_required = false",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Apologies, I am unable to gather the postal code." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "6800b052-d068-4b1c-a0e8-c37699078b41"
+  }, {
+    "intent": "prebuilt_components_address_collection_locality",
+    "condition": "$flow.city_required = false",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Apologies, I am unable to gather the city name." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "94b2835a-b42a-44be-8399-9d6d1de375d7"
+  }, {
+    "intent": "prebuilt_components_address_collection_country",
+    "condition": "$flow.country_required = false",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Apologies, I am unable to gather the country name." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "a94de4c9-d358-4d43-8081-40a475d146ab"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "d98a401d-79df-4857-bffa-4f13a8cabe10"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "a9ce73eb-97d8-4161-ae33-f10746b26fc4"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, I didn't get that. Please tell me which part of the address needs to be changed." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "9ecc8c71-0971-4607-80f8-a380b7bf9e8b"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, I still wasn't able to get that. Please tell me which part of the address needs to be changed." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "1d2ddcfa-6af3-483b-955f-73b7eec6a5d2"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "b027b8e1-4bf4-40cb-9578-711c8bdfe8c5"
+  }, {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, I wasn't able to hear you. Please tell me which part of the address needs to be changed." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "6cf913b8-a8df-4512-a09f-f551cd8a9f84"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, I still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "b00ea283-6214-4af3-925e-c5c9ccf50e14"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "35531019-d696-43cb-bd3f-85b95aa9d54b"
+  } ]
+}

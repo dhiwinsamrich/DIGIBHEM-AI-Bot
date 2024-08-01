@@ -1,0 +1,54 @@
+{
+  "name": "a4e210fe-e76a-4319-b45c-f508634efdc1",
+  "displayName": "Round-Trip Ticket Purchase Confirmation",
+  "form": {
+    "parameters": [ {
+      "displayName": "email",
+      "required": true,
+      "entityType": "@sys.email",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "We will send a confirmation email of the ticket for your records. May I have your email please? " ]
+            },
+            "languageCode": "en"
+          } ]
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Please enter a valid email address. An example is: your_name@gmail.com." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "19502f4b-b22f-4f55-9419-34a0dcd48dc8"
+        } ]
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "[Below is a sample webhook response with both filled parameters and static data. Unfilled parameters will need a real time webhook response]\n\nYour ticket confirmation number is HP205\n\n$session.params.passenger_name \n\nDeparture Flight DA1357\nDate $session.params.departure_date\nDeparture Airport $session.params.departure_airport\nTime $session.params.outbound_departure_time\nArrival Airport $session.params.return_airport  \nArrival Time 8:00 PM \n\nReturn Flight DA9842: \nDate $session.params.return_date\nDeparture Airport $session.params.return_airport  \nTime $session.params.return_departure_time\nArrival Airport $session.params.departure_airport\nArrival Time 10:00 PM" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$page.params.status = \"FINAL\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thank you for your email address. We will send a confirmation message to you." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Anything Else",
+    "name": "5f36ab4a-0000-210f-859a-f403043d09f0"
+  } ]
+}

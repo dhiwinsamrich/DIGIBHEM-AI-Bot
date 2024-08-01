@@ -1,0 +1,36 @@
+{
+  "name": "3d49bbd0-4778-408a-bc3b-b4738ca225e3",
+  "displayName": "Display Selected Round-Trip Flight",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "[Unfilled parameters will need a real time webhook response]\n\nDeparture Flight $session.params.departure_flight_number\nDate $session.params.departure_date\nDeparture Airport $session.params.departure_airport\nTime $session.params.outbound_departure_time\nArrival Airport $session.params.return_airport  \nTime $session.params.outbound_arrival_time \n\nReturn Flight $session.params.return_flight_number\nDate $session.params.return_date\nDeparture Airport $session.params.return_airport  \nTime $session.params.return_departure_time\nArrival Airport $session.params.departure_airport\nTime $session.params.return_arrival_time\n\nThe price for this ticket is $session.params.ticket_price\nYou have an available account credit of: $session.params.account_credit \n\nWould you like to proceed with payment?" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "small_talk.confirmation.yes",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Great!\n" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Round-Trip Payment",
+    "name": "5f36ab3f-0000-210f-859a-f403043d09f0"
+  }, {
+    "intent": "small_talk.confirmation.no",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Anything Else",
+    "name": "5f36ab40-0000-210f-859a-f403043d09f0"
+  } ],
+  "transitionRouteGroups": [ "Airline FAQ" ]
+}

@@ -1,0 +1,160 @@
+{
+  "name": "fffc5027-a028-445b-96aa-984f82353f22",
+  "displayName": "replaced elements",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.replaced_string",
+      "value": null
+    }, {
+      "parameter": "$flow.zip_code_replaced",
+      "value": "$sys.func.IF(\"$flow.zip_code != null AND $flow.zip_code_webhook[0] != N/A AND $flow.zip_code != N/A\", $sys.func.IF(\"$sys.func.LOWER($flow.zip_code) != $sys.func.LOWER($flow.zip_code_webhook[0])\", true, false), false)"
+    }, {
+      "parameter": "$flow.city_replaced",
+      "value": "$sys.func.IF(\"$flow.city != null AND $flow.city_webhook[0] != N/A AND $flow.city != N/A\", $sys.func.IF(\"$sys.func.LOWER($flow.city) != $sys.func.LOWER($flow.city_webhook[0])\", true, false), false)"
+    }, {
+      "parameter": "$flow.admin_area_replaced",
+      "value": "$sys.func.IF(\"$flow.admin_area != null AND $flow.admin_area_webhook[0] != N/A AND $flow.admin_area != N/A\", $sys.func.IF(\"$sys.func.LOWER($flow.admin_area) != $sys.func.LOWER($flow.admin_area_webhook[0])\", true, false), false)"
+    }, {
+      "parameter": "$flow.street_number_replaced",
+      "value": "$sys.func.IF(\"$flow.street_number != null AND $flow.street_number_webhook[0] != N/A AND $flow.street_number != N/A\", $sys.func.IF(\"$sys.func.LOWER($flow.street_number) != $sys.func.LOWER($flow.street_number_webhook[0])\", true, false), false)"
+    }, {
+      "parameter": "$flow.route_replaced",
+      "value": "$sys.func.IF(\"$flow.route != null AND $flow.route_webhook[0] != N/A AND $flow.route != N/A\", $sys.func.IF(\"$sys.func.LOWER($flow.route) != $sys.func.LOWER($flow.route_webhook[0])\", true, false), false)"
+    }, {
+      "parameter": "$flow.country_replaced",
+      "value": "$sys.func.IF(\"$flow.country != null AND $flow.country_webhook[0] != N/A AND $flow.country != N/A\", $sys.func.IF(\"$sys.func.LOWER($sys.func.TO_TEXT($flow.country)) != $sys.func.LOWER($sys.func.TO_TEXT($flow.country_webhook[0]))\", true, false), false)"
+    }, {
+      "parameter": "$flow.island_replaced",
+      "value": "$sys.func.IF(\"$flow.island != null AND $flow.island_webhook[0] != N/A AND $flow.island != N/A\", $sys.func.IF(\"$sys.func.LOWER($flow.island) != $sys.func.LOWER($flow.island_webhook[0])\", true, false), false)"
+    }, {
+      "parameter": "$flow.is_admin_area_short",
+      "value": "$sys.func.IF(\"$sys.func.LEN($flow.admin_area_webhook[0]) \u003e 3\", false, true)"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.zip_code_replaced = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.replaced_string",
+        "value": "$sys.func.APPEND($flow.replaced_string, \"postal code as \u003csay-as interpret-as='verbatim'\u003e$flow.zip_code_webhook[0]\u003c/say-as\u003e\")"
+      }, {
+        "parameter": "$flow.zip_code",
+        "value": "$flow.zip_code_webhook[0]"
+      } ]
+    },
+    "name": "bfb46703-ea13-4728-a020-e2cb48be1325"
+  }, {
+    "condition": "$flow.admin_area_replaced = true AND $flow.is_admin_area_short = false",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.replaced_string",
+        "value": "$sys.func.APPEND($flow.replaced_string, \"administrative area as $flow.admin_area_webhook[0]\")"
+      }, {
+        "parameter": "$flow.admin_area",
+        "value": "$flow.admin_area_webhook[0]"
+      } ]
+    },
+    "name": "8f245530-e265-403b-8c13-fd020c51814e"
+  }, {
+    "condition": "$flow.admin_area_replaced = true AND $flow.is_admin_area_short = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.replaced_string",
+        "value": "$sys.func.APPEND($flow.replaced_string, \"administrative area as \u003csay-as interpret-as='verbatim'\u003e$flow.admin_area_webhook[0]\u003c/say-as\u003e\")"
+      }, {
+        "parameter": "$flow.admin_area",
+        "value": "$flow.admin_area_webhook[0]"
+      } ]
+    },
+    "name": "87e69549-0461-4d1d-92e0-eb6822348bcf"
+  }, {
+    "condition": "$flow.city_replaced = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.replaced_string",
+        "value": "$sys.func.APPEND($flow.replaced_string, \"city as $flow.city_webhook[0]\")"
+      }, {
+        "parameter": "$flow.city",
+        "value": "$flow.city_webhook[0]"
+      } ]
+    },
+    "name": "c877c6f2-6016-4a95-9a20-5d2267338399"
+  }, {
+    "condition": "$flow.country_replaced = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.replaced_string",
+        "value": "$sys.func.APPEND($flow.replaced_string, \"country as $flow.country_webhook[0]\")"
+      }, {
+        "parameter": "$flow.country",
+        "value": "$flow.country_webhook[0]"
+      } ]
+    },
+    "name": "4f466cae-6cbd-44aa-9350-ea845f463742"
+  }, {
+    "condition": "$flow.island_replaced = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.replaced_string",
+        "value": "$sys.func.APPEND($flow.replaced_string, \"island as $flow.island_webhook[0]\")"
+      }, {
+        "parameter": "$flow.island",
+        "value": "$flow.island_webhook[0]"
+      } ]
+    },
+    "name": "ec884283-6c89-4bc8-ade3-eb44e78b7840"
+  }, {
+    "condition": "$flow.route_replaced = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.replaced_string",
+        "value": "$sys.func.APPEND($flow.replaced_string, \"route as $flow.route_webhook[0]\")"
+      }, {
+        "parameter": "$flow.route",
+        "value": "$flow.route_webhook[0]"
+      } ]
+    },
+    "name": "316cb676-8cb1-4fb1-b35f-f30762761b96"
+  }, {
+    "condition": "$flow.street_number_replaced = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.replaced_string",
+        "value": "$sys.func.APPEND($flow.replaced_string, \"street number as \u003csay-as interpret-as='verbatim'\u003e$flow.street_number_webhook[0]\u003c/say-as\u003e\")"
+      }, {
+        "parameter": "$flow.street_number",
+        "value": "$flow.street_number_webhook[0]"
+      } ]
+    },
+    "name": "69873b66-613d-4d24-a4fd-2e7c69cc50c7"
+  }, {
+    "condition": "$flow.replaced_string != null",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eAfter validation I have replaced the $flow.replaced_string.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.replaced_string",
+        "value": "$sys.func.JOIN(\", \", $flow.replaced_string)"
+      }, {
+        "parameter": "$flow.playback_previous_prompt",
+        "value": "\u003cspeak\u003eAfter validation I have replaced the $flow.replaced_string.\u003c/speak\u003e"
+      } ]
+    },
+    "targetPage": "address elements null check",
+    "name": "892d0e8d-16d8-4c6c-b847-a256ff307220"
+  }, {
+    "condition": "$flow.replaced_string = null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "address elements null check",
+    "name": "e78f9610-f0cf-46f8-88c0-e1b80071db97"
+  } ]
+}

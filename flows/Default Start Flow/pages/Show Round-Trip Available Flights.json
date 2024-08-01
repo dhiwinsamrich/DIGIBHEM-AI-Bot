@@ -1,0 +1,50 @@
+{
+  "name": "49e2c7e6-77af-4e9b-a766-78db889515ee",
+  "displayName": "Show Round-Trip Available Flights",
+  "form": {
+    "parameters": [ {
+      "displayName": "flight_option",
+      "required": true,
+      "entityType": "@flight-option",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "Would you like to book Flight Option A, Flight Option B, or Option C?" ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "[Sample webhook response of available flights]\n\nOption A\nDeparture Flight BL378M\nDate $session.params.departure_date\nDeparture Airport $session.params.departure_airport\nTime 6:15 AM\nArrival Airport $session.params.return_airport  \nArrival Time 7:15 AM \n\nReturn Flight DA1357\nDate $session.params.return_date\nTime 10:00 PM\nDeparture Airport $session.params.return_airport  \nTime 11:00 PM\nArrival Airport $session.params.departure_airport\n\nOption B\nDeparture Flight  NW781A \nDate $session.params.departure_date\nDeparture Airport $session.params.departure_airport\nTime  9:30 AM\nArrival Airport $session.params.return_airport  \nArrival Time 11:30 AM  \n\nReturn Flight DA1347\nDate $session.params.return_date\nDeparture Airport $session.params.return_airport  \nTime 6:00 PM\nArrival Airport $session.params.departure_airport\nTime 11:00 PM\n\nOption C\nDeparture Flight  DA1357\nDate $session.params.departure_date\nDeparture Airport  $session.params.departure_airport\nTime  $session.params.outbound_departure_time\nArrival Airport $session.params.return_airport  \nArrival Time 8:00 PM  \n\nReturn Flight DA9842: \nDate $session.params.return_date\nDeparture Airport $session.params.return_airport  \nTime $session.params.return_departure_time\nArrival Airport $session.params.departure_airport\nArrival Time 9:00 PM \n" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "small_talk.confirmation.no",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Anything Else",
+    "name": "e45eca2e-4331-4081-a6c1-96346be20d5c"
+  }, {
+    "condition": "$page.params.status = \"FINAL\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "All of our seats are open seating.  Family passengers with children under 5 are boarded first to allow families to sit together. " ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Display Selected Round-Trip Flight",
+    "name": "5f36ab41-0000-210f-859a-f403043d09f0"
+  } ],
+  "transitionRouteGroups": [ "Airline FAQ" ]
+}

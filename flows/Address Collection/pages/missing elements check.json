@@ -1,0 +1,58 @@
+{
+  "name": "e28e8d6e-a7eb-4769-b7f8-7c7d475e9068",
+  "displayName": "missing elements check",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.city",
+      "value": "$sys.func.IF($sys.func.CONTAIN($flow.missing_elems, \"locality\"), null, \"$flow.city\")"
+    }, {
+      "parameter": "$flow.zip_code",
+      "value": "$sys.func.IF($sys.func.CONTAIN($flow.missing_elems, \"postal_code\"), null, $flow.zip_code)"
+    }, {
+      "parameter": "$flow.admin_area",
+      "value": "$sys.func.IF($sys.func.CONTAIN($flow.missing_elems, \"administrative_area_level_1\"), null, $flow.admin_area)"
+    }, {
+      "parameter": "$flow.country",
+      "value": "$sys.func.IF($sys.func.CONTAIN($flow.missing_elems, \"country\"), null, $flow.country)"
+    }, {
+      "parameter": "$flow.street_number",
+      "value": "$sys.func.IF($sys.func.CONTAIN($flow.missing_elems, \"street_number\"), null, $flow.street_number)"
+    }, {
+      "parameter": "$flow.island",
+      "value": "$sys.func.IF($sys.func.CONTAIN($flow.missing_elems, \"archipelago\"), null,  $flow.island)"
+    }, {
+      "parameter": "$flow.route",
+      "value": "$sys.func.IF($sys.func.CONTAIN($flow.missing_elems, \"route\"), null, $flow.route)"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "($flow.island = null OR $flow.city = null OR $flow.zip_code = null OR $flow.admin_area = null OR $flow.country = null OR $flow.street_number = null OR $flow.route = null) AND $flow.webhook_retry_num \u003c $flow.retry_num",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, I need some more information." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e collect missing elements",
+    "name": "cec431b0-304b-4841-82bb-dbcda6396839"
+  }, {
+    "condition": "$flow.island != null AND $flow.city != null AND $flow.zip_code != null AND $flow.admin_area != null AND $flow.country != null AND $flow.street_number != null AND $flow.route != null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "format address",
+    "name": "d129ebd3-d952-4df3-b0a5-e7f7b9f376bc"
+  }, {
+    "condition": "($flow.island = null OR $flow.city = null OR $flow.zip_code = null OR $flow.admin_area = null OR $flow.country = null OR $flow.street_number = null OR $flow.route = null) AND $flow.webhook_retry_num = $flow.retry_num",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e confirm invalid address",
+    "name": "529dc7dc-7d40-4194-9c71-723fad665c4c"
+  } ]
+}

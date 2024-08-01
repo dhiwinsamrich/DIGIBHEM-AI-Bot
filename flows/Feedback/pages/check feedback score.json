@@ -1,0 +1,127 @@
+{
+  "name": "7160e3e7-42fd-4908-b60c-6843a43974c0",
+  "displayName": "check feedback score",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "($flow.feedback_score \u003e 5 OR $flow.feedback_score \u003c 1) AND $flow.feedback_retry_counter \u003c $flow.feedback_max_retry_count",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.feedback_retry_counter",
+        "value": "$sys.func.ADD($flow.feedback_retry_counter,1)"
+      }, {
+        "parameter": "$flow.feedback_score",
+        "value": null
+      } ],
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$flow.feedback_retry_counter = 0",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "Sorry, we didn't get that. Please tell us a feedback score that is 1, 2, 3, 4, or 5." ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "condition": "$flow.feedback_retry_counter = 1",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "Sorry, we´re still not getting that. Please tell us a feedback score that is 1, 2, 3, 4, or 5." ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ]
+    },
+    "targetPage": "\u003e collect feedback score",
+    "name": "fea9f140-52d4-4c53-b1f8-3da02f84f2c7"
+  }, {
+    "condition": "($flow.feedback_score \u003e 5 OR $flow.feedback_score \u003c 1) AND $flow.feedback_retry_counter = $flow.feedback_max_retry_count",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "cd421dd5-0960-4117-be06-80ca3bb2051d"
+  }, {
+    "condition": "$flow.feedback_score \u003e $flow.minimum_feedback_score",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Great, looks like we did it well." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.feedback_comment",
+        "value": ""
+      } ]
+    },
+    "targetPage": "\u003e invoke update feedback API",
+    "name": "e2e89d20-8b1e-4bd8-8d23-ac73b5d90376"
+  }, {
+    "condition": "$flow.feedback_score \u003c= $flow.minimum_feedback_score",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect feedback comments",
+    "name": "c54b9dff-cc84-40f8-9cc7-43559698ce11"
+  }, {
+    "condition": "$flow.feedback_retry_counter \u003c $flow.feedback_max_retry_count",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.feedback_retry_counter",
+        "value": "$sys.func.ADD($flow.feedback_retry_counter,1)"
+      }, {
+        "parameter": "$flow.feedback_score",
+        "value": null
+      } ],
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$flow.feedback_retry_counter = 0",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "Sorry, we didn't get that. Please tell us a feedback score that is 1, 2, 3, 4, or 5." ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "condition": "$flow.feedback_retry_counter = 1",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "Sorry, we´re still not getting that. Please tell us a feedback score that is 1, 2, 3, 4, or 5." ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ]
+    },
+    "targetPage": "\u003e collect feedback score",
+    "name": "83ff87c0-6e1b-47b9-ac68-d3c648b61f25"
+  }, {
+    "condition": "$flow.feedback_retry_counter = $flow.feedback_max_retry_count",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "262a5ed1-36be-40c6-80ef-c07b9e32d877"
+  } ],
+  "description": "Conditional Responses are in routes for No match"
+}

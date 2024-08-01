@@ -1,0 +1,167 @@
+{
+  "name": "a8e9a469-fb14-4fd6-97b5-cec3720ed2da",
+  "displayName": "Collect Round-Trip Ticket Information",
+  "form": {
+    "parameters": [ {
+      "displayName": "passenger_name",
+      "required": true,
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "What is the first and last name of the passenger flying?" ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    }, {
+      "displayName": "departure_date",
+      "required": true,
+      "entityType": "@sys.date",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "Which day would you like to leave?", "Which date do you want to fly?" ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    }, {
+      "displayName": "departure_airport",
+      "required": true,
+      "entityType": "@airport-codes",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "Which airport are you leaving from?" ]
+            },
+            "languageCode": "en"
+          } ]
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "If you need time to look up the airport name, feel free to come back to the agent after you are ready to proceed. " ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "b9641ef5-8120-4919-917d-4bb32a4512a8"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "You can enter the airport code or airport name. " ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "215ef949-dea6-4097-9706-869a79fcbb8a"
+        } ]
+      }
+    }, {
+      "displayName": "outbound_departure_time",
+      "required": true,
+      "entityType": "@sys.time",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "What time would you like to leave on the outbound flight? Please use AM and PM in your response." ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    }, {
+      "displayName": "return_date",
+      "required": true,
+      "entityType": "@sys.date",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "Which date will you return?", "What is your return date?" ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    }, {
+      "displayName": "return_airport",
+      "required": true,
+      "entityType": "@airport-codes",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "What is the name of the airport you would like to fly to?" ]
+            },
+            "languageCode": "en"
+          } ]
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "If you need time to look up the airport name, feel free to come back to the agent after you are ready to proceed. " ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "683202f5-a483-40e0-aed2-ee4a7c8c9e5d"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "You can enter the airport code or airport name. " ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "b965671e-e688-4ff7-a4b1-92474654ca06"
+        } ]
+      }
+    }, {
+      "displayName": "return_departure_time",
+      "required": true,
+      "entityType": "@sys.time",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "What time would you like to leave on the return flight home? Please use AM and PM in your response." ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$page.params.status = \"FINAL\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thank you for that information. " ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Confirm Flight Details Round-Trip Ticket",
+    "name": "5cbd6cd2-709d-47bc-8e8c-8d6e99cba139"
+  } ]
+}

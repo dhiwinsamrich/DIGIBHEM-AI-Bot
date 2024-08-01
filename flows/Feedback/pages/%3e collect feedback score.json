@@ -1,0 +1,133 @@
+{
+  "name": "29ae5a91-18f8-4198-9a43-0647ee5c3447",
+  "displayName": "\u003e collect feedback score",
+  "form": {
+    "parameters": [ {
+      "displayName": "$flow.feedback_score",
+      "required": true,
+      "entityType": "@sys.number-integer",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we were not able to hear you. Can you please provide your feedback for our service?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "1911386d-88f7-4232-970c-9cf99e1bc0ab"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Hmm, we still cannot hear you. Can you please provide your feedback for our service?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "b8f5d38a-24e0-458a-9159-e50e9522a2b1"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-input-default",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "transfer_reason",
+              "value": "max_no_input"
+            } ]
+          },
+          "name": "4cfc07f0-e893-4277-a1d7-8375e873cf7d"
+        }, {
+          "targetPage": "check feedback score",
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+          
+          },
+          "name": "76a87761-323f-4b98-b302-459f630488a9"
+        }, {
+          "targetPage": "check feedback score",
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+          
+          },
+          "name": "bc310cdf-c5be-468f-b226-414121ee204f"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-match-default",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "transfer_reason",
+              "value": "max_no_match"
+            } ]
+          },
+          "name": "1446f59e-6e63-4c7f-b092-3b539c4d9292"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "maxDigits": 1,
+          "useSystemEntityRule": false,
+          "endpointingTimeoutDuration": {
+            "seconds": 5
+          }
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "conditionalCases": [ {
+      "cases": [ {
+        "condition": "$flow.feedback_retry_counter = 0",
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "Thank you for calling. Your feedback is important to us. Please take a moment to share your opinion of the service you received today by answering a few short questions." ]
+            },
+            "languageCode": "en"
+          }
+        }, {
+          "message": {
+            "text": {
+              "text": [ "On a scale of 1 to 5, where 1 is most unsatisfied and 5 is most satisfied, how satisfied are you with the service you received today?" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      } ]
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_escalate_human_agent_1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "e7015169-79f1-4392-a701-e16b388c6b85"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "538df64e-c6da-4bc5-8378-d9ba8a099214"
+  }, {
+    "condition": "$page.params.status = \"FINAL\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "check feedback score",
+    "name": "5c414132-35c5-4d73-8996-919116dfa6cf"
+  } ]
+}

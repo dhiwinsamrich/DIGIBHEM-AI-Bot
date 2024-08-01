@@ -1,0 +1,145 @@
+{
+  "name": "6ff06d81-7c44-4981-a3a7-c5eac1550459",
+  "displayName": "Collect One-Way Ticket Information",
+  "form": {
+    "parameters": [ {
+      "displayName": "departure_date",
+      "required": true,
+      "entityType": "@sys.date",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "Which day would you like to leave?", "Which date do you want to fly?" ]
+            },
+            "languageCode": "en"
+          } ],
+          "webhook": "Apigee Integration",
+          "tag": "findAvailableTicket"
+        }
+      }
+    }, {
+      "displayName": "departure_airport",
+      "required": true,
+      "entityType": "@airport-codes",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "Which airport would you like to fly out of?" ]
+            },
+            "languageCode": "en"
+          } ],
+          "webhook": "Apigee Integration",
+          "tag": "findAvailableTicket"
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "If you need time to look up the airport name, feel free to come back to the agent after you are ready to proceed. " ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "2f42ac23-9843-40ed-8fef-3cea9c357b96"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "You can enter the airport code or airport name. " ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "385ea02b-10b5-4949-b1dd-c4586cd0b08a"
+        } ]
+      }
+    }, {
+      "displayName": "arrival_airport",
+      "required": true,
+      "entityType": "@airport-codes",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "Which airport are you flying into?" ]
+            },
+            "languageCode": "en"
+          } ],
+          "webhook": "Apigee Integration",
+          "tag": "findAvailableTicket"
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "If you need time to look up the airport name, feel free to come back to the agent after you are ready to proceed." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "59210be6-253c-4d31-b294-b9fc40fc6471"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "You can enter the airport code or airport name. " ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "cc587af5-c361-44e2-9c02-497316821d05"
+        } ]
+      }
+    }, {
+      "displayName": "outbound_departure_time",
+      "required": true,
+      "entityType": "@sys.time",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "What time would you like to leave? Please use AM and PM in your response. " ]
+            },
+            "languageCode": "en"
+          } ],
+          "webhook": "Apigee Integration",
+          "tag": "findAvailableTicket"
+        }
+      }
+    }, {
+      "displayName": "passenger_name",
+      "required": true,
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "What is the first  and last name of the passenger flying?" ]
+            },
+            "languageCode": "en"
+          } ],
+          "webhook": "Apigee Integration",
+          "tag": "findAvailableTicket"
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$page.params.status = \"FINAL\"",
+    "triggerFulfillment": {
+      "webhook": "Apigee Integration",
+      "tag": "findAvailableTicket"
+    },
+    "targetPage": "Confirm Flight Details One-Way Ticket",
+    "name": "f1481bc6-4332-42b4-a264-95ff65f85df4"
+  } ]
+}

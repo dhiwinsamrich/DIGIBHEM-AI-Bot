@@ -1,0 +1,63 @@
+{
+  "name": "da51b219-58e2-4861-a3f5-89c8058708b0",
+  "displayName": "Confirm Flight Details Round-Trip Ticket",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "This is to confirm that $session.params.passenger_name will fly \n\nFrom $session.params.departure_airport\n\nTo  $session.params.return_airport  \n\nLeaving on $session.params.departure_date\n \nOutbound Flight Time $session.params.outbound_departure_time \n\nReturning on $session.params.return_date\n\nReturn Flight Time $session.params.return_departure_time\n\nIs that correct?\n" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "small_talk.confirmation.yes",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Now we will choose the flight time. " ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Show Round-Trip Available Flights",
+    "name": "5f36ab52-0000-210f-859a-f403043d09f0"
+  }, {
+    "intent": "small_talk.confirmation.no",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Let's try checking for other options. Please note that you will be asked to re-enter your information. " ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "passenger_name",
+        "value": null
+      }, {
+        "parameter": "departure_date",
+        "value": null
+      }, {
+        "parameter": "departure_airport",
+        "value": null
+      }, {
+        "parameter": "outbound_departure_time",
+        "value": null
+      }, {
+        "parameter": "return_date",
+        "value": null
+      }, {
+        "parameter": "return_airport",
+        "value": null
+      }, {
+        "parameter": "return_departure_time",
+        "value": null
+      } ]
+    },
+    "targetPage": "Collect Round-Trip Ticket Information",
+    "name": "5f36ab53-0000-210f-859a-f403043d09f0"
+  } ],
+  "transitionRouteGroups": [ "Airline FAQ" ]
+}

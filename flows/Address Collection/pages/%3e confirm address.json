@@ -1,0 +1,279 @@
+{
+  "name": "8c4a99b9-862f-46f3-b7f6-5dba60c02874",
+  "displayName": "\u003e confirm address",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eI have collected the final address; $flow.formatted_address. Is that correct? Please say yes or no.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.playback_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.replay_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.last_prompt",
+      "value": "\u003cspeak\u003eI have collected the final address; $flow.formatted_address. Is that correct? Please say yes or no.\u003c/speak\u003e"
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "20b81142-0c61-41f8-a7d3-2ae1d23617c2"
+  }, {
+    "intent": "prebuilt_components_playback",
+    "condition": "$flow.playback_counter = 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "9b719131-2b16-4a1c-8dbd-5ccc7cff84c6"
+  }, {
+    "intent": "prebuilt_components_playback",
+    "condition": "$flow.playback_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSure, as of now I have got the address as, $flow.formatted_address. Is that correct? Please say yes or no.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.playback_counter",
+        "value": "$sys.func.ADD($flow.playback_counter,1)"
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "\u003cspeak\u003eSure, as of now I have got the address as, $flow.formatted_address. Is that correct? Please say yes or no.\u003c/speak\u003e"
+      } ]
+    },
+    "name": "54a69e3a-f27c-4ca6-a9f2-af095ae5bccc"
+  }, {
+    "intent": "prebuilt_components_confirmation_yes",
+    "condition": "$sys.func.COUNT($flow.unconfimed_elems) = 0",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "address_collection_status",
+        "value": "VALID_ADDRESS"
+      } ]
+    },
+    "targetPage": "end success",
+    "name": "cce0a8d8-b586-4ce1-a0be-f0b6c0da0122"
+  }, {
+    "intent": "prebuilt_components_confirmation_yes",
+    "condition": "$sys.func.COUNT($flow.unconfimed_elems) != 0",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "address_collection_status",
+        "value": "INVALID_ADDRESS"
+      } ]
+    },
+    "targetPage": "end success",
+    "name": "e6f09d47-1082-4fb4-8004-0e0427a5224f"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.webhook_retry_num \u003c $flow.retry_num AND $flow.no_change_counter \u003c 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.no_change_counter",
+        "value": "$sys.func.ADD($flow.no_change_counter,1)"
+      } ]
+    },
+    "targetPage": "\u003e collect error elements",
+    "name": "bfa87e24-37d7-4509-ad9a-a4091b2c3296"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.webhook_retry_num = $flow.retry_num AND $flow.invalid_address_confirmation != true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e confirm invalid address",
+    "name": "4379ef64-79e0-483e-ba88-9ff722e0583a"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.invalid_address_confirmation = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "address_collection_status",
+        "value": "NO_USER_CONFIRMATION"
+      }, {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, I've used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "bf66ade9-9bb1-4aef-b089-aacb4749b155"
+  }, {
+    "intent": "prebuilt_components_address_collection_address_correct",
+    "condition": "$sys.func.COUNT($flow.unconfimed_elems) = 0",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "address_collection_status",
+        "value": "VALID_ADDRESS"
+      } ]
+    },
+    "targetPage": "end success",
+    "name": "415aacc4-c4dd-4cd0-a562-60d83ef07d52"
+  }, {
+    "intent": "prebuilt_components_address_collection_address_correct",
+    "condition": "$sys.func.COUNT($flow.unconfimed_elems) != 0",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "address_collection_status",
+        "value": "INVALID_ADDRESS"
+      } ]
+    },
+    "targetPage": "end success",
+    "name": "316e588e-554b-412f-9924-1cbfe4d4c8e6"
+  }, {
+    "intent": "prebuilt_components_address_collection_address_incorrect",
+    "condition": "$flow.webhook_retry_num \u003c $flow.retry_num AND $flow.no_change_counter \u003c 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.no_change_counter",
+        "value": "$sys.func.ADD($flow.no_change_counter,1)"
+      } ]
+    },
+    "targetPage": "\u003e collect error elements",
+    "name": "955827e1-a20f-4bf0-be2c-4be00be7bfda"
+  }, {
+    "intent": "prebuilt_components_address_collection_address_incorrect",
+    "condition": "$flow.webhook_retry_num = $flow.retry_num AND $flow.invalid_address_confirmation != true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e confirm invalid address",
+    "name": "c32f997d-f0fb-4081-a349-dda7f18b8306"
+  }, {
+    "intent": "prebuilt_components_address_collection_address_incorrect",
+    "condition": "$flow.invalid_address_confirmation = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "address_collection_status",
+        "value": "NO_USER_CONFIRMATION"
+      }, {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, I've used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "cdc163ed-ab11-4101-8109-06faca47fa26"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.webhook_retry_num \u003c $flow.retry_num AND $flow.no_change_counter = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, I've used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "5e51d3bb-c616-4eef-876d-63438ab18d28"
+  }, {
+    "intent": "prebuilt_components_address_collection_address_incorrect",
+    "condition": "$flow.webhook_retry_num \u003c $flow.retry_num AND $flow.no_change_counter = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, I've used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "09106eba-8917-4c96-b669-ef8f3dc073b5"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "ff0e6007-1ad1-4781-b87e-40d46e6a0ff6"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "ed514518-11ad-49a8-8626-07e81e1ac601"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, I didn't get that. I got the address as, $flow.formatted_address. Is that correct? Please say yes or no.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "f481474b-3b18-4f18-83d4-e489421b1f0a"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, I still wasn't able to get that. Please say yes or no." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "b91e3b24-4506-4147-ad37-cd3cce0e1105"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "5be9208a-39c0-4de2-8e42-a75d8009c460"
+  }, {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, I wasn't able to hear you. I got the address as, $flow.formatted_address. Is that correct? Please say yes or no.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "b1930154-8a18-4bcd-8ea0-24ec89231597"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, I still cannot hear you. Try speaking louder or moving to a quieter area.\n" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "78d6c6c6-1c11-45ff-a64d-0a97ad9fdab6"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "7defe9f4-a22f-4b6d-903c-386a862dc9ce"
+  } ]
+}

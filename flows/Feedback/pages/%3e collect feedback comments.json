@@ -1,0 +1,76 @@
+{
+  "name": "00e0a87d-b2ef-40f3-8849-b1d53cbd3c1e",
+  "displayName": "\u003e collect feedback comments",
+  "form": {
+    "parameters": [ {
+      "displayName": "$flow.feedback_comment",
+      "required": true,
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we were not able to hear you. Please provide your feedback comment" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "ca241fef-64b8-4f40-bf70-a2b4db94818f"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Hmm, we still cannot hear you. Please provide your feedback comment" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "39b6c571-f0e9-4d7c-ac3c-97b2cef0906f"
+        }, {
+          "targetPage": "END_FLOW_WITH_FAILURE",
+          "event": "sys.no-input-default",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "We´re sorry, but we cannot hear you at the moment. Please check your connection and try calling back later. Thank you." ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "transfer_reason",
+              "value": "max_no_input"
+            } ]
+          },
+          "name": "420a04da-262f-4567-99be-9152afcb503a"
+        } ]
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Can you please help us on how we can improve this experience for you?" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$page.params.status = FINAL",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thanks for your feedback. We apologize for the inconvenience caused to you and strive to give you a better experience next time." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e invoke update feedback API",
+    "name": "0b58b6f2-e56b-4381-8330-c7aaba2d926e"
+  } ]
+}

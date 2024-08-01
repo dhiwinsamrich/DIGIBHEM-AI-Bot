@@ -1,0 +1,102 @@
+{
+  "name": "619d611f-7c5a-457f-9782-2f9a504f72e0",
+  "displayName": "required elements check",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.zip_code_required = false",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.missing_elems",
+        "value": "$sys.func.IF($sys.func.CONTAIN($flow.missing_elems, postal_code), $sys.func.REMOVE($flow.missing_elems, [\"postal_code\"]), $flow.missing_elems)"
+      }, {
+        "parameter": "$flow.unconfimed_elems",
+        "value": "$sys.func.IF($sys.func.CONTAIN($flow.unconfimed_elems, postal_code), $sys.func.REMOVE($flow.unconfimed_elems, [\"postal_code\"]), $flow.unconfimed_elems)"
+      } ]
+    },
+    "name": "a687e423-c7fd-42a5-bd16-80079551380d"
+  }, {
+    "condition": "$flow.city_required = false",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.missing_elems",
+        "value": "$sys.func.IF($sys.func.CONTAIN($flow.missing_elems, locality), $sys.func.REMOVE($flow.missing_elems, [\"locality\"]), $flow.missing_elems)"
+      }, {
+        "parameter": "$flow.unconfimed_elems",
+        "value": "$sys.func.IF($sys.func.CONTAIN($flow.unconfimed_elems, locality), $sys.func.REMOVE($flow.unconfimed_elems, [\"locality\"]), $flow.unconfimed_elems)"
+      } ]
+    },
+    "name": "da51c816-df51-4dde-abc4-b1b0a981deab"
+  }, {
+    "condition": "$flow.admin_area_required = false",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.missing_elems",
+        "value": "$sys.func.IF($sys.func.CONTAIN($flow.missing_elems, administrative_area_level_1), $sys.func.REMOVE($flow.missing_elems, [\"administrative_area_level_1\"]), $flow.missing_elems)"
+      }, {
+        "parameter": "$flow.unconfimed_elems",
+        "value": "$sys.func.IF($sys.func.CONTAIN($flow.unconfimed_elems, administrative_area_level_1), $sys.func.REMOVE($flow.unconfimed_elems, [\"administrative_area_level_1\"]), $flow.unconfimed_elems)"
+      } ]
+    },
+    "name": "f355a55d-a06e-4f76-ab6a-6f454ee2f862"
+  }, {
+    "condition": "$flow.street_number_required = false",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.missing_elems",
+        "value": "$sys.func.IF($sys.func.CONTAIN($flow.missing_elems, street_number), $sys.func.REMOVE($flow.missing_elems, [\"street_number\"]), $flow.missing_elems)"
+      }, {
+        "parameter": "$flow.unconfimed_elems",
+        "value": "$sys.func.IF($sys.func.CONTAIN($flow.unconfimed_elems, street_number), $sys.func.REMOVE($flow.unconfimed_elems, [\"street_number\"]), $flow.unconfimed_elems)"
+      } ]
+    },
+    "name": "8daa7947-3d10-4510-b947-035e21806049"
+  }, {
+    "condition": "$flow.route_required = false",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.missing_elems",
+        "value": "$sys.func.IF($sys.func.CONTAIN($flow.missing_elems, route), $sys.func.REMOVE($flow.missing_elems, [\"route\"]), $flow.missing_elems)"
+      }, {
+        "parameter": "$flow.unconfimed_elems",
+        "value": "$sys.func.IF($sys.func.CONTAIN($flow.unconfimed_elems, route), $sys.func.REMOVE($flow.unconfimed_elems, [\"route\"]), $flow.unconfimed_elems)"
+      } ]
+    },
+    "name": "abc21bdf-4f17-4fcd-923b-24ae107cfcaf"
+  }, {
+    "condition": "$flow.country_required = false",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.missing_elems",
+        "value": "$sys.func.IF($sys.func.CONTAIN($flow.missing_elems, country), $sys.func.REMOVE($flow.missing_elems, [\"country\"]), $flow.missing_elems)"
+      }, {
+        "parameter": "$flow.unconfimed_elems",
+        "value": "$sys.func.IF($sys.func.CONTAIN($flow.unconfimed_elems, country), $sys.func.REMOVE($flow.unconfimed_elems, [\"country\"]), $flow.unconfimed_elems)"
+      } ]
+    },
+    "name": "50ccb2dc-a103-4966-9f2d-a699833dfdf5"
+  }, {
+    "condition": "$flow.island_required = false",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.missing_elems",
+        "value": "$sys.func.IF($sys.func.CONTAIN($flow.missing_elems, archipelago), $sys.func.REMOVE($flow.missing_elems, [\"archipelago\"]), $flow.missing_elems)"
+      }, {
+        "parameter": "$flow.unconfimed_elems",
+        "value": "$sys.func.IF($sys.func.CONTAIN($flow.unconfimed_elems, archipelago), $sys.func.REMOVE($flow.unconfimed_elems, [\"archipelago\"]), $flow.unconfimed_elems)"
+      } ]
+    },
+    "name": "0ab6e37e-5142-4a93-92a1-246394fbbdfe"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "replaced elements",
+    "name": "91208d0d-6896-4249-95bd-3e8c38c8b8f9"
+  } ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "88e1a7c7-38fd-4de8-86fd-a371cd8f3807",
+  "displayName": "Frequent Flyer Program",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Do you have already have a frequent flyer account with us?" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "small_talk.confirmation.yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Check Frequent Flyer Account Miles",
+    "name": "c9fe45c1-6f67-4126-8d54-30da5b9dcc79"
+  }, {
+    "intent": "small_talk.confirmation.no",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Join Frequent Flyer",
+    "name": "459a6cad-199d-49f0-b88d-8927951635a7"
+  } ]
+}

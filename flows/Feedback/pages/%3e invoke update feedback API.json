@@ -1,0 +1,64 @@
+{
+  "name": "8633c969-b4d3-419c-bbcc-27422d5e83e3",
+  "displayName": "\u003e invoke update feedback API",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "webhook": "prebuilt_components_feedback:update_feedback",
+    "tag": "updateFeedback"
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Have a great day." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$session.params.feedback_comment",
+        "value": "$flow.feedback_comment"
+      }, {
+        "parameter": "$session.params.feedback_score",
+        "value": "$sys.func.TO_NUMBER($flow.feedback_score)"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "a0a713ec-4ebb-4ad7-a27d-ffad4c1b1e2c"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_error"
+      } ]
+    },
+    "name": "9dcde9f5-85d4-4e2e-b840-a82a63ac73a9"
+  }, {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error.not-found",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_not_found"
+      } ]
+    },
+    "name": "3cf4a88c-1f60-4396-88f8-470a71035b50"
+  } ]
+}

@@ -1,0 +1,128 @@
+{
+  "name": "c5f832d4-47a2-4a07-b175-2a0685d7f5b9",
+  "displayName": "Address Collection",
+  "description": "Allows you to collect and validate an address using the Google Maps Address Validation API.",
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_waiting_room",
+    "condition": "$flow.waiting_room_counter \u003c 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.waiting_room_counter",
+        "value": "$sys.func.ADD($flow.waiting_room_counter,1)"
+      } ]
+    },
+    "targetFlow": "Waiting Room",
+    "name": "fc1ca207-c8f8-476b-8a82-f0f2d2449a5b"
+  }, {
+    "intent": "prebuilt_components_waiting_room",
+    "condition": "$flow.waiting_room_counter = 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "3bc07321-273d-4202-bb77-33450fa34de7"
+  }, {
+    "intent": "prebuilt_components_replay",
+    "condition": "$flow.replay_counter = 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "ed81d860-4435-4fd6-b9d9-936b5602a005"
+  }, {
+    "intent": "prebuilt_components_replay",
+    "condition": "$flow.replay_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sure, let me repeat it." ]
+        },
+        "languageCode": "en"
+      }, {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.replay_counter",
+        "value": "$sys.func.ADD($flow.replay_counter,1)"
+      } ]
+    },
+    "name": "cfc48708-79f7-471e-a834-9f7b20873510"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.retry_num",
+        "value": 3
+      }, {
+        "parameter": "$flow.zip_code_required",
+        "value": true
+      }, {
+        "parameter": "$flow.city_required",
+        "value": true
+      }, {
+        "parameter": "$flow.admin_area_required",
+        "value": true
+      }, {
+        "parameter": "$flow.street_number_required",
+        "value": true
+      }, {
+        "parameter": "$flow.route_required",
+        "value": true
+      }, {
+        "parameter": "$flow.country_required",
+        "value": true
+      }, {
+        "parameter": "$flow.island_required",
+        "value": true
+      }, {
+        "parameter": "$flow.webhook_retry_num",
+        "value": 0
+      }, {
+        "parameter": "$flow.playback_no_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.no_change_counter",
+        "value": 0
+      } ]
+    },
+    "targetPage": "\u003e collect address",
+    "name": "d7be6266-b400-49af-8e7c-8041fc62fa4e"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "8b7d292d-621f-4897-9185-0a760aa26a63"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "32c7a498-af28-43af-a1f7-0da4c2a55523"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC",
+    "multiIntentSettings": {
+    
+    }
+  },
+  "advancedSettings": {
+    "enabled": true
+  }
+}
