@@ -1,0 +1,258 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "one way",
+      "parameterId": "flight-type"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "one way",
+      "parameterId": "flight-type"
+    }, {
+      "text": " to "
+    }, {
+      "text": "Denver",
+      "parameterId": "airport-codes",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "get me a ticket "
+    }, {
+      "text": "one way",
+      "parameterId": "flight-type"
+    }, {
+      "text": " to "
+    }, {
+      "text": "JFK",
+      "parameterId": "airport-codes",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i want to book a "
+    }, {
+      "text": "one way",
+      "parameterId": "flight-type"
+    }, {
+      "text": " ticket"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i want to book a "
+    }, {
+      "text": "one-way",
+      "parameterId": "flight-type"
+    }, {
+      "text": " ticket"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i want to book a ticket, "
+    }, {
+      "text": "no return, just there",
+      "parameterId": "flight-type"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "do you sell "
+    }, {
+      "text": "one way",
+      "parameterId": "flight-type"
+    }, {
+      "text": " tickets to "
+    }, {
+      "text": "Entebbe",
+      "parameterId": "geo-city"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "can i get a "
+    }, {
+      "text": "one way",
+      "parameterId": "flight-type"
+    }, {
+      "text": " ticket to "
+    }, {
+      "text": "london",
+      "parameterId": "geo-city",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "give me the "
+    }, {
+      "text": "one way",
+      "parameterId": "flight-type"
+    }, {
+      "text": " please"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "just a "
+    }, {
+      "text": "one way",
+      "parameterId": "flight-type"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "one",
+      "auto": true
+    }, {
+      "text": " way ticket to ",
+      "auto": true
+    }, {
+      "text": "chicago",
+      "parameterId": "airport-codes",
+      "auto": true
+    }, {
+      "text": " please",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i want to book a one way ticket to "
+    }, {
+      "text": "boise",
+      "parameterId": "geo-city"
+    }, {
+      "text": " idaho"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "can you get me a ",
+      "auto": true
+    }, {
+      "text": "one",
+      "auto": true
+    }, {
+      "text": " way ticket to ",
+      "auto": true
+    }, {
+      "text": "Miami",
+      "parameterId": "airport-codes",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I'd like to buy a single ticket",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I'd like to buy I a ",
+      "auto": true
+    }, {
+      "text": "one",
+      "auto": true
+    }, {
+      "text": "-way ticket to ",
+      "auto": true
+    }, {
+      "text": "Singapore",
+      "parameterId": "geo-city"
+    }, {
+      "text": ", please.",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "one way ticket"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "a ",
+      "auto": true
+    }, {
+      "text": "one",
+      "auto": true
+    }, {
+      "text": " way ticket",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "want a ",
+      "auto": true
+    }, {
+      "text": "one",
+      "auto": true
+    }, {
+      "text": " way ticket",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no a ",
+      "auto": true
+    }, {
+      "text": "one",
+      "auto": true
+    }, {
+      "text": " way ticket",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i want a ",
+      "auto": true
+    }, {
+      "text": "one",
+      "auto": true
+    }, {
+      "text": " way ticket",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "just "
+    }, {
+      "text": "one",
+      "auto": true
+    }, {
+      "text": " way"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

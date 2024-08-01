@@ -1,0 +1,7 @@
+{
+  "name": "4b0f1877-a7b0-447c-b4d5-1badbf08e006",
+  "displayName": "prebuilt_components_address_collection_address_incorrect",
+  "priority": 500000,
+  "description": "Used by a user to indicate their negation to the asked question.",
+  "numTrainingPhrases": 51
+}

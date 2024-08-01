@@ -1,0 +1,11 @@
+{
+  "name": "5a2eaf66-6077-44e5-830d-67a1e2aa0a89",
+  "displayName": "flights.round_trip_ticket",
+  "parameters": [ {
+    "id": "airport-codes",
+    "entityType": "@airport-codes",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 17
+}

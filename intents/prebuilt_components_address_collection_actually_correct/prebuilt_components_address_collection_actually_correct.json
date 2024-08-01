@@ -1,0 +1,11 @@
+{
+  "name": "867d2e85-0127-40b0-b753-d885f5a2e1a6",
+  "displayName": "prebuilt_components_address_collection_actually_correct",
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-head",
+    "value": "sys-head"
+  } ],
+  "description": "Possible when a user asked to make a change in the address, but then changes their mind.",
+  "numTrainingPhrases": 53
+}

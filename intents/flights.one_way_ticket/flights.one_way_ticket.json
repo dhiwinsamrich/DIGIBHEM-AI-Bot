@@ -1,0 +1,19 @@
+{
+  "name": "164428bd-647a-4e30-ab0f-cc7f3e3b76f9",
+  "displayName": "flights.one_way_ticket",
+  "parameters": [ {
+    "id": "airport-codes",
+    "entityType": "@airport-codes",
+    "isList": true
+  }, {
+    "id": "geo-city",
+    "entityType": "@sys.geo-city",
+    "isList": true
+  }, {
+    "id": "flight-type",
+    "entityType": "@flight-type",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 21
+}
