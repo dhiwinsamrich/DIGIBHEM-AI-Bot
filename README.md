@@ -1,5 +1,5 @@
 <h1 align="center">Interactive ChatBot using DialogFlow and DialogFlow CX</h1>
-<h2 align="center">Zyra - Flight Assistant </h2>
+<h2 align="center">Zyra The Flight Assistant </h2>
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/a3c0e077-547e-4c12-8be9-774a2dd5466e" alt="DigitalBhem" width="800" height="200"/>
